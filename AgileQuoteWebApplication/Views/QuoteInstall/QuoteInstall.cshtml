@@ -1,0 +1,57 @@
+﻿<script src="~/Scripts/AgileQuote/QuoteInstall.js"></script>
+
+<div class="quote_list">
+    <input type="hidden" value="@ViewBag.QuoteID" id="QuoteID" />
+    <table id="InstallDetailsTable">
+        <thead>
+            <tr>
+                <th>No of FTE's Required</th>
+                <th>Per Day Cost</th>
+                <th>No of Days Required</th>
+                <th>Total FTE Costs</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr></tr>
+        </tbody>
+    </table>
+    <div class="accord_btns">
+        <input type="button" id="AddInstallationDetails" value="Add Installation Details" />
+    </div>
+</div>
+<div id="AddInstallPopup" class="light-popup SingleRecordPopup">
+    <a id="AddInstallPopup_close" class="close" href="#">
+        <img alt="Close" title="Close Window" class="btn_close" src="~/Content/images/fancy_close.png"></a>
+    <div class="Title">Intallation Charges</div>
+    <ul class="popup-data">
+        <li>
+            <label>No of FTE's Required<span>:</span></label>
+            <input type="text" id="NoEmployees" /><span style="color:red;font-size:10px;float:left;" id="NoEmpError">*</span>
+        </li>
+
+        <li>
+            <label>Per Day Cost<span>:</span></label>
+            <span class="symbol">@ViewBag.symbol</span><input type="text" id="PerDayCose" disabled="disabled" style="margin-left:6px !important;" /><span style="color:red;font-size:10px;float:left;" id="PerDayCostError">*</span>
+        </li>
+
+        <li>
+            <label>No of Days Required<span>:</span></label>
+            <input type="text" id="NoDays" disabled="disabled" /><span style="color:red;font-size:10px;float:left;" id="NoDayError">*</span>
+        </li>
+        <li>
+            <label>Total FTE Cost<span>:</span></label>
+            <span class="symbol">@ViewBag.symbol</span><input type="text" id="TotalCost" disabled="disabled"  style="margin-left:6px !important;" />
+        </li>
+        <li>
+            <label>&nbsp;</label>
+            <p id="error"></p>
+        </li>
+        <li>
+            <div class="submit_box">
+                <label>&nbsp;</label>
+                <input type="button" value="Insert" id="InsertInstallationDetails">
+            </div>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>

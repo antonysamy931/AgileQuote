@@ -1,0 +1,232 @@
+﻿@{
+    ViewBag.Title = "QuoteBoard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="~/Scripts/jquery.noty.js"></script>
+<script src="~/Scripts/center.js"></script>
+<script src="~/Scripts/default.js"></script>
+<script src="~/Scripts/top.js"></script>
+
+
+<script type="text/javascript">
+    var notyAlert = null;
+    $(document).ready(function () {
+        // Setup the "Up" links
+        $(".rowUp").click(function () {
+            var row = $(this).closest("tr");
+
+            // Get the previous element in the DOM
+            var previous = row.prev();
+
+            // Check to see if it is a row
+            if (previous.is("tr")) {
+                // Move row above previous
+                row.detach();
+                previous.before(row);
+
+                // draw the user's attention to it
+                row.fadeOut();
+                row.fadeIn();
+            }
+            // else - already at the top
+        });
+
+        $(".rowDown").click(function () {
+            var row = $(this).closest("tr");
+
+            // Get the previous element in the DOM
+            var Next = row.next();
+
+            // Check to see if it is a row
+            if (Next.is("tr")) {
+                // Move row above previous
+                row.detach();
+                Next.after(row);
+
+                // draw the user's attention to it
+                row.fadeOut();
+                row.fadeIn();
+            }
+            // else - already at the top
+
+        });
+
+        $('#Proposalallselect').click(function () {
+            if ($(this).prop('checked') === true) {
+                $('table td input').each(function (i) {
+                    if ($(this).prop('disabled') === false) {
+                        $(this).attr('checked', 'checked');
+                    }
+                });
+            }
+            else {
+                $('table td input').each(function (i) {
+                    if ($(this).prop('disabled') === false) {
+                        $(this).removeAttr('checked');
+                    }
+                });
+            }
+        });
+
+        $('#ProposalReset').click(function () {
+            window.location.replace('/pdf/proposal?QuoteId=' + $('#QuoteId').val());
+        });
+
+
+        $('#GenerateProposal').click(function () {
+            var array = [];
+            $('table td input').each(function () {
+                if ($(this).prop('checked') === true) {
+                    array.push($(this).attr('name'));
+                }
+            });
+
+            $('#ArrangeString').val(array);
+            $.ajax({
+                url: '/pdf/Proposal?ArrangeString=' + array + '&QuoteId=' + $('#QuoteId').val(),
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    $.noty.closeAll();
+                    notyAlert = noty({
+                        text: data.Result,
+                        type: 'success',
+                        buttons: [{
+                            addClass: 'btn btn-primary', text: 'OK', onClick: function ($noty) {
+                                $noty.close();
+                                if (data.redirect) {
+                                    window.location.replace(data.redirectAction);
+                                }
+                            }
+                        }]
+                    });                                        
+                },
+                error: function (e) {
+                },
+                async:false
+            });
+            //$('form').submit();
+        });
+
+    });
+</script>
+
+<style>
+    table tr th, table tr td
+    {
+        border: 1px solid #C6D9EC;
+    }
+    .pImg
+    {       
+        margin:0!important;
+    }
+    .four
+    {
+        width:25%;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    
+    <div id="SubmitedQuoteContainer">
+        <section class="c12 main-title" style="margin-top: 2%;">
+            <div class="c6 quote">
+                <img src="~/Content/images/qoute-ion.png" alt="img1">
+                <p>Proposal</p>
+            </div>
+        </section>
+        <section>
+            <div class="table_top" style="display: none;">
+                <div class="list_select">
+                    <span>Select:</span>
+                    <label>
+                        <select></select></label>
+                    <span>0 item selected</span>
+                </div>
+                <div class="list_select_action">
+                    <span>Actions:</span>
+                    <label>
+                        <select></select></label>
+                    <input type="button" value="Submit">
+                </div>
+            </div>
+            <div class="create">
+                <div class="greay_box whitebox">
+                    <div>
+                        <div class="quote_list">
+                            <table cellspacing="0" cellpadding="0" style="width: 76%; margin: 2% auto;">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <input type="checkbox" id="Proposalallselect" />
+                                        </th>
+                                        <th>Document Name</th>
+                                        <th>Description</th>
+                                        <th>Set Order</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="">
+                                        <td>
+                                            <input type="checkbox" value="Cover Page" name="CoverPage" /></td>
+                                        <td>Cover</td>
+                                        <td>Proposal transmittal letter</td>
+                                        <td class="four"><a href="#" id="row1Up" class="rowUp"><img class="pImg" src="~/Content/images/Up.png" /></a>  <a href="#" id="row1Down" class="rowDown"><img class="pImg" src="~/Content/images/Down.png" /></a></td>
+                                    </tr>
+                                    <tr class="">
+                                        <td>
+                                            <input type="checkbox" value="Case Study" name="Overview" /></td>
+                                        <td>Solution Overview</td>
+                                        <td>Overview of proposed solution</td>
+                                        <td class="four"><a href="#" id="row5Up" class="rowUp"><img class="pImg" src="~/Content/images/Up.png" /></a> <a href="#" id="row5Down" class="rowDown"><img class="pImg" src="~/Content/images/Down.png" /></a></td>
+                                    </tr>
+                                    <tr class="">
+                                        <td>
+                                            <input type="checkbox" value="Quote Details" name="QuoteDetails" checked="checked" disabled="disabled" /></td>
+                                        <td>Quote</td>
+                                        <td>List of offered items, quantities, rates and prices</td>
+                                        <td class="four"><a href="#" id="row3Up" class="rowUp"><img class="pImg" src="~/Content/images/Up.png" /></a>  <a href="#" id="row3Down" class="rowDown"><img class="pImg" src="~/Content/images/Down.png" /></a></td>
+                                    </tr>                                                                      
+                                    <tr class="">
+                                        <td>
+                                            <input type="checkbox" value="Product Information" name="ProductInformation" /></td>
+                                        <td>Datasheet</td>
+                                        
+                                        <td>Description of offered products</td>
+                                        <td class="four"><a href="#" id="row4Up" class="rowUp"><img class="pImg" src="~/Content/images/Up.png" /></a>  <a href="#" id="row4Down" class="rowDown"><img class="pImg" src="~/Content/images/Down.png" /></a></td>
+                                    </tr>
+                                    <tr class="">
+                                        <td>
+                                            <input type="checkbox" value="Aboutus Page" name="AboutUs" /></td>
+                                        <td>About Us</td>
+                                        <td>Corporate overview</td>
+                                        <td class="four"><a href="#" id="row2Up" class="rowUp"><img class="pImg" src="~/Content/images/Up.png" /></a>  <a href="#" id="row2Down" class="rowDown"><img class="pImg" src="~/Content/images/Down.png" /></a></td>
+                                    </tr>
+                                    @*<tr class="">
+                                        <td>
+                                            <input type="checkbox" value="SAP - ERP Integration" name="SapErpIntegration" /></td>
+                                        <td>SAP - ERP Integration</td>
+                                        <td>SAP - ERP Integration Description</td>
+                                        <td class="four"><a href="#" id="row6Up" class="rowUp"><img class="pImg" src="~/Content/images/Up.png" /></a>  <a href="#" id="row6Down" class="rowDown"><img class="pImg" src="~/Content/images/Down.png" /></a></td>
+                                    </tr>*@                                                                                                           
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <div class="clear"></div>
+    </div>
+    <input type="hidden" name="ArrangeString" id="ArrangeString" />
+    <input type="hidden" id="QuoteId" name="QuoteId" value="@ViewBag.QuoteId" />
+    <div class="submit_box" style="margin: 0 0 0 12px;">
+        <input type="button" id="GenerateProposal" value="Generate Proposal" />
+        <input type="button" value="Reset" id="ProposalReset" />
+    </div>
+       
+}

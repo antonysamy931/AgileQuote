@@ -1,0 +1,628 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Bytescout.PDF2HTML</name>
+  </assembly>
+  <members>
+    <member name="M:JBIG2_Image_Decoder.org.jpedal.jbig2.decoders.HuffmanDecoder.decodeInt(System.Int32[][])">
+      <exception cref="T:System.IO.IOException">
+      </exception>
+    </member>
+    <member name="M:JBIG2_Image_Decoder.org.jpedal.jbig2.examples.pdf.PDFSegment.writeToHeader(System.Int16[])">
+      <exception cref="T:System.IO.IOException">
+      </exception>
+    </member>
+    <member name="M:JBIG2_Image_Decoder.org.jpedal.jbig2.image.JBIG2Bitmap.readBitmap(System.Boolean,System.Int32,System.Boolean,System.Boolean,JBIG2_Image_Decoder.org.jpedal.jbig2.image.JBIG2Bitmap,System.Int16[],System.Int16[],System.Int32)">
+      <exception cref="T:System.IO.IOException">
+      </exception>
+      <exception cref="T:JBIG2_Image_Decoder.org.jpedal.jbig2.JBIG2Exception">
+      </exception>
+    </member>
+    <member name="M:JBIG2_Image_Decoder.org.jpedal.jbig2.image.JBIG2Bitmap.readGenericRefinementRegion(System.Int32,System.Boolean,JBIG2_Image_Decoder.org.jpedal.jbig2.image.JBIG2Bitmap,System.Int32,System.Int32,System.Int16[],System.Int16[])">
+      <exception cref="T:System.IO.IOException">
+      </exception>
+      <exception cref="T:JBIG2_Image_Decoder.org.jpedal.jbig2.JBIG2Exception">
+      </exception>
+    </member>
+    <member name="M:JBIG2_Image_Decoder.org.jpedal.jbig2.image.JBIG2Bitmap.readTextRegion(System.Boolean,System.Boolean,System.Int32,System.Int32,System.Int32,System.Int32[][],System.Int32,JBIG2_Image_Decoder.org.jpedal.jbig2.image.JBIG2Bitmap[],System.Int32,System.Int32,System.Boolean,System.Int32,System.Int32,System.Int32[][],System.Int32[][],System.Int32[][],System.Int32[][],System.Int32[][],System.Int32[][],System.Int32[][],System.Int32[][],System.Int32,System.Int16[],System.Int16[],JBIG2_Image_Decoder.org.jpedal.jbig2.decoders.JBIG2StreamDecoder)">
+      <exception cref="T:System.IO.IOException">
+      </exception>
+      <exception cref="T:JBIG2_Image_Decoder.org.jpedal.jbig2.JBIG2Exception">
+      </exception>
+    </member>
+    <member name="M:JBIG2_Image_Decoder.org.jpedal.jbig2.image.JBIG2Bitmap.getBufferedImage">
+      <summary>
+            Should be considered Trash, if you want to get an image from the Data, PLEASE rewrite this!
+            </summary>
+    </member>
+    <member name="M:JBIG2_Image_Decoder.org.jpedal.jbig2.JBIG2Decoder.#ctor">
+      <summary>
+            Constructor
+            </summary>
+    </member>
+    <member name="M:JBIG2_Image_Decoder.org.jpedal.jbig2.JBIG2Decoder.setGlobalData(System.Byte[])">
+      <summary>
+             If the data stream is taken from a PDF, there may be some global data. Pass any global data in here.  Call this method before decodeJBIG2(...)
+            </summary>
+      <param name="data">global data</param>
+      <exception cref="T:System.IO.IOException">
+      </exception>
+      <exception cref="T:JBIG2_Image_Decoder.org.jpedal.jbig2.JBIG2Exception">
+      </exception>
+    </member>
+    <member name="M:JBIG2_Image_Decoder.org.jpedal.jbig2.JBIG2Decoder.decodeJBIG2(System.String)">
+      <summary>
+            Decodes a JBIG2 image from a String path
+            </summary>
+      <param name="file">Path to file to decode</param>
+      <exception cref="T:System.IO.IOException">
+      </exception>
+      <exception cref="T:JBIG2_Image_Decoder.org.jpedal.jbig2.JBIG2Exception">
+      </exception>
+    </member>
+    <member name="M:JBIG2_Image_Decoder.org.jpedal.jbig2.JBIG2Decoder.decodeJBIG2(System.IO.Stream)">
+      <summary>
+            Decodes a JBIG2 image from a Stream
+            </summary>
+      <param name="inputStream">InputStream</param>
+      <exception cref="T:System.IO.IOException">
+      </exception>
+      <exception cref="T:JBIG2_Image_Decoder.org.jpedal.jbig2.JBIG2Exception">
+      </exception>
+    </member>
+    <member name="M:JBIG2_Image_Decoder.org.jpedal.jbig2.JBIG2Decoder.decodeJBIG2(System.Byte[])">
+      <summary>
+            Decodes a JBIG2 image from a bytearray 
+            </summary>
+      <param name="data">the raw data stream</param>
+      <exception cref="T:System.IO.IOException">
+      </exception>
+      <exception cref="T:JBIG2_Image_Decoder.org.jpedal.jbig2.JBIG2Exception">
+      </exception>
+    </member>
+    <member name="M:JBIG2_Image_Decoder.org.jpedal.jbig2.JBIG2Decoder.getPageAsBufferedImage(System.Int32)">
+      <summary>
+            Creates a Bitmap from a page
+            </summary>
+      <param name="page">The pages number</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:JBIG2_Image_Decoder.org.jpedal.jbig2.JBIG2Exception.#ctor">
+      <summary>
+            Constructs a JBIGException without a message
+            </summary>
+    </member>
+    <member name="M:JBIG2_Image_Decoder.org.jpedal.jbig2.JBIG2Exception.#ctor(System.String)">
+      <summary>
+            Constructs a JBIGException with a message
+            </summary>
+      <param name="message">a message describing the exception</param>
+    </member>
+    <member name="T:JBIG2_Image_Decoder.org.jpedal.jbig2.util.Debugging">
+      <summary>
+            I added this Class for the C# version to help debugging.
+            </summary>
+    </member>
+    <member name="M:JBIG2_Image_Decoder.org.jpedal.jbig2.util.Debugging.DictToString``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.String)">
+      <summary>
+            Converts a Dictionary to a string.
+            </summary>
+      <typeparam name="T">Key</typeparam>
+      <typeparam name="V">Value</typeparam>
+      <param name="items">Dictionary</param>
+      <param name="format">A format to Convert to</param>
+      <returns>String representing the Dictionary</returns>
+    </member>
+    <member name="T:Bytescout.PDF2HTML.GraphicsTransformationQuality">
+      <summary>
+            Defines smoothing quality for text and vector graphics; interpolation quality for raster images.
+            </summary>
+    </member>
+    <member name="T:Bytescout.PDF2HTML.BaseExtractor">
+      <summary>
+             Defines a base class for PDF extractors.
+            </summary>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.IBaseExtractor.Reset">
+      <summary>
+             Resets the instance and disposes internal resources.
+            </summary>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.IBaseExtractor.LoadDocumentFromFile(System.String)">
+      <summary>
+             Loads PDF document from specified file.
+            </summary>
+      <param name="fileName">File name.</param>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.IBaseExtractor.LoadDocumentFromStream(System.IO.Stream)">
+      <summary>
+             Loads PDF document from provided stream.
+            </summary>
+      <param name="documentFileStream">Input stream.</param>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.IBaseExtractor.GetPageCount">
+      <summary>
+             Returns document page count.
+            </summary>
+      <returns>Page count.</returns>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.IBaseExtractor.GetPageRect_Left(System.Int32)">
+      <summary>
+            Gets the specified page left coordinate.
+            </summary>
+      <param name="pageIndex">Index of the page.</param>
+      <returns>Left coordinate in points.</returns>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.IBaseExtractor.GetPageRect_Top(System.Int32)">
+      <summary>
+            Gets the specified page top coordinate.
+            </summary>
+      <param name="pageIndex">Index of the page.</param>
+      <returns>Top coordinate in points.</returns>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.IBaseExtractor.GetPageRect_Width(System.Int32)">
+      <summary>
+            Gets the specified page width.
+            </summary>
+      <param name="pageIndex">Index of the page.</param>
+      <returns>Page width in points.</returns>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.IBaseExtractor.GetPageRect_Height(System.Int32)">
+      <summary>
+            Gets the specified page height.
+            </summary>
+      <param name="pageIndex">Index of the page.</param>
+      <returns>Page height in points.</returns>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.IBaseExtractor.RegistrationName">
+      <summary>
+             Registration name.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.IBaseExtractor.RegistrationKey">
+      <summary>
+             Registration key.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.IBaseExtractor.Password">
+      <summary>
+             PDF document owner password.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.IBaseExtractor.Version">
+      <summary>
+             Gets the component version number.
+            </summary>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.BaseExtractor.#ctor">
+      <summary>
+             Default constructor.
+            </summary>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.BaseExtractor.#ctor(System.String,System.String)">
+      <summary>
+             Initializes a new instance of the extractor class.
+            </summary>
+      <param name="registrationName">Registration name.</param>
+      <param name="registrationKey">Registration key.</param>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.BaseExtractor.Dispose">
+      <summary>
+            Releases the unmanaged resources used by the instance and optionally releases the managed resources.
+            </summary>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.BaseExtractor.Reset">
+      <summary>
+             Resets the instance and disposes internal resources.
+            </summary>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.BaseExtractor.LoadDocumentFromFile(System.String)">
+      <summary>
+             Loads PDF document from specified file.
+            </summary>
+      <param name="fileName">File name.</param>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.BaseExtractor.LoadDocumentFromStream(System.IO.Stream)">
+      <summary>
+             Loads PDF document from provided stream.
+            </summary>
+      <param name="documentFileStream">Input stream.</param>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.BaseExtractor.GetPageCount">
+      <summary>
+             Returns document page count.
+            </summary>
+      <returns>Page count.</returns>
+      <exception cref="T:Bytescout.PDF2HTML.PDF2HTMLException">
+      </exception>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.BaseExtractor.GetPageRectangle(System.Int32)">
+      <summary>
+            Gets the page rectangle.
+            </summary>
+      <param name="pageIndex">Index of the page.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.BaseExtractor.GetPageRect_Left(System.Int32)">
+      <summary>
+            Gets the specified page left coordinate.
+            </summary>
+      <param name="pageIndex">Index of the page.</param>
+      <returns>Left coordinate in points.</returns>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.BaseExtractor.GetPageRect_Top(System.Int32)">
+      <summary>
+            Gets the specified page top coordinate.
+            </summary>
+      <param name="pageIndex">Index of the page.</param>
+      <returns>Top coordinate in points.</returns>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.BaseExtractor.GetPageRect_Width(System.Int32)">
+      <summary>
+            Gets the specified page width.
+            </summary>
+      <param name="pageIndex">Index of the page.</param>
+      <returns>Page width in points.</returns>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.BaseExtractor.GetPageRect_Height(System.Int32)">
+      <summary>
+            Gets the specified page height.
+            </summary>
+      <param name="pageIndex">Index of the page.</param>
+      <returns>Page height in points.</returns>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.BaseExtractor.SetExtractionArea(System.Drawing.RectangleF)">
+      <summary>
+             Sets the extraction area by rectangle.
+            </summary>
+      <param name="rectangle">
+      </param>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.BaseExtractor.SetExtractionArea(System.Single,System.Single,System.Single,System.Single)">
+      <summary>
+             Sets the extraction area by coordinates and dimensions.
+            </summary>
+      <param name="left">
+      </param>
+      <param name="top">
+      </param>
+      <param name="width">
+      </param>
+      <param name="height">
+      </param>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.BaseExtractor.ResetExtractionArea">
+      <summary>
+             Resets the extraction area to full page.
+            </summary>
+    </member>
+    <member name="E:Bytescout.PDF2HTML.BaseExtractor.PasswordRequired">
+      <summary>
+             Occurs when the password required to decrypt the document.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.BaseExtractor.RegistrationName">
+      <summary>
+             Registration name.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.BaseExtractor.RegistrationKey">
+      <summary>
+             Registration key.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.BaseExtractor.Password">
+      <summary>
+             PDF document owner password.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.BaseExtractor.Version">
+      <summary>
+             Gets the component version number.
+            </summary>
+    </member>
+    <member name="T:Bytescout.PDF2HTML.HTMLExtractionMode">
+      <summary>
+             Defines HTML extraction modes.
+            </summary>
+    </member>
+    <member name="F:Bytescout.PDF2HTML.HTMLExtractionMode.PlainHTML">
+      <summary>
+             (0) Extract to HTML without formatting.
+            </summary>
+    </member>
+    <member name="F:Bytescout.PDF2HTML.HTMLExtractionMode.HTMLWithCSS">
+      <summary>
+             (1) Extract to HTML with CSS formatting.
+            </summary>
+    </member>
+    <member name="T:Bytescout.PDF2HTML.OutputImageFormat">
+      <summary>
+            Defines format for output images.
+            </summary>
+    </member>
+    <member name="F:Bytescout.PDF2HTML.OutputImageFormat.PNG">
+      <summary> PNG format (0) </summary>
+    </member>
+    <member name="F:Bytescout.PDF2HTML.OutputImageFormat.BMP">
+      <summary> BMP format (1) </summary>
+    </member>
+    <member name="F:Bytescout.PDF2HTML.OutputImageFormat.TIFF">
+      <summary> TIFF format (2) </summary>
+    </member>
+    <member name="F:Bytescout.PDF2HTML.OutputImageFormat.JPEG">
+      <summary> JPEG format (3) </summary>
+    </member>
+    <member name="F:Bytescout.PDF2HTML.OutputImageFormat.GIF">
+      <summary> GIF format (4) </summary>
+    </member>
+    <member name="F:Bytescout.PDF2HTML.OutputImageFormat.EMF">
+      <summary> EMF format (5) </summary>
+    </member>
+    <member name="T:Bytescout.PDF2HTML.HTMLExtractor">
+      <summary>
+            Extracts text and images from PDF document and creates formated HTML page from extracted data.
+            </summary>
+    </member>
+    <member name="T:Bytescout.PDF2HTML.IHTMLExtractor">
+      <summary>
+             Defines the PDF to HTML extractor interface.
+            </summary>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.IHTMLExtractor.GetHTML">
+      <summary>
+             Extracts HTML from whole document.
+            </summary>
+      <returns>HTML text.</returns>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.IHTMLExtractor.GetHTMLPage(System.Int32)">
+      <summary>
+             Extracts HTML from specified document page.
+            </summary>
+      <param name="pageIndex">Page index (zero-based).</param>
+      <returns>HTML text.</returns>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.IHTMLExtractor.SaveHtmlToFile(System.String)">
+      <summary>
+             Saves HTML text to file.
+            </summary>
+      <param name="fileName">File name.</param>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.IHTMLExtractor.SaveHtmlPageToFile(System.Int32,System.String)">
+      <summary>
+             Saves HTML from specified page page to stream.
+            </summary>
+      <param name="pageIndex">Page index (zero-based).</param>
+      <param name="fileName">Output file name.</param>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.IHTMLExtractor.SaveHtmlToStream(System.IO.Stream)">
+      <summary>
+             Saves HTML text to stream.
+            </summary>
+      <param name="stream">Output stream.</param>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.IHTMLExtractor.SaveHtmlPageToStream(System.Int32,System.IO.Stream)">
+      <summary>
+             Saves HTML from specified page page to stream.
+            </summary>
+      <param name="pageIndex">Page index (zero-based).</param>
+      <param name="stream">Output stream.</param>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.IHTMLExtractor.ExtractionMode">
+      <summary>
+             Extraction mode: plain HTML or formatted HTML with CSS.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.IHTMLExtractor.ExtractInvisibleText">
+      <summary>
+            Gets or sets a value indicating whether to extract invisible text from PDF document.
+            </summary>
+      <value>
+        <c>true</c> if extract invisible text; otherwise, <c>false</c>.
+            </value>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.IHTMLExtractor.OptimizeImages">
+      <summary>
+            Gets or sets optimization of images (True by default)
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.IHTMLExtractor.OutputPageWidth">
+      <summary>
+            Width of the output page rendered into HTML (default width is 1024 pixels)
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.IHTMLExtractor.DetectLinesInsteadOfParagraphs">
+      <summary>
+            Gets or sets a value indicating whether to detect single lines or multiple lines of text
+            </summary>
+      <value>
+        <c>true</c> if detects single lines of text; otherwise, <c>false</c>.
+            </value>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.IHTMLExtractor.DetectNewColumnBySpacesRatio">
+      <summary>
+             Table columns detection option.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.IHTMLExtractor.HighPrecisionTextPositioning">
+      <summary>
+            Gets or sets a value indicating whether to use the high precision text positioning.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.IHTMLExtractor.PreserveFormattingOnTextExtraction">
+      <summary>
+            Gets or sets a value indicating whether to preserve the text formatting on the extraction.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.IHTMLExtractor.AddFontStyleHTMLTagsToText">
+      <summary>
+            Controls if HTML output adds font style information to text objects
+            True by default, set to False to output text objects as plain text objects without font size and style defined
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.IHTMLExtractor.ControlsAsText">
+      <summary>
+            Controls if renders the form text controls to a plain text objects.
+            False by default, set to True to display controls as text.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.IHTMLExtractor.OutputImageFormat">
+      <summary>
+             Defines format for output images. Default is JPEG.
+            </summary>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.HTMLExtractor.#ctor">
+      <summary>
+             Initializes a new instance of the <see cref="T:Bytescout.PDF2HTML.HTMLExtractor" /> class.
+            </summary>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.HTMLExtractor.#ctor(System.String,System.String)">
+      <summary>
+             Initializes a new instance of the <see cref="T:Bytescout.PDF2HTML.HTMLExtractor" /> class.
+            </summary>
+      <param name="registrationName">Registration name.</param>
+      <param name="registrationKey">Registration key.</param>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.HTMLExtractor.Reset">
+      <summary>
+             Resets the instance and disposes internal resources. Also automatically invoked by <see cref="M:Bytescout.PDF2HTML.BaseExtractor.Dispose" />.
+            </summary>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.HTMLExtractor.GetHTML">
+      <summary>
+             Extracts HTML from whole document.
+            </summary>
+      <returns>HTML text.</returns>
+      <exception cref="T:Bytescout.PDF2HTML.PDF2HTMLException">
+      </exception>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.HTMLExtractor.GetHTMLPage(System.Int32)">
+      <summary>
+             Extracts HTML from specified document page.
+            </summary>
+      <param name="pageIndex">Page index (zero-based).</param>
+      <returns>HTML text.</returns>
+      <exception cref="T:Bytescout.PDF2HTML.PDF2HTMLException">
+      </exception>
+      <exception cref="T:System.IndexOutOfRangeException">
+      </exception>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.HTMLExtractor.SaveHtmlToFile(System.String)">
+      <summary>
+             Saves HTML text to file.
+            </summary>
+      <param name="fileName">File name.</param>
+      <exception cref="T:Bytescout.PDF2HTML.PDF2HTMLException">
+      </exception>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.HTMLExtractor.SaveHtmlPageToFile(System.Int32,System.String)">
+      <summary>
+             Saves HTML from specified page page to stream.
+            </summary>
+      <param name="pageIndex">Page index (zero-based).</param>
+      <param name="fileName">Output file name.</param>
+      <exception cref="T:Bytescout.PDF2HTML.PDF2HTMLException">
+      </exception>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.HTMLExtractor.SaveHtmlToStream(System.IO.Stream)">
+      <summary>
+             Saves HTML text to stream.
+            </summary>
+      <param name="stream">Output stream.</param>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.HTMLExtractor.SaveHtmlPageToStream(System.Int32,System.IO.Stream)">
+      <summary>
+             Saves HTML from specified page page to stream.
+            </summary>
+      <param name="pageIndex">Page index (zero-based).</param>
+      <param name="stream">Output stream.</param>
+      <exception cref="T:Bytescout.PDF2HTML.PDF2HTMLException">
+      </exception>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.HTMLExtractor.DetectNewColumnBySpacesRatio">
+      <summary>
+             Table columns detection option: defines space between columns to detect text as a new column.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.HTMLExtractor.ExtractInvisibleText">
+      <summary>
+            Gets or sets a value indicating whether to extract invisible text from PDF document.
+            </summary>
+      <value>
+        <c>true</c> if extract invisible text; otherwise, <c>false</c>.
+            </value>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.HTMLExtractor.PreserveFormattingOnTextExtraction">
+      <summary>
+            Gets or sets a value indicating whether to preserve the text formatting on the extraction.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.HTMLExtractor.DetectLinesInsteadOfParagraphs">
+      <summary>
+            Tries to detect single lines instead of multiple lines.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.HTMLExtractor.TrimSpaces">
+      <summary>
+             Gets or sets a value indicating whether to remove trailing and ending spaces from table cell values.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.HTMLExtractor.OutputImageFormat">
+      <summary>
+             Defines format for output images. Default is JPEG.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.HTMLExtractor.ExtractionMode">
+      <summary>
+             Extraction mode: plain HTML or formatted HTML with CSS.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.HTMLExtractor.OptimizeImages">
+      <summary>
+            Gets or sets optimization of images (True by default)
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.HTMLExtractor.OutputPageWidth">
+      <summary>
+            Output page width to render when converting to HTML (default is 1024)
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.HTMLExtractor.HighPrecisionTextPositioning">
+      <summary>
+            Gets or sets a value indicating whether to use the high precision text positioning.
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.HTMLExtractor.AddFontStyleHTMLTagsToText">
+      <summary>
+            Controls if HTML output adds font style information to text objects
+            True by default, set to False to output tet objects as plain text objects without font size and style defined
+            </summary>
+    </member>
+    <member name="P:Bytescout.PDF2HTML.HTMLExtractor.ControlsAsText">
+      <summary>
+            Controls if renders the form text controls to a plain text objects.
+            False by default, set to True to display controls as text.
+            </summary>
+    </member>
+    <member name="T:Bytescout.PDF2HTML.PDF2HTMLException">
+      <summary>
+             Represents errors that occur during PDF extraction process.
+            </summary>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.PDF2HTMLException.#ctor(System.String)">
+      <summary>
+             Initializes a new instance of the <see cref="T:Bytescout.PDF2HTML.PDF2HTMLException" /> class.
+            </summary>
+      <param name="message">The message text.</param>
+    </member>
+    <member name="M:Bytescout.PDF2HTML.PDF2HTMLException.#ctor(System.String,System.Exception)">
+      <summary>
+             Initializes a new instance of the <see cref="T:Bytescout.PDF2HTML.PDF2HTMLException" /> class.
+            </summary>
+      <param name="message">The message text.</param>
+      <param name="innerException">The inner exception.</param>
+    </member>
+  </members>
+</doc>

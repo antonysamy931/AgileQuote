@@ -1,0 +1,69 @@
+﻿@model AgileQuoteProperty.Model.QuoteQualitativeInformation
+@{                
+
+}
+<script src="~/Scripts/AgileQuote/QuoteStatus.js"></script>
+<script src="~/Scripts/AgileQuote/QuoteQualitativeInformation.js"></script>
+
+<div class="sel">    
+    <ul>        
+        <li class="some-class1">
+            <label>Quote Value  </label>            
+            @Html.TextBoxFor(x => x.txtQuoteValue, new { @id = "txtQuoteValue" })
+        </li>
+        <li class="some-class1">
+            <label>Gross Margin Amount / Percentage</label>
+            @Html.TextBoxFor(x => x.txtMagrinAmountPercentage, new { @id = "txtGrossMarginAmount" })
+        </li>
+        <li class="some-class1">
+            <label>Leadtime</label>
+            @Html.TextBoxFor(x => x.txtLeadTime, new { @id = "txtLeadTime" })            
+        </li>
+        <li class="some-class1">
+            <label>Win Probability % </label>
+            @Html.TextBoxFor(x => x.txtWinProbability, new { @id = "txtWinProbability" })            
+        </li>
+        <li class="some-class">
+            <label>Scope of Work</label>
+            @Html.TextAreaFor(x => x.txtareaScopeofWork, new { @id = "txtareaScopeofWork" })            
+        </li>
+        <li class="some-class">
+            <label>Executive Summary</label>
+            @Html.TextAreaFor(x => x.txtareaExecutiveSummary, new { @id = "txtareaExecutiveSummary" })            
+        </li>
+        <li class="some-class">
+            <label>Primary Competitor</label>
+            @Html.TextAreaFor(x => x.txtareaPrimaryCompetitor, new { @id = "txtareaPrimaryCompetitor" })            
+        </li>
+        <li class="some-class">
+            <label>How was Selling Price Set?</label>
+            @Html.TextAreaFor(x => x.txtareaSellingPrice, new { @id = "txtareaSellingPrice" })           
+        </li>
+        <li class="some-class">
+            <label>Payment Terms</label>
+            @Html.TextAreaFor(x => x.txtareaPaymentTerms, new { @id = "txtareaPaymentTerms" })            
+        </li>
+        <li class="some-class">
+            <label>Risk & Mitigation</label>
+            @Html.TextAreaFor(x => x.txtareaRiskMitigation, new { @id = "txtareaRiskMitigation" })            
+        </li>
+        <li class="some-classtest">
+            <label>New/Repeat Business</label>
+            @Html.DropDownListFor(x => x.Business, new SelectList(Model.BusinessList), new { @id = "Business" })            
+        </li>
+        <li class="some-class">
+            <label>Any Other Comments</label>
+            @Html.TextAreaFor(x => x.txtareaAnyOtherComments, new { @id = "txtareaAnyOtherComments" })            
+        </li>
+    </ul>
+    @*<div class="submit_boxQI">
+        <input type="button" id="QualitativeInformation" value="Submit Quote for Approval" style="margin:15px 10px; float:right;">
+    </div>*@
+    <div class="submit_boxQI">
+        <input type="button" id="QualitativeInformationUpdate" value="Submit Quote for Approval" style="margin:15px 10px; float:right;">
+    </div>
+</div>
+
+
+
+

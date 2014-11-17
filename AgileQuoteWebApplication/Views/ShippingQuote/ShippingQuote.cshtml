@@ -1,0 +1,338 @@
+﻿<script src="~/Scripts/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        ReloadShippingQuoteDataTable();
+        buttonShown();
+
+        $('#AddQuoteShipping').click(function () {
+            var popMargTop = ($('#AddQuoteShippingPopup').height() + 24) / 2;
+            var popMargLeft = ($('#AddQuoteShippingPopup').width() + 24) / 2;
+
+            $('#AddQuoteShippingPopup').css({
+                'margin-top': -popMargTop,
+                'margin-left': -popMargLeft
+            });
+
+            // Add the mask to body
+            $('body').append('<div id="mask"></div>');
+            $('#mask').fadeIn(300);
+            //Fade in the Popup
+            $('#AddQuoteShippingPopup').fadeIn(300);
+        });
+
+        $('#AddQuoteShippingPopup_close').click(function () {
+            $('#mask').fadeOut(300);
+            $('#AddQuoteShippingPopup').fadeOut(300);
+        });
+
+        $('#InsertQuoteShippingDetails').click(function () {
+            var quoteId = $('#QuoteID').val();
+            var truckCost = $('#TruckCost').val();
+            var dieselCost = $('#DieselCost').val();
+            var otherCost = $('#OtherCost').val();
+
+            if (truckCost !== '' && dieselCost !== '' && otherCost !== '') {
+                $('#TruckCostError').text('');
+                $('#DieselCostError').text('');
+                $('#OtherCostError').text('');
+                $.ajax({
+                    url: '/ShippingQuote/InsetQuoteShippingDetails?QuoteID=' + quoteId + '&truckCost=' + truckCost + '&dieselCost=' + dieselCost + '&otherCost=' + otherCost,
+                    type: 'post',
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.Redirect) {
+                            window.location.replace(data.RedirectAction);
+                        }
+                        else {
+                            if (data.result === 'success') {
+                                ReloadShippingQuoteDataTable();
+                                buttonShown();
+                                $('#mask').fadeOut(300);
+                                $('#AddQuoteShippingPopup').fadeOut(300);
+                            }
+                        }
+                    },
+                    error: function (e) {
+                    },
+                    async: false
+                });
+            }
+            else {
+                if (truckCost === '' && dieselCost === '' && otherCost === '') {
+                    $('#TruckCostError').text('*');
+                    $('#DieselCostError').text('*');
+                    $('#OtherCostError').text('*');
+                }
+                else if (truckCost === '' && dieselCost !== '' && otherCost !== '') {
+                    $('#TruckCostError').text('*');
+                    $('#DieselCostError').text('');
+                    $('#OtherCostError').text('');
+                }
+                else if (truckCost !== '' && dieselCost === '' && otherCost !== '') {
+                    $('#TruckCostError').text('');
+                    $('#DieselCostError').text('*');
+                    $('#OtherCostError').text('');
+                }
+                else if (truckCost !== '' && dieselCost !== '' && otherCost === '') {
+                    $('#TruckCostError').text('');
+                    $('#DieselCostError').text('');
+                    $('#OtherCostError').text('*');
+                }
+                else if (truckCost !== '' && dieselCost === '' && otherCost === '') {
+                    $('#TruckCostError').text('');
+                    $('#DieselCostError').text('*');
+                    $('#OtherCostError').text('*');
+                }
+                else if (truckCost === '' && dieselCost !== '' && otherCost === '') {
+                    $('#TruckCostError').text('*');
+                    $('#DieselCostError').text('');
+                    $('#OtherCostError').text('*');
+                }
+                else if (truckCost === '' && dieselCost === '' && otherCost !== '') {
+                    $('#TruckCostError').text('*');
+                    $('#DieselCostError').text('*');
+                    $('#OtherCostError').text('');
+                }
+            }
+        });
+
+        $('#TruckCost').keyup(function () {
+            //if (/^[+-]?\d+(\.\d+)?$/.test($(this).val())) {                
+            //}
+            //else {
+            //    if ($(this).val().length != 0) {
+            //        $(this).val($(this).val().slice(0, -1));
+            //    }
+            //}
+
+            if (!/^[0-9]+$/.test($(this).val())) {
+                if ($(this).val().length != 0) {
+                    $(this).val($(this).val().slice(0, -1));
+                }
+            }
+        });
+
+        $('#DieselCost').keyup(function () {
+            if (!/^[0-9]+$/.test($(this).val())) {
+                if ($(this).val().length != 0) {
+                    $(this).val($(this).val().slice(0, -1));
+                }
+            }
+        });
+
+        $('#OtherCost').keyup(function () {
+            if (!/^[0-9]+$/.test($(this).val())) {
+                if ($(this).val().length != 0) {
+                    $(this).val($(this).val().slice(0, -1));
+                }
+            }
+        });
+
+        $('#UpdateQuoteShippingDetails').click(function () {
+            var quoteID = $('#QuoteID').val();
+            var shippingID = $('#QuoteshippingID').val();
+            var truckCost = $('#TruckCost').val();
+            var dieselCost = $('#DieselCost').val();
+            var otherCost = $('#OtherCost').val();
+            var isDelete = false;
+            $.ajax({
+                url: '/ShippingQuote/UpdateShippingChargesDetails?QuoteID=' + quoteID + '&ShippingID=' + shippingID + '&TruckCost=' + truckCost + '&DieselCost=' + dieselCost + '&Delete=' + isDelete + '&otherCost=' + otherCost,
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.Redirect) {
+                        window.location.replace(data.RedirectAction);
+                    }
+                    else {
+                        if (data.result === 'success') {
+                            ReloadShippingQuoteDataTable();
+                            $('#mask').fadeOut(300);
+                            $('#AddQuoteShippingPopup').fadeOut(300);
+                        }
+                    }
+                },
+                error: function (e) {
+                },
+                async: false
+            });            
+        });
+
+    });
+
+    function buttonShown() {
+        var quoteId = $('#QuoteID').val();
+
+        $.ajax({
+            url: '/ShippingQuote/GetQuoteShippingListCount?QuoteID=' + quoteId,
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                if (data.Redirect) {
+                    window.location.replace(data.RedirectAction);
+                }
+                else {
+                    if (data.result > 0) {
+                        $('#AddQuoteShipping').css('display', 'none');
+                    }
+                    else {
+                        $('#AddQuoteShipping').css('display', 'block');
+                    }
+                }
+            },
+            error: function (e) {
+            },
+            async: false
+        });
+    }
+
+    function ReloadShippingQuoteDataTable() {
+        var quoteID = $('#QuoteID').val();
+        $('table').css('width', '100%');
+        if (quoteID != '') {
+            $('#ShippingQuoteTable').dataTable({
+                "aaData": [
+                /* Reduced data set */
+                ["Trident", "Internet Explorer 4.0", "Win 95+", 4, "X"],
+                ["Trident", "Internet Explorer 5.0", "Win 95+", 5, "C"],
+                ["Trident", "Internet Explorer 5.5", "Win 95+", 5.5, "A"],
+                ["Trident", "Internet Explorer 6.0", "Win 98+", 6, "A"],
+                ["Trident", "Internet Explorer 7.0", "Win XP SP2+", 7, "A"],
+                ["Gecko", "Firefox 1.5", "Win 98+ / OSX.2+", 1.8, "A"],
+                ["Gecko", "Firefox 2", "Win 98+ / OSX.2+", 1.8, "A"],
+                ["Gecko", "Firefox 3", "Win 2k+ / OSX.3+", 1.9, "A"],
+                ["Webkit", "Safari 1.2", "OSX.3", 125.5, "A"],
+                ["Webkit", "Safari 1.3", "OSX.3", 312.8, "A"],
+                ["Webkit", "Safari 2.0", "OSX.4+", 419.3, "A"],
+                ["Webkit", "Safari 3.0", "OSX.4+", 522.1, "A"]
+                ],
+                "bServerSide": true,
+                "sAjaxSource": "/ShippingQuote/GetQuoteShippingDatatableList?QuoteID=" + quoteID,
+                "bProcessing": true,
+                "sPaginationType": "full_numbers",
+                //"iDisplayLength": 1,
+                "bDestroy": true,
+                "aoColumns": [
+                            { "sTitle": "Shipping Code", "sName": "Sno" },
+                            { "sTitle": "Truck Cost", "sName": "truckCost" },
+                            { "sTitle": "Diesel Cost", "sName": "dieselCost" },
+                            { "sTitle": "Other Cost", "sName": "otherCost" },
+                            {
+                                "sTitle": "View",
+                                "sName": "Sno",
+                                "bSearchable": false,
+                                "bSortable": false,
+                                "fnRender": function (obj) {
+                                    return '<a href="#" id=' + obj.aData[0] + ' onclick="javascript:QuoteShippingEditFunction(this)" ><img src="/Content/images/edit.png" alt="EDIT" title="Edit" /></a><a href="#" id=' + obj.aData[0] + ' onclick="javascript:QuoteshippingDeleteFuction(this)" style="float:left"><img alt="DELETE" src="/Content/images/error.png" title="Delete"></a>'
+                                }
+                            }
+                ]
+            });
+        }
+
+    }
+
+    function QuoteShippingEditFunction(data) {
+        var QuoteID = $('#QuoteID').val();
+        $.ajax({
+            url: '/ShippingQuote/GetQuoteShippingDetails?QuoteID=' + QuoteID + '&ShippingID=' + data.id,
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                $('#QuoteshippingID').val(data.result.ShippingID);
+                $('#TruckCost').val(data.result.truckCost);
+                $('#DieselCost').val(data.result.dieselCost);
+                $('#OtherCost').val(data.result.otherCost);
+                $('#InsertQuoteShippingDetails').css('display', 'none');
+                $('#UpdateQuoteShippingDetails').css('display', 'block');
+
+                var popMargTop = ($('#AddQuoteShippingPopup').height() + 24) / 2;
+                var popMargLeft = ($('#AddQuoteShippingPopup').width() + 24) / 2;
+
+                $('#AddQuoteShippingPopup').css({
+                    'margin-top': -popMargTop,
+                    'margin-left': -popMargLeft
+                });
+
+                // Add the mask to body
+                $('body').append('<div id="mask"></div>');
+                $('#mask').fadeIn(300);
+                //Fade in the Popup
+                $('#AddQuoteShippingPopup').fadeIn(300);
+
+            },
+            error: function (e) {
+            },
+            async: false
+        });        
+    }
+
+    function QuoteshippingDeleteFuction(data) {
+        var QuoteID = $('#QuoteID').val();
+        var shippingID = data.id;
+        var truckCost = 0;
+        var dieselCost = 0;
+        var otherCost = 0;
+        var isDelete = true;
+        $.ajax({
+            url: '/ShippingQuote/UpdateShippingChargesDetails?QuoteID=' + QuoteID + '&ShippingID=' + shippingID + '&TruckCost=' + truckCost + '&DieselCost=' + dieselCost + '&Delete=' + isDelete + '&otherCost=' + otherCost,
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                if (data.Redirect) {
+                    window.location.replace(data.RedirectAction);
+                }
+                else {
+                    if (data.result === 'success') {
+                        ReloadShippingQuoteDataTable();
+                        buttonShown();
+                    }
+                }
+            },
+            error: function (e) {
+            },
+            async: false
+        });        
+    }
+</script>
+
+<div class="quote_list">
+    <input type="hidden" value="@ViewBag.QuoteID" id="QuoteID" />
+    <table id="ShippingQuoteTable">
+    </table>
+    <div class="accord_btns">
+        <input type="button" id="AddQuoteShipping" value="Add Shipping Details" />
+    </div>
+</div>
+<div id="AddQuoteShippingPopup" class="light-popup SingleRecordPopup">
+    <a id="AddQuoteShippingPopup_close" class="close" href="#">
+        <img alt="Close" title="Close Window" class="btn_close" src="~/Content/images/fancy_close.png"></a>
+    <div class="Title">Shipping Details</div>
+    <input type="hidden" id="QuoteshippingID" />
+    <ul class="popup-data">
+        <li>
+            <label>Truck Cost<span>:</span></label>
+            <span class="symbol">@ViewBag.symbol</span>
+            <input type="text" id="TruckCost" /><span style="color: red; font-size: 10px; float: left;" id="TruckCostError"></span>
+        </li>
+
+        <li>
+            <label>Diesel Cost<span>:</span></label>
+            <span class="symbol">@ViewBag.symbol</span>
+            <input type="text" id="DieselCost" /><span style="color: red; font-size: 10px; float: left;" id="DieselCostError"></span>
+        </li>
+        <li>
+            <label>Other Cost<span>:</span></label>
+            <span class="symbol">@ViewBag.symbol</span>
+            <input type="text" id="OtherCost" /><span style="color: red; font-size: 10px; float: left;" id="OtherCostError"></span>
+        </li>
+        <li>
+            <div class="submit_box">
+                <label>&nbsp;</label>
+                <input type="button" value="Insert" id="InsertQuoteShippingDetails">
+                <input type="button" value="Update" id="UpdateQuoteShippingDetails" style="display: none !important;" />
+            </div>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>

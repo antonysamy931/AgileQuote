@@ -1,0 +1,150 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/* --------------------------------------- GRID Layout ----------------------------------------- */
+/* --------------------------------------- Clearfixes ------------------------------------------ */
+.row:before, .row:after, .clearfix:before, .clearfix:after, .centered:before, .centered:after, .clear:before, .clear:after {
+	content: '';
+	display: table;
+}
+.row:after, .clearfix:after, .centered:after, .clear:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+html[xmlns] .clearfix {
+	display: block;
+}
+* html .clearfix {
+	height: 1%;
+}
+.row, .centered, .clearfix, .clear {
+	zoom: 1
+}
+/*-------------------------------------Clear fixes end--------------------------------------------*/
+* { /*this border-box property will affect IE7 browsers */
+	box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+/* custom grid */
+.grid {
+	margin: 0 auto;
+	max-width: 96%;/*may change as per requirement */
+	width: 100%;
+}
+/* You can choose the grid 1140 or 1024 or 960 as per your requirement */
+.g1140 {
+	margin: 0 auto;
+	max-width: 1140px;
+	width: 100%;
+}
+.g1024 {
+	margin: 0 auto;
+	max-width: 1024px;
+	width: 100%;
+}
+.g960 {
+	margin: 0 auto;
+	max-width: 960px;
+	width: 100%;
+}
+.row {
+	width: 100%;
+	margin: 0 auto;
+}
+.c1 { width: 8.33% }
+.c2 { width: 16.66% }
+.c3 { width: 25% }
+.c4 { width: 33.33% }
+.c5 { width: 41.66% }
+.c6 { width: 50% }
+.c7 { width: 58.33% }
+.c8 { width: 66.66% } 
+.c9 { width: 75% }
+.c10 { width: 83.33% }
+.c11 { width: 91.66% }
+.c12 { width: 100% }
+.c1-5 { width: 20% }
+/* This column can be used as a one fifth of the row */
+.c1-8 { width: 12.5% }
+/* This column can be used as a one eigth of the row */
+.c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10, .c11, .c12, .c1-5, .c1-8 {
+	min-height: 1px;
+	float: left;
+	padding-left: 10px;
+	padding-right: 10px;
+	position: relative;
+}
+.c1.first, .c2.first, .c3.first, .c4.first, .c5.first, .c6.first, .c7.first, .c8.first, .c9.first, .c10.first, .c11.first, .c1-5.first, .c1-8.first {
+	padding-left: 0;
+}
+.c1.last, .c2.last, .c3.last, .c4.last, .c5.last, .c6.last, .c7.last, .c8.last, .c9.last, .c10.last, .c11.last, .c1-5.last, .c1-8.last {
+	padding-right: 0;
+}
+.c1.one, .c2.one, .c3.one, .c4.one, .c5.one, .c6.one, .c7.one, .c8.one, .c9.one, .c10.one, .c11.one, .c1-5.one, .c1-8.one {
+	padding-right: 0;
+	padding-left: 0;
+}
+.row .row {
+	margin-left: -10px
+}
+/* ------------------------------------------ Helpers ----------------------------------------- */
+.left {float: left;}
+.right {float: right;}
+.centered{float: none; margin: auto;}
+.text-left {text-align: left;}
+.text-right {text-align: right;}
+.text-center {text-align: center;}
+.text-justify {text-align: justify;}
+.space-top {margin-top: 20px;}
+.space-bot {margin-bottom: 20px;}
+.space-tb {margin-top: 10px;margin-bottom: 10px;}
+.noleftmargin {	margin-left: 0px}
+.norightmargin {margin-right: 0px}
+.nomargin {margin:0;}
+.nopadding {padding: 0px}
+.noborder {border: 0px}
+/* =Media query for 960 Screens - sets nested grids to 100%-------------------------------------------------------------- */
+@media only screen and (max-width:960px) {
+ 	.row .row .c1, .row .row .c2, .row .row .c3, .row .row .c4, .row .row .c5, .row .row .c6, .row .row .c7, .row .row .c8, .row .row .c9, .row .row .c10, .row .row .c11, .row .row .c12, .row .row .c1-5, .row .row .c1-8 {
+		width: 100%;
+		/*margin-bottom: 20px;*/
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+ 	.row .row>div:last-child {
+		margin-bottom: 0 !important
+	}
+}
+/* =Media query for iPad and tablets-------------------------------------------------------------- */
+@media handheld, only screen and (max-width:768px), only screen and (max-device-width:768px) and (orientation:portrait) {
+	body {
+		font-size: 90%
+	}
+ 	.c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10, .c11, .c12, .c1-5, .c1-8 {
+		/*width: 100%;*/
+		margin-right: 0;
+		margin-left: 0;
+		/*margin-bottom: 20px;*/
+	}
+}
+@media all and (max-width: 699px) and (min-width: 520px){
+nav.main-menu{
+	width:200px;
+}
+.blue-btn
+{
+margin-top:8px;
+}
+.greay_box li {
+    min-height: 40px !important;
+	}
+.greay_box li label {
+    width: 55% !important;
+}
+}

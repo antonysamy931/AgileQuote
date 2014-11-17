@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Reports";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/QuoteList.css" rel="stylesheet" />
+
+@using (Html.BeginForm("Reports", "Home", FormMethod.Post))
+{
+
+    <section style="margin-top:15px;">
+
+    </section>    
+    
+@*<section class="c12 main-title">
+    <div class="c6 quote">
+        <img src="~/Content/images/qoute-ion.png" alt="img1" />
+        <p id="QuoteTitle">Reports</p>
+    </div>
+</section>*@
+
+<section>
+    <div class="create" id="QuoteCreateTab">
+        <ul class="tabs7">
+            <li><a href="#QuotesToClose">Quotes To Close</a><span></span></li>
+            <li><a href="#PendingQuotes">Pending Quotes</a><span></span></li>
+            <li><a href="#OrphanedQuotes">Orphaned Quotes</a><span></span></li>
+            <li><a href="#QuotationList">Quotation List</a><span></span></li>
+        </ul>
+        <div class="greay_box" id="QuoteAddressTab" style="margin-top:2%;">
+            <div id="QuotesToClose" class="tab_content7">
+                @Html.Action("QuotestoCloseReport", "Home")
+            </div>
+            <div id="PendingQuotes" class="tab_content7">
+                @Html.Action("PendingQuotesReport", "Home")
+            </div>
+            <div id="OrphanedQuotes" class="tab_content7">
+                @Html.Action("OrphanedQuotesReport", "Home")
+            </div>
+            <div id="QuotationList" class="tab_content7">
+                @Html.Action("QuotationListReport", "Home")
+            </div>
+        </div>
+    </div>
+</section>
+}

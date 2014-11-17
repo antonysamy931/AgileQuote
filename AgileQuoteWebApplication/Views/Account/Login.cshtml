@@ -1,0 +1,81 @@
+﻿@model AgileQuoteProperty.Model.Login
+
+@{
+    //ViewBag.Title = "Login";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
+}
+@using Recaptcha
+<html>
+<head>
+    <title>Login</title>
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/css/icons.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        <div class="g1140">
+            <div id="login-page">
+                <div class="login-head">
+                    <div class="logo">
+                        <img src="~/Content/images/Agile-logo.png" alt="img1" />
+                        <p><span>Agile </span>Quote</p>
+                    </div>
+                </div>
+                <div class="login-cont">
+                    <ul>
+                        <li>
+                            @Html.LabelFor(x => x.CompanyName)                            
+                            @Html.DropDownListFor(x => x.CompanyName, new SelectList(Model.CompanyList, "value", "value", Model.CompanyName), "Select Company Name", new { @class="login-Option " })
+                            @Html.ValidationMessageFor(x => x.CompanyName)
+                        </li>
+
+                        <li>
+                            @Html.LabelFor(x => x.userName)
+                            @Html.TextBoxFor(x => x.userName)
+                            @Html.ValidationMessageFor(x => x.userName)
+                        </li>
+
+                        <li>
+                            @Html.LabelFor(x => x.password)
+                            @Html.PasswordFor(x => x.password)
+                            @Html.ValidationMessageFor(x => x.password)
+                            @Html.ValidationSummary(true)
+                        </li>                      
+                        <li>
+                            <label>&nbsp;</label>
+                            <input type="submit" value="LOGIN" name="login">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>@*
+
+    
+    <br />
+    
+    @Html.LabelFor(x=>x.password)
+    @Html.PasswordFor(x => x.password)
+    @Html.ValidationMessageFor(x=>x.password)
+    <br />
+    @Html.Raw(Html.GenerateCaptcha("captcha", "Black"))
+    <br />
+    
+    @Html.LabelFor(x=>x.RandomNumber)<input type="text" name="random" value="@ViewBag.RandomNumber" disabled="disabled" />
+    @Html.TextBoxFor(x=>x.RandomNumber)
+    @Html.ValidationMessageFor(x=>x.RandomNumber)
+    <br />
+    
+    @Html.ValidationSummary(true)
+    <br />
+    <input type="submit" value="LOGIN" />*@
+    }
+
+</body>
+</html>
+

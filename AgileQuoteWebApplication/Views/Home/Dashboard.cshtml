@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+
+@using (Html.BeginForm("Dashboard", "Dashboard", FormMethod.Post))
+{
+
+    <div class="create">
+        <div class="greay_box whitebox">
+            <div>
+                    @Html.Action("SalesManagerDashboard", "Home")               
+            </div>
+        </div>
+    </div>
+}

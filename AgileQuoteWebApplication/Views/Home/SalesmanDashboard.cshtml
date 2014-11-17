@@ -1,0 +1,170 @@
+﻿<script src="~/Scripts/jquery.dataTables.min.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+<link href="~/Content/QuoteList.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        loadSalesPersonDashboard();
+
+        $(".column").sortable({
+            connectWith: ".column"
+        });
+        $(".portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
+        .find(".portlet-header")
+        .addClass("ui-widget-header ui-corner-all")
+        .prepend("<span class='ui-icon ui-icon-minusthick'></span>")
+        .end()
+        .find(".quote_list");
+        $(".portlet-header .ui-icon").click(function () {
+            $(this).toggleClass("ui-icon-minusthick").toggleClass("ui-icon-plusthick");
+            $(this).parents(".portlet:first").find(".quote_list").toggle();
+        });
+        $(".column").disableSelection();
+    });
+
+
+    function loadSalesPersonDashboard() {
+        //var quoteID = $('#QuoteID').val();
+        $('table').css('width', '100%');
+
+        $('#QuotestoClose').dataTable({
+            "aaData": [
+            /* Reduced data set */
+            ["1502", "Customer B", "04.Oct.2013", 3200],
+            ["1507", "Customer B", "12.Oct.2013", 2360],
+            ["1513", "Customer A", "26.Oct.2013", 4520],
+            ["1519", "Customer C", "06.Nov.2013", 3454],
+            ["1525", "Customer C", "12.Nov.2013", 7520]
+
+            ],
+            "bAutoWidth": true,
+            //"bServerSide": true,
+            //"sAjaxSource": "/Home/GeQuoteToClosetManager",
+            "bProcessing": true,
+            "sPaginationType": "full_numbers",
+            //"iDisplayLength": 1,
+            "bDestroy": true,
+
+            "aoColumns": [
+                        { "sTitle": "Quote #", "sWidth": "50%" },
+                        { "sTitle": "Customer Name" },
+                        { "sTitle": "Quote Date" },
+                        { "sTitle": "Quote Amount" },
+
+
+            ]
+        });
+
+        $('#PendingQuotes').dataTable({
+            "aaData": [
+            /* Reduced data set */
+            ["1460", "Customer C", "02.Sep.2013", 5623, "Antony", "05.Sep.2013"],
+            ["1475", "Customer D", "12.Sep.2013", 4500, "James", "17.Sep.2013"],
+            ["1477", "Customer A", "13.Sep.2013", 4521, "James", "18.Sep.2013"],
+            ["1484", "Customer C", "20.Sep.2013", 2452, "Antony", "25.Sep.2013"],
+            ["1490", "Customer C", "24.Sep.2013", 36547, "Antony", "27.Sep.2013"]
+            ],
+            //"bServerSide": true,
+            //"sAjaxSource": "/Home/GeQuoteToClosetManager",
+            "bProcessing": true,
+            "sPaginationType": "full_numbers",
+            ////"iDisplayLength": 1,
+            "bDestroy": true,
+
+            "aoColumns": [
+                        { "sTitle": "Quote #" },
+                        { "sTitle": "Customer Name" },
+                        { "sTitle": "Quote Date" },
+                        { "sTitle": "Quote Amount" },
+                        { "sTitle": "Pending With Whom" },
+                        { "sTitle": "Since When" }
+            ]
+        });
+
+
+        $('#OrphanedQuotes').dataTable({
+            "aaData": [
+            /* Reduced data set */
+            ["1401", "Customer B", "01.July.2013", 6320, "John", "02.Aug.2013"],
+            ["1410", "Customer C", "12.July.2013", 4500, "Smith", "07.Aug.2013"],
+            ["1415", "Customer D", "12.Aug.2013", 7852, "Andrew", "02.Sep.2013"],
+            ["1430", "Customer A", "20.Aug.2013", 1452, "Antony", "10.Sep.2013"],
+            ["1450", "Customer C", "28.Aug.2013", 36547, "Ebin", "17.Sep.2013"]
+            ],
+            //"bServerSide": true,
+            //"sAjaxSource": "/Home/GeQuoteToClosetManager",
+            "bProcessing": true,
+            "sPaginationType": "full_numbers",
+            //"iDisplayLength": 1,
+            "bDestroy": true,
+
+            "aoColumns": [
+                        { "sTitle": "Quote #" },
+                        { "sTitle": "Customer Name" },
+                        { "sTitle": "Quote Date" },
+                        { "sTitle": "Quote Amount" },
+                        { "sTitle": "Pending With Whom" },
+                        { "sTitle": "Since When" }
+            ]
+        });
+    }
+</script>
+<style>
+    div.portlet-header {
+        background: none repeat scroll 0 0 #1971B5 !important;
+        color: #FFFFFF !important;
+        display: block !important;
+        font-family: 'MuseoSans500Regular';
+        font-size: 16px !important;
+        padding: 6px 5px 6px 8px !important;
+    }
+</style>
+<section class="c12 main-title">
+    <div class="c6 quote">
+        <img src="~/Content/images/qoute-ion.png" alt="img1">
+        <p id="QuoteTitle">Dashboard - SalesPerson</p>
+    </div>
+</section>
+<section>
+    <table>
+        <tr>
+            <td>
+                <div class="column">
+                    <div class="portlet"  style="width:100%">
+                        <div class="portlet-header">Quotes to Close</div>
+                        <div class="quote_list">
+                            <table id="QuotestoClose"></table>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="column">
+                    <div class="portlet"  style="width: 100%">
+                        <div class="portlet-header">Pending Quotes</div>
+
+                        <div class="quote_list">
+                            <table id="PendingQuotes"></table>
+                        </div>
+                    </div>
+
+
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="column">
+                    <div class="portlet" style="width: 100%">
+                        <div class="portlet-header">Orphaned Quotes</div>
+
+                        <div class="quote_list">
+                            <table id="OrphanedQuotes"></table>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</section>

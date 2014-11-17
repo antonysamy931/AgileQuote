@@ -1,0 +1,128 @@
+8/14/2013 11:31:08 AM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   at System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AgileQuoteWebApplication.AgileQuoteService.IService1.CompanyList()
+   at AgileQuoteWebApplication.AgileQuoteService.Service1Client.CompanyList() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Service References\AgileQuoteService\Reference.cs:line 198
+   at AgileQuoteWebApplication.Controllers.AccountController.Login() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Controllers\AccountController.cs:line 34
+8/14/2013 11:31:34 AM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   at System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AgileQuoteWebApplication.AgileQuoteService.IService1.CompanyList()
+   at AgileQuoteWebApplication.AgileQuoteService.Service1Client.CompanyList() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Service References\AgileQuoteService\Reference.cs:line 198
+   at AgileQuoteWebApplication.Controllers.AccountController.Login() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Controllers\AccountController.cs:line 34
+8/14/2013 11:31:40 AM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   at System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AgileQuoteWebApplication.AgileQuoteService.IService1.CompanyList()
+   at AgileQuoteWebApplication.AgileQuoteService.Service1Client.CompanyList() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Service References\AgileQuoteService\Reference.cs:line 198
+   at AgileQuoteWebApplication.Controllers.AccountController.Login() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Controllers\AccountController.cs:line 34
+8/14/2013 11:32:09 AM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   at System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AgileQuoteWebApplication.AgileQuoteService.IService1.CompanyList()
+   at AgileQuoteWebApplication.AgileQuoteService.Service1Client.CompanyList() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Service References\AgileQuoteService\Reference.cs:line 198
+   at AgileQuoteWebApplication.Controllers.AccountController.Login() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Controllers\AccountController.cs:line 34
+8/14/2013 11:32:24 AM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   at System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AgileQuoteWebApplication.AgileQuoteService.IService1.CompanyList()
+   at AgileQuoteWebApplication.AgileQuoteService.Service1Client.CompanyList() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Service References\AgileQuoteService\Reference.cs:line 198
+   at AgileQuoteWebApplication.Controllers.AccountController.Login() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Controllers\AccountController.cs:line 34
+8/14/2013 11:32:43 AM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   at System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AgileQuoteWebApplication.AgileQuoteService.IService1.CompanyList()
+   at AgileQuoteWebApplication.AgileQuoteService.Service1Client.CompanyList() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Service References\AgileQuoteService\Reference.cs:line 198
+   at AgileQuoteWebApplication.Controllers.AccountController.Login() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Controllers\AccountController.cs:line 34
+8/14/2013 11:34:42 AM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   at System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AgileQuoteWebApplication.AgileQuoteService.IService1.CompanyList()
+   at AgileQuoteWebApplication.AgileQuoteService.Service1Client.CompanyList() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Service References\AgileQuoteService\Reference.cs:line 198
+   at AgileQuoteWebApplication.Controllers.AccountController.Login() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Controllers\AccountController.cs:line 34
+8/14/2013 11:36:39 AM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   at System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AgileQuoteWebApplication.AgileQuoteService.IService1.CompanyList()
+   at AgileQuoteWebApplication.AgileQuoteService.Service1Client.CompanyList() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Service References\AgileQuoteService\Reference.cs:line 198
+   at AgileQuoteWebApplication.Controllers.AccountController.Login() in d:\AgileQuote\trunk\AgileQuote\AgileQuoteWebApplication\Controllers\AccountController.cs:line 34

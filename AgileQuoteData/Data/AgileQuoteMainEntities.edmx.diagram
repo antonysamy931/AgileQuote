@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4e20b543127c4b829840b180aec89660" Name="Diagram1">
+        <EntityTypeShape EntityType="AgileQuoteModel.tbBundle" Width="1.5" PointX="3.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbBundleMaterialMapping" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbBundleType" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbCategory" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbCurrency" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbMaterial" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbQuote" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbQuoteAuthorize" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbQuoteBundleMapping" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbQuoteMaterialMapping" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbQuoteRentalProductMapping" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbQuoteRentalSparsMapping" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbQuoteStatu" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbRentalProduct" Width="1.5" PointX="0.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbRentalSpar" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbSalesOrganization" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="AgileQuoteModel.FK_QuoteBundleMapping_tbBundle" ManuallyRouted="false" />
+        <AssociationConnector Association="AgileQuoteModel.FK_QuoteMaterialMapping_tbMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="AgileQuoteModel.FK_QuoteBundleMapping_tbQuote1" ManuallyRouted="false" />
+        <AssociationConnector Association="AgileQuoteModel.FK_QuoteMaterialMapping_tbQuote" ManuallyRouted="false" />
+        <AssociationConnector Association="AgileQuoteModel.FK_QuoteRentalProductMapping_tbQuote" ManuallyRouted="false" />
+        <AssociationConnector Association="AgileQuoteModel.FK_QuoteRentalSparsMapping_tbQuote" ManuallyRouted="false" />
+        <AssociationConnector Association="AgileQuoteModel.FK_tbQuoteAuthorize_tbQuote" ManuallyRouted="false" />
+        <AssociationConnector Association="AgileQuoteModel.FK_QuoteRentalProductMapping_RentalProducts" ManuallyRouted="false" />
+        <AssociationConnector Association="AgileQuoteModel.FK_QuoteRentalSparsMapping_RentalSpars" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbQuoteBundleInstalation" Width="1.5" PointX="9.4114082536713255" PointY="21.901749218768323" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbQuoteMaterialInstalation" Width="1.5" PointX="0.91972654355677153" PointY="22.935499380778289" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbQuoteService" Width="1.5" PointX="9.5" PointY="10.125" />
+        <AssociationConnector Association="AgileQuoteModel.FK_tbQuoteBundleInstalation_tbQuote" />
+        <AssociationConnector Association="AgileQuoteModel.FK_tbQuoteMaterialInstalation_tbQuote" />
+        <AssociationConnector Association="AgileQuoteModel.FK_tbQuoteService_tbQuote" />
+        <AssociationConnector Association="AgileQuoteModel.FK_tbQuoteService_tbQuote1" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbQuoteBoughtOutItem" Width="1.5" PointX="10.625" PointY="4.5" />
+        <AssociationConnector Association="AgileQuoteModel.FK_tbQuoteBoughtOutItem_tbQuote" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbQuoteCollabrator" Width="1.5" PointX="5.4115289549396977" PointY="15.558207325431615" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbQuoteShipping" Width="1.5" PointX="6.3450986921531616" PointY="7.9284220374787333" />
+        <AssociationConnector Association="AgileQuoteModel.FK_tbQuoteShipping_tbQuote" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbQuoteBusinessList" Width="1.5" PointX="6.3938682984532171" PointY="25.098092299466064" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbQuoteQualitativeInformation" Width="1.5" PointX="5.7987558272661435" PointY="20.677786419483734" />
+        <EntityTypeShape EntityType="AgileQuoteModel.SugectionMaterialMapping" Width="1.5" PointX="7.3336473048355657" PointY="3.9913528580178288" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbApproverRule" Width="1.5" PointX="1.6981919955919458" PointY="1.3576638704899997" />
+        <EntityTypeShape EntityType="AgileQuoteModel.tbOfferedMaterialMapping" Width="1.5" PointX="4.5735243747818863" PointY="16.712008722458037" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

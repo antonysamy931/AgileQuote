@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "Quotation Summary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+<link href="~/Content/QuoteList.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        loadManagerDashboard();
+
+        $(".portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
+        .find(".portlet-header")
+        .addClass("ui-widget-header ui-corner-all")
+        //.prepend("<span class='ui-icon ui-icon-minusthick'></span>")
+        //.end()
+        .find(".quote_list");
+        $(".portlet-header .ui-icon").click(function () {
+            $(this).toggleClass("ui-icon-minusthick").toggleClass("ui-icon-plusthick");
+            $(this).parents(".portlet:first").find(".quote_list").toggle();
+        });
+
+        $('#ReportSummaryQuote').click(function () {
+
+            var quoteID = txtQuoteID.value;
+            window.location.replace("/QuoteList/QuoteSummary?QuoteID=" + quoteID);
+
+        });
+    });
+
+    function loadManagerDashboard() {
+        //var quoteID = $('#QuoteID').val();
+        $('table').css('width', '100%');
+
+        $('#QuotationSummaryQuotes').dataTable({
+            "aaData": [
+            /* Reduced data set */
+            ["1500", "Customer A", "01.Oct.2013", 5400],
+            ["1505", "Customer B", "12.Oct.2013", 2340],
+            ["1510", "Customer A", "24.Oct.2013", 6520],
+            ["1517", "Customer C", "04.Nov.2013", 1254],
+            ["1523", "Customer C", "11.Nov.2013", 8520]
+
+            ],
+            //"bServerSide": true,
+            //"sAjaxSource": "/Home/GeQuoteToClosetManager",
+            "bAutoWidth": false,
+            "bProcessing": true,
+            "sPaginationType": "full_numbers",
+            //"iDisplayLength": 1,
+            "bDestroy": true,
+
+            "aoColumns": [
+                        { "sTitle": "Quote #" },
+                        { "sTitle": "Customer Name" },
+                        { "sTitle": "Quote Date" },
+                        { "sTitle": "Quote Amount" }
+
+
+            ]
+        });
+    }
+
+</script>
+
+<style>
+    div.portlet-header
+    {
+        background: none repeat scroll 0 0 #1971B5 !important;
+        color: #FFFFFF !important;
+        display: block !important;
+        font-family: 'MuseoSans500Regular';
+        font-size: 16px !important;
+        padding: 6px 5px 6px 8px !important;
+    }
+</style>
+<section class="c12 main-title">
+    <div class="c6 quote">
+        <img src="~/Content/images/qoute-ion.png" alt="img1">
+        <p id="QuoteTitle">Quotation Summary</p>
+    </div>
+</section>
+
+<section>
+    <div class="create">
+        <div class="greay_box whitebox">
+            <div>
+                @*<ul class="greay_box" style="margin-bottom: 1%;">
+                    <li>
+                        <label>
+                            Quote ID
+                        </label>
+                        <input id="txtQuoteID" type="text" />
+                    </li>
+                </ul>
+                <div class="submit_box" style="width: 15%;">
+
+                    <input type="button" id="ReportSummaryQuote" value="Generate Report">
+                </div>*@
+                @*<div>
+                    @Html.Action("QuoteSummary", "QuoteList")
+                </div>*@
+            </div>
+        </div>
+    </div>
+
+</section>
+

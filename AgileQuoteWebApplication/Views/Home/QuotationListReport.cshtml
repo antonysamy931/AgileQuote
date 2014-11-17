@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Quotation List";
+    Layout = null;
+}
+
+<link href="~/Content/QuoteList.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        loadManagerDashboardQuoteListReports();        
+    });
+
+    function loadManagerDashboardQuoteListReports() {
+        //var quoteID = $('#QuoteID').val();
+        $('table').css('width', '100%');
+
+        $('#QuotationListQuotes').dataTable({
+            "aaData": [
+            /* Reduced data set */
+            ["1500", "Customer A", "01-Oct-2013", 540, "India", "Approved"],
+            ["1505", "Customer B", "12-Oct-2013", 234, "France", "Pending Approval"],
+            ["1510", "Customer C", "24-Oct-2013", 652, "Germany", "Rejected"],
+            ["1517", "Customer D", "04-Nov-2013", 125, "Japan", "Approved"],
+            ["1523", "Customer E", "11-Nov-2013", 852, "Iceland", "Pending Approval"],
+            ["1506", "Customer F", "01-Oct-2013", 540, "India", "Approved"],
+            ["1508", "Customer G", "12-Oct-2013", 234, "France", "Pending Approval"],
+            ["1516", "Customer H", "24-Oct-2013", 652, "Germany", "Rejected"],
+            ["1519", "Customer I", "04-Nov-2013", 125, "Japan", "Approved"],
+            ["1522", "Customer J", "11-Nov-2013", 852, "Iceland", "Pending Approval"]
+            ],
+            //"bServerSide": true,
+            //"sAjaxSource": "/Home/GeQuoteToClosetManager",
+            "bAutoWidth": false,
+            "bProcessing": true,
+            "sPaginationType": "full_numbers",
+            //"iDisplayLength": 1,
+            "bDestroy": true,
+
+            "aoColumns": [
+                        { "sTitle": "Quote#" },
+                        { "sTitle": "Customer Name" },
+                        { "sTitle": "Quote Date" },
+                        { "sTitle": "Quote Amount" },
+                        { "sTitle": "Sales Organization" },
+                        { "sTitle": "Status" }
+
+
+            ]
+        });
+    }
+
+</script>
+
+@*<section class="c12 main-title">
+    <div class="c6 quote">
+        <img src="~/Content/images/qoute-ion.png" alt="img1">
+        <p id="QuoteTitle">Quotation List</p>
+    </div>
+</section>*@
+
+<section>
+    <div class="create">
+        <div class="greay_box whitebox">          
+                <div class="quote_list">
+                    <table id="QuotationListQuotes"></table>
+                </div>            
+        </div>
+    </div>
+</section>
+

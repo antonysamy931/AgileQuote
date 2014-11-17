@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Quoteto Close";
+    Layout = null;
+}
+
+<link href="~/Content/QuoteList.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        loadManagerDashboardCloseReports();        
+    });
+
+    function loadManagerDashboardCloseReports() {
+        //var quoteID = $('#QuoteID').val();
+        $('table').css('width', '100%');
+
+        $('#QuotestoClose').dataTable({
+            "aaData": [
+            /* Reduced data set */
+            ["1500", "Customer A", "01-Oct-2013", 540],
+            ["1505", "Customer B", "12-Oct-2013", 234],
+            ["1510", "Customer C", "24-Oct-2013", 652],
+            ["1517", "Customer D", "04-Nov-2013", 125],
+            ["1523", "Customer D", "11-Nov-2013", 852],
+            ["1501", "Customer F", "01-Oct-2013", 540],
+            ["1508", "Customer G", "12-Oct-2013", 230],
+            ["1518", "Customer H", "24-Oct-2013", 650],
+            ["1519", "Customer I", "04-Nov-2013", 124],
+            ["1527", "Customer J", "11-Nov-2013", 850]
+            ],
+            //"bServerSide": true,
+            //"sAjaxSource": "/Home/GeQuoteToClosetManager",
+            "bAutoWidth": false,
+            "bProcessing": true,
+            "sPaginationType": "full_numbers",
+            //"iDisplayLength": 1,
+            "bDestroy": true,
+
+            "aoColumns": [
+                        { "sTitle": "Quote#" },
+                        { "sTitle": "Customer Name" },
+                        { "sTitle": "Quote Date" },
+                        { "sTitle": "Quote Amount" }
+            ]
+        });
+    }
+
+</script>
+
+
+@*<section class="c12 main-title">
+    <div class="c6 quote">
+        <img src="~/Content/images/qoute-ion.png" alt="img1">
+        <p id="QuoteTitle">Quotes To Close</p>
+    </div>
+</section>*@
+
+<section>
+    <div class="create">
+        <div class="greay_box whitebox">
+            <div class="quote_list">
+                <table id="QuotestoClose"></table>
+            </div>            
+        </div>
+    </div>
+</section>

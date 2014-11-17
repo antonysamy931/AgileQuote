@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eb1b81a7a6e04685aa7df6b32180a65b" Name="Diagram1">
+        <EntityTypeShape EntityType="AgileQuoteAdminModel.tbAddress" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteAdminModel.tbCompany" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteAdminModel.tbCustomerDetail" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteAdminModel.tbCustomerRole" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteAdminModel.tbImageCategory" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteAdminModel.tbLoginMaintenance" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteAdminModel.tbMembershipLogin" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AgileQuoteAdminModel.tbUserImage" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="AgileQuoteAdminModel.FK_tbAddress_tbCustomerDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="AgileQuoteAdminModel.FK_CustomerDetails_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="AgileQuoteAdminModel.FK_UserImage_CustomerDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="AgileQuoteAdminModel.FK_tbLoginMaintenance_tbCustomerDetails" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

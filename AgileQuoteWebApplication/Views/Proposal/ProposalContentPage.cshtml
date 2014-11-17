@@ -1,0 +1,523 @@
+﻿@model AgileQuoteProperty.Model.QuoteSummary
+@using AgileQuoteProperty.Common
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+</head>
+<body>
+    <div>
+        <div style="padding-bottom: 2%!important;">
+            <div>
+                <table bgcolor="#F5F5F5" width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="2%"></td>
+                        <td width="6%">
+                            <img alt="img1" src="/Content/images/qoute-ion.png" width="30" height="30"></td>
+                        <td>
+                            <p><font size="1" color="#555555"><b>Quote Details</b></font></p>
+                        </td>
+                    </tr>
+                </table>
+                <table bgcolor="#FFFFFF" width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <p></p>
+                        </td>
+                    </tr>
+                </table>
+                <table bgcolor="#FFFFFF" width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="4%"></td>
+                        <td width="19%"><font size="1" color="#555555">Quote Name</font></td>
+                        <td width="1%"><font size="1" color="#555555">:</font></td>
+                        <td width="20%"><font size="1" color="#555555">@Model.summaryQuote.QuoteName</font></td>
+                        <td width="4%"></td>
+                        <td width="19%"><font size="1" color="#555555">Sales Organization Name</font></td>
+                        <td width="1%"><font size="1" color="#555555">:</font></td>
+                        <td width="24%"><font size="1" color="#555555">@Model.summaryQuote.qQuoteSalesOrgName</font></td>
+                    </tr>
+                    <tr>
+                        <td width="4%"></td>
+                        <td width="19%"><font size="1" color="#555555">Customer Code</font></td>
+                        <td width="1%"><font size="1" color="#555555">:</font></td>
+                        <td width="20%"><font size="1" color="#555555">@Model.summaryQuote.CustomerCode</font></td>
+                        <td width="4%"></td>
+                        <td width="19%"><font size="1" color="#555555">Customer Name</font></td>
+                        <td width="1%"><font size="1" color="#555555">:</font></td>
+                        <td width="24%"><font size="1" color="#555555">@Model.summaryQuote.CustomerName</font></td>
+                    </tr>
+                    <tr>
+                        <td width="4%"></td>
+                        <td width="19%"><font size="1" color="#555555">Requested Date</font></td>
+                        <td width="1%"><font size="1" color="#555555">:</font></td>
+                        <td width="20%"><font size="1" color="#555555">@Model.summaryQuote.RequrestedDate</font></td>
+                        <td width="4%"></td>
+                        <td width="19%"><font size="1" color="#555555">Currency Name</font></td>
+                        <td width="1%"><font size="1" color="#555555">:</font></td>
+                        <td width="24%"><font size="1" color="#555555">@Model.summaryQuote.currencyName</font></td>
+                    </tr>
+                    <tr>
+                        <td width="4%"></td>
+                        <td width="19%"><font size="1" color="#555555">Budget Value</font></td>
+                        <td width="1%"><font size="1" color="#555555">:</font></td>
+                        <td width="20%"><font size="1" color="#555555">@Model.summaryQuote.BudgetValue</font></td>
+                        <td width="4%"></td>
+                        <td width="19%"><font size="1" color="#555555">Prepared By</font></td>
+                        <td width="1%"><font size="1" color="#555555">:</font></td>
+                        <td width="24%"><font size="1" color="#555555">@Model.summaryQuote.PreparedBy</font></td>
+                    </tr>
+                </table>
+
+                <br />
+                <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#F5F5F5">
+                    <tr>
+                        <td width="2%"></td>
+                        <td width="48%">
+                            <p><font size="1" color="#555555"><b>Billing Address Details</b></font></p>
+                        </td>
+                        <td width="2%"></td>
+                        <td width="48%">
+                            <p><font size="1" color="#555555"><b>Shipping Address Details</b></font></p>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#FFFFFF">
+                    <tr>
+                        <td width="4%"></td>
+                        <td><font size="1" color="#55555">Address Line One</font></td>
+                        <td><font size="1" color="#55555">:</font></td>
+                        <td><font size="1" color="#55555">@Model.summaryQuote.BillingAddressOne</font></td>
+                        <td></td>
+                        <td><font size="1" color="#55555">Address Line Two</font></td>
+                        <td><font size="1" color="#55555">:</font></td>
+                        <td><font size="1" color="#55555">@Model.summaryQuote.BillingAddressTwo</font></td>
+
+                        <td></td>
+                        <td><font size="1" color="#55555">Address Line One</font></td>
+                        <td><font size="1" color="#55555">:</font></td>
+                        <td><font size="1" color="#55555">@Model.summaryQuote.ShippingAddressOne</font></td>
+                        <td></td>
+                        <td><font size="1" color="#55555">Address Line Two</font></td>
+                        <td><font size="1" color="#55555">:</font></td>
+                        <td><font size="1" color="#55555">@Model.summaryQuote.ShippingAddressTwo</font></td>
+                    </tr>
+                </table>
+                <br />
+
+                <ul style="list-style: none outside none; padding: 0;">
+                    <li style="width: 47%; float: left;">
+                        <section style="background: none repeat scroll 0 0 #F5F5F5; float: left; position: relative; z-index: 1; width: 100%;">
+                            <div style="float: left; margin-left: 20px; padding: 10px 0;">
+                                <p style="font: bold 17px 'HelveticaNeueLTStd77CnBold'; float: left; color: #555555; margin: 0; padding-left: 10px;">Billing Address Details</p>
+                            </div>
+                        </section>
+
+                        <div style="background: none repeat scroll 0 0 rgba(0, 0, 0, 0); float: left; margin: 20px 1%; width: 98%;">
+                            <ul style="list-style: none outside none; margin: 0; padding: 10px;">
+                                <li style="list-style: none outside none; margin: 0; padding: 0; float: left; min-height: 45px; width: 50%;">
+                                    <label style="font-family: 'proximanova'; font-size: 13px; float: left; color: #555555; padding-left: 12%; width: 42%;">Address Line One</label>
+                                    <span style="float: none;">:</span>
+                                    <span style="padding-left: 3%; font-size: 13px; color: #555555;">@Model.summaryQuote.BillingAddressOne</span>
+                                </li>
+                                <li style="list-style: none outside none; margin: 0; padding: 0; float: left; min-height: 45px; width: 50%;">
+                                    <label style="font-family: 'proximanova'; font-size: 13px; float: left; color: #555555; padding-left: 12%; width: 42%;">Address Line Two</label>
+                                    <span style="float: none;">:</span>
+                                    <span style="padding-left: 3%; font-size: 13px; color: #555555;">@Model.summaryQuote.BillingAddressTwo</span>
+                                </li>
+                                <li style="list-style: none outside none; margin: 0; padding: 0; float: left; min-height: 45px; width: 50%;">
+                                    <label style="font-family: 'proximanova'; font-size: 13px; float: left; color: #555555; padding-left: 12%; width: 42%;">City</label>
+                                    <span style="float: none;">:</span>
+                                    <span style="padding-left: 3%; font-size: 13px; color: #555555;">@Model.summaryQuote.BillingCity</span>
+                                </li>
+                                <li style="list-style: none outside none; margin: 0; padding: 0; float: left; min-height: 45px; width: 50%;">
+                                    <label style="font-family: 'proximanova'; font-size: 13px; float: left; color: #555555; padding-left: 12%; width: 42%;">State</label>
+                                    <span style="float: none;">:</span>
+                                    <span style="padding-left: 3%; font-size: 13px; color: #555555;">@Model.summaryQuote.BillingState</span>
+                                </li>
+                                <li style="list-style: none outside none; margin: 0; padding: 0; float: left; min-height: 45px; width: 50%;">
+                                    <label style="font-family: 'proximanova'; font-size: 13px; float: left; color: #555555; padding-left: 12%; width: 42%;">Country</label>
+                                    <span style="float: none;">:</span>
+                                    <span style="padding-left: 3%; font-size: 13px; color: #555555;">@Model.summaryQuote.BillingCountry</span>
+                                </li>
+                                <li style="list-style: none outside none; margin: 0; padding: 0; float: left; min-height: 45px; width: 50%;">
+                                    <label style="font-family: 'proximanova'; font-size: 13px; float: left; color: #555555; padding-left: 12%; width: 42%;">Zip Code</label>
+                                    <span style="float: none;">:</span>
+                                    <span style="padding-left: 3%; font-size: 13px; color: #555555;">@Model.summaryQuote.BillingPostalCode</span>
+                                </li>
+                                <li style="list-style: none outside none; margin: 0; padding: 0; float: left; min-height: 45px; width: 50%;">
+                                    <label style="font-family: 'proximanova'; font-size: 13px; float: left; color: #555555; padding-left: 12%; width: 42%;">Phone Number</label>
+                                    <span style="float: none;">:</span>
+                                    <span style="padding-left: 3%; font-size: 13px; color: #555555;">@Model.summaryQuote.BillingPhoneNumber</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li style="width: 53%; float: left;">
+                        <section style="background: none repeat scroll 0 0 #F5F5F5; float: left; position: relative; z-index: 1; width: 100%;">
+                            <div style="float: left; margin-left: 20px; padding: 10px 0;">
+                                <p style="font: bold 17px 'HelveticaNeueLTStd77CnBold'; float: left; color: #555555; margin: 0; padding-left: 10px;">Shipping Address Details</p>
+                            </div>
+                        </section>
+
+                        <div style="background: none repeat scroll 0 0 rgba(0, 0, 0, 0); float: left; margin: 20px 1%; width: 98%;">
+                            <ul style="list-style: none outside none; margin: 0; padding: 10px;">
+                                <li style="list-style: none outside none; margin: 0; padding: 0; float: left; min-height: 45px; width: 50%;">
+                                    <label style="font-family: 'proximanova'; font-size: 13px; float: left; color: #555555; padding-left: 15%; width: 36%;">Address Line One</label>
+                                    <span style="float: none;">:</span>
+                                    <span style="padding-left: 3%; font-size: 13px; color: #555555;">@Model.summaryQuote.ShippingAddressOne</span>
+                                </li>
+                                <li style="list-style: none outside none; margin: 0; padding: 0; float: left; min-height: 45px; width: 50%;">
+                                    <label style="font-family: 'proximanova'; font-size: 13px; float: left; color: #555555; padding-left: 5%; width: 36%;">Address Line Two</label>
+                                    <span style="float: none;">:</span>
+                                    <span style="padding-left: 3%; font-size: 13px; color: #555555;">@Model.summaryQuote.ShippingAddressTwo</span>
+                                </li>
+                                <li style="list-style: none outside none; margin: 0; padding: 0; float: left; min-height: 45px; width: 50%;">
+                                    <label style="font-family: 'proximanova'; font-size: 13px; float: left; color: #555555; padding-left: 15%; width: 36%;">City</label>
+                                    <span style="float: none;">:</span>
+                                    <span style="padding-left: 3%; font-size: 13px; color: #555555;">@Model.summaryQuote.ShippingCity</span>
+                                </li>
+                                <li style="list-style: none outside none; margin: 0; padding: 0; float: left; min-height: 45px; width: 50%;">
+                                    <label style="font-family: 'proximanova'; font-size: 13px; float: left; color: #555555; padding-left: 5%; width: 36%;">State</label>
+                                    <span style="float: none;">:</span>
+                                    <span style="padding-left: 3%; font-size: 13px; color: #555555;">@Model.summaryQuote.ShippingState</span>
+                                </li>
+                                <li style="list-style: none outside none; margin: 0; padding: 0; float: left; min-height: 45px; width: 50%;">
+                                    <label style="font-family: 'proximanova'; font-size: 13px; float: left; color: #555555; padding-left: 15%; width: 36%;">Country</label>
+                                    <span style="float: none;">:</span>
+                                    <span style="padding-left: 3%; font-size: 13px; color: #555555;">@Model.summaryQuote.ShippingCountry</span>
+                                </li>
+                                <li style="list-style: none outside none; margin: 0; padding: 0; float: left; min-height: 45px; width: 50%;">
+                                    <label style="font-family: 'proximanova'; font-size: 13px; float: left; color: #555555; padding-left: 5%; width: 36%;">Zip Code</label>
+                                    <span style="float: none;">:</span>
+                                    <span style="padding-left: 3%; font-size: 13px; color: #555555;">@Model.summaryQuote.ShippingPostalCode</span>
+                                </li>
+                                <li style="list-style: none outside none; margin: 0; padding: 0; float: left; min-height: 45px; width: 50%;">
+                                    <label style="font-family: 'proximanova'; font-size: 13px; float: left; color: #555555; padding-left: 15%; width: 36%;">Phone Number</label>
+                                    <span style="float: none;">:</span>
+                                    <span style="padding-left: 3%; font-size: 13px; color: #555555;">@Model.summaryQuote.ShippingPhoneNumber</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <section style="background: none repeat scroll 0 0 #F5F5F5; float: left; position: relative; z-index: 1; width: 100%;">
+                    <div style="float: left; margin-left: 20px; padding: 10px 0;">
+                        <p style="font: bold 17px 'HelveticaNeueLTStd77CnBold'; float: left; color: #555555; margin: 0; padding-left: 10px;">Bundle Material</p>
+                    </div>
+                </section>
+
+                <div class="create" style="float: left; margin: 5px 1%; width: 98%;">
+                    <div class="greay_box whitebox" style="background: none repeat scroll 0 0 rgba(0, 0, 0, 0); float: left; margin: 0; width: 100%; border: 0 none;">
+                        <div class="quote_list" style="float: left; margin: 1% 1% 0; width: 98%;">
+                            <table style="width: 100%; border: 1px solid #C6D9EC;" cellspacing="0" cellpadding="0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 6% !important; border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Code</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Name</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Description</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Unit Price</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Quantity</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Total Gross Price</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Discount</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Total Net Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.summaryQuoteBundle.ListQuoteBundleMaterial)
+                                    {
+                                        <tr>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@item.Code</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@item.Name</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@item.Description</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, item.UnitPrice)</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@item.Quantity</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, item.GrossPrice)</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@item.Discount%</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, item.NetPrice)</td>
+                                        </tr>
+                                        if (item.Type == "B")
+                                        {
+                                        <tr>
+                                            <td colspan="1" style="border: 0;">
+                                                <img src="~/Content/images/minus.png" />
+                                            </td>
+                                            <td colspan="7" style="border: 0;">
+                                                <table style="margin: 1%; width: 95%;" cellspacing="0" cellpadding="0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width: 6% !important; border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Code</th>
+                                                            <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Name</th>
+                                                            <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Quantity</th>
+                                                            <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Amount</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (var sam in item.ListOfMaterialMappedBundle)
+                                                        {
+                                                            <tr>
+                                                                <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@sam.MaterialCode</td>
+                                                                <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@sam.MaterialName</td>
+                                                                <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@sam.Quantity</td>
+                                                                <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, sam.MaterialAmount)</td>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+
+                            <table style="width: 65%; float: right;" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="Noborder" style="height: 40px; padding: 4px 10px; border: 0 none; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">Grand Total Gross Price&nbsp&nbsp:</td>
+                                    <td class="Noborder" style="height: 40px; padding: 4px 10px; border: 0 none; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, Model.summaryQuoteBundle.qQuoteBundleMaterial.qTotalGrossPrice)</td>
+                                    <td class="Noborder" style="height: 40px; padding: 4px 10px; border: 0 none; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">Overall Discount&nbsp&nbsp:</td>
+                                    <td class="Noborder" style="height: 40px; padding: 4px 10px; border: 0 none; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Model.summaryQuoteBundle.qQuoteBundleMaterial.qTotalDiscount%</td>
+                                    <td class="Noborder" style="height: 40px; padding: 4px 10px; border: 0 none; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">Grand Total Net Price &nbsp&nbsp:</td>
+                                    <td class="Noborder" style="height: 40px; padding: 4px 10px; border: 0 none; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, Model.summaryQuoteBundle.qQuoteBundleMaterial.qTotalNetPrice)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <section style="background: none repeat scroll 0 0 #F5F5F5; float: left; position: relative; z-index: 1; width: 100%;">
+                    <div style="float: left; margin-left: 20px; padding: 10px 0;">
+                        <p style="font: bold 17px 'HelveticaNeueLTStd77CnBold'; float: left; color: #555555; margin: 0; padding-left: 10px;">Bought Out Item</p>
+                    </div>
+                </section>
+
+                <div class="create" style="float: left; margin: 5px 1%; width: 98%;">
+                    <div class="greay_box whitebox" style="background: none repeat scroll 0 0 rgba(0, 0, 0, 0); float: left; margin: 0; width: 100%; border: 0 none;">
+                        <div class="quote_list" style="float: left; margin: 1% 1% 0; width: 98%;">
+                            <table style="width: 100%" cellspacing="0" cellpadding="0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 6% !important; border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Code</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Name</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Unit Cost</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Quantity</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Total Cost</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Unit Price</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Total Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.summaryQuoteBoughtoutItem)
+                                    {
+                                        <tr>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@item.ItemId</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@item.ItemName</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, item.UnitPrice)</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@item.Quantity</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, item.NetPrice)</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, item.quotedUnitPrice)</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, item.quotedNetPrice)</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+
+                            <table style="width: 50%; float: right;" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="Noborder" style="height: 40px; padding: 4px 10px; border: 0 none; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">Grand Total Cost&nbsp&nbsp:</td>
+                                    <td class="Noborder" style="height: 40px; padding: 4px 10px; border: 0 none; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, Model.summaryQuoteBoughtoutItemTotal.TotalNetPrice)</td>
+                                    <td class="Noborder" style="height: 40px; padding: 4px 10px; border: 0 none; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">Grand Total Price&nbsp&nbsp:</td>
+                                    <td class="Noborder" style="height: 40px; padding: 4px 10px; border: 0 none; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, Model.summaryQuoteBoughtoutItemTotal.TotalQuotedNetPrice)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <section style="background: none repeat scroll 0 0 #F5F5F5; float: left; position: relative; z-index: 1; width: 100%;">
+                    <div style="float: left; margin-left: 20px; padding: 10px 0;">
+                        <p style="font: bold 17px 'HelveticaNeueLTStd77CnBold'; float: left; color: #555555; margin: 0; padding-left: 10px;">Material Bundle Warrenty</p>
+                    </div>
+                </section>
+
+                <div class="create" style="float: left; margin: 5px 1%; width: 98%;">
+                    <div class="greay_box whitebox" style="background: none repeat scroll 0 0 rgba(0, 0, 0, 0); float: left; margin: 0; width: 100%; border: 0 none;">
+                        <div class="quote_list" style="float: left; margin: 1% 1% 0; width: 98%;">
+                            <table style="width: 100%" cellspacing="0" cellpadding="0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 6% !important; border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Code</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Name</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Description</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Warranty</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Override Warranty</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.summaryQuoteBundleWarrenty)
+                                    {
+                                        <tr>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@item.Code</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@item.Name</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@item.Description</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@item.Warrenty</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@item.OverRideWarrenty</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <section style="background: none repeat scroll 0 0 #F5F5F5; float: left; position: relative; z-index: 1; width: 100%;">
+                    <div style="float: left; margin-left: 20px; padding: 10px 0;">
+                        <p style="font: bold 17px 'HelveticaNeueLTStd77CnBold'; float: left; color: #555555; margin: 0; padding-left: 10px;">Material Bundle Installation</p>
+                    </div>
+                </section>
+
+                <div class="create" style="float: left; margin: 5px 1%; width: 98%;">
+                    <div class="greay_box whitebox" style="background: none repeat scroll 0 0 rgba(0, 0, 0, 0); float: left; margin: 0; width: 100%; border: 0 none;">
+                        <div class="quote_list" style="float: left; margin: 1% 1% 0; width: 98%;">
+                            <table style="width: 100%" cellspacing="0" cellpadding="0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 20% !important; border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">No of FTE's required</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Per Day Cost</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">No of Days Required</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Total No of FTE's Costs</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Model.summaryQuoteInstallationCharges.NoEmployees</td>
+                                        <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, Model.summaryQuoteInstallationCharges.CostPerDay)</td>
+                                        <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Model.summaryQuoteInstallationCharges.NoDays</td>
+                                        <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, Model.summaryQuoteInstallationCharges.TotalCost)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <section style="background: none repeat scroll 0 0 #F5F5F5; float: left; position: relative; z-index: 1; width: 100%;">
+                    <div style="float: left; margin-left: 20px; padding: 10px 0;">
+                        <p style="font: bold 17px 'HelveticaNeueLTStd77CnBold'; float: left; color: #555555; margin: 0; padding-left: 10px;">Shipping Charges</p>
+                    </div>
+                </section>
+
+                <div class="create" style="float: left; margin: 5px 1%; width: 98%;">
+                    <div class="greay_box whitebox" style="background: none repeat scroll 0 0 rgba(0, 0, 0, 0); float: left; margin: 0; width: 100%; border: 0 none;">
+                        <div class="quote_list" style="float: left; margin: 1% 1% 0; width: 98%;">
+                            <table style="width: 100%" cellspacing="0" cellpadding="0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 20% !important; border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Shipping Code</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Truck Cost</th>
+                                        <th style="border: 1px solid #8CB2D9; background: none repeat scroll 0 0 #C6D9EC; color: #597FA6 !important; font-family: 'proximanova'; font-size: 13px; font-weight: bold; height: 40px; padding: 0 10px; text-decoration: none; vertical-align: middle;">Diesel Cost</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        @foreach (var item in Model.summaryQuoteShipping)
+                                        {
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@item.Sno</td>
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, item.truckCost)</td>                                        
+                                            <td style="border: 1px solid #C6D9EC; height: 40px; padding: 4px 10px; color: #5C5C5F; font-family: 'proximanova'; font-size: 13px; text-align: center; vertical-align: middle;">@Extension.FormatCurrency(ViewBag.Nfi, item.dieselCost)</td>
+                                        }
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <section style="background: none repeat scroll 0 0 #F5F5F5; float: left; position: relative; z-index: 1; width: 100%;">
+                    <div style="float: left; margin-left: 20px; padding: 10px 0;">
+                        <p style="font: bold 17px 'HelveticaNeueLTStd77CnBold'; float: left; color: #555555; margin: 0; padding-left: 10px;">Quote Qualitative Information</p>
+                    </div>
+                </section>
+
+                <ul style="list-style: none outside none; width: 96%;">
+                    <li style="list-style: none outside none;">
+                        <div style="background: none repeat scroll 0 0 rgba(0, 0, 0, 0); float: left; margin: 20px 1%; width: 98%;">
+                            <ul style="list-style: none outside none; margin: 0; padding: 10px;">
+                                <li style="float: left; list-style: none outside none; margin: 0; min-height: 45px; padding-left: 3%; width: 100%;">
+                                    <label style="padding-left: 5%; width: 32%; color: #555555; float: left; font-family: 'proximanova'; font-size: 13px;">Quote Value</label>
+                                    <span>:</span>
+                                    <span style="font-size: 13px; color: #555555; padding-left: 1%;">@Model.summaryQuoteQualitativeInformation.txtQuoteValue</span>
+                                </li>
+                                <li style="float: left; list-style: none outside none; margin: 0; min-height: 45px; padding-left: 3%; width: 100%;">
+                                    <label style="padding-left: 5%; width: 32%; color: #555555; float: left; font-family: 'proximanova'; font-size: 13px;">Gross Margin Amount / Percentage</label>
+                                    <span>:</span>
+                                    <span style="font-size: 13px; color: #555555; padding-left: 1%;">@Model.summaryQuoteQualitativeInformation.txtMagrinAmountPercentage</span>
+                                </li>
+                                <li style="float: left; list-style: none outside none; margin: 0; min-height: 45px; padding-left: 3%; width: 100%;">
+                                    <label style="padding-left: 5%; width: 32%; color: #555555; float: left; font-family: 'proximanova'; font-size: 13px;">Leadtime</label>
+                                    <span>:</span>
+                                    <span style="font-size: 13px; color: #555555; padding-left: 1%;">@Model.summaryQuoteQualitativeInformation.txtLeadTime</span>
+                                </li>
+                                <li style="float: left; list-style: none outside none; margin: 0; min-height: 45px; padding-left: 3%; width: 100%;">
+                                    <label style="padding-left: 5%; width: 32%; color: #555555; float: left; font-family: 'proximanova'; font-size: 13px;">Win Probability % </label>
+                                    <span>:</span>
+                                    <span style="font-size: 13px; color: #555555; padding-left: 1%;">@Model.summaryQuoteQualitativeInformation.txtWinProbability</span>
+                                </li>
+                                <li style="float: left; list-style: none outside none; margin: 0; min-height: 45px; padding-left: 3%; width: 100%;">
+                                    <label style="padding-left: 5%; width: 32%; color: #555555; float: left; font-family: 'proximanova'; font-size: 13px;">Scope of Work</label>
+                                    <span>:</span>
+                                    <span style="font-size: 13px; color: #555555; padding-left: 1%;">@Model.summaryQuoteQualitativeInformation.txtareaScopeofWork</span>
+                                </li>
+                                <li style="float: left; list-style: none outside none; margin: 0; min-height: 45px; padding-left: 3%; width: 100%;">
+                                    <label style="padding-left: 5%; width: 32%; color: #555555; float: left; font-family: 'proximanova'; font-size: 13px;">Executive Summary</label>
+                                    <span>:</span>
+                                    <span style="font-size: 13px; color: #555555; padding-left: 1%;">@Model.summaryQuoteQualitativeInformation.txtareaExecutiveSummary</span>
+                                </li>
+                                <li style="float: left; list-style: none outside none; margin: 0; min-height: 45px; padding-left: 3%; width: 100%;">
+                                    <label style="padding-left: 5%; width: 32%; color: #555555; float: left; font-family: 'proximanova'; font-size: 13px;">Primary Competitor</label>
+                                    <span>:</span>
+                                    <span style="font-size: 13px; color: #555555; padding-left: 1%;">@Model.summaryQuoteQualitativeInformation.txtareaPrimaryCompetitor</span>
+                                </li>
+                                <li style="float: left; list-style: none outside none; margin: 0; min-height: 45px; padding-left: 3%; width: 100%;">
+                                    <label style="padding-left: 5%; width: 32%; color: #555555; float: left; font-family: 'proximanova'; font-size: 13px;">How was Selling Price Set?</label>
+                                    <span>:</span>
+                                    <span style="font-size: 13px; color: #555555; padding-left: 1%;">@Model.summaryQuoteQualitativeInformation.txtareaSellingPrice</span>
+                                </li>
+                                <li style="float: left; list-style: none outside none; margin: 0; min-height: 45px; padding-left: 3%; width: 100%;">
+                                    <label style="padding-left: 5%; width: 32%; color: #555555; float: left; font-family: 'proximanova'; font-size: 13px;">Payment Terms</label>
+                                    <span>:</span>
+                                    <span style="font-size: 13px; color: #555555; padding-left: 1%;">@Model.summaryQuoteQualitativeInformation.txtareaPaymentTerms</span>
+                                </li>
+                                <li style="float: left; list-style: none outside none; margin: 0; min-height: 45px; padding-left: 3%; width: 100%;">
+                                    <label style="padding-left: 5%; width: 32%; color: #555555; float: left; font-family: 'proximanova'; font-size: 13px;">Risk & Mitigation</label>
+                                    <span>:</span>
+                                    <span style="font-size: 13px; color: #555555; padding-left: 1%;">@Model.summaryQuoteQualitativeInformation.txtareaRiskMitigation</span>
+                                </li>
+                                <li style="float: left; list-style: none outside none; margin: 0; min-height: 45px; padding-left: 3%; width: 100%;">
+                                    <label style="padding-left: 5%; width: 32%; color: #555555; float: left; font-family: 'proximanova'; font-size: 13px;">New/Repeat Business</label>
+                                    <span>:</span>
+                                    <span style="font-size: 13px; color: #555555; padding-left: 1%;">@Model.summaryQuoteQualitativeInformation.Business</span>
+                                </li>
+                                <li style="float: left; list-style: none outside none; margin: 0; min-height: 45px; padding-left: 3%; width: 100%;">
+                                    <label style="padding-left: 5%; width: 32%; color: #555555; float: left; font-family: 'proximanova'; font-size: 13px;">Any Other Comments</label>
+                                    <span>:</span>
+                                    <span style="font-size: 13px; color: #555555; padding-left: 1%;">@Model.summaryQuoteQualitativeInformation.txtareaAnyOtherComments</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

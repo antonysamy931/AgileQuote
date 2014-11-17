@@ -1,0 +1,282 @@
+﻿@model AgileQuoteProperty.Model.QuoteBundleMaterialList
+
+@{
+    var qBundleMaterialList = Model.ListQuoteBundleMaterial == null ? null : Model.ListQuoteBundleMaterial;
+    WebGrid grid = new WebGrid(rowsPerPage: 10, ajaxUpdateContainerId: "grid");
+    grid.Bind(qBundleMaterialList, rowCount: qBundleMaterialList.Count());
+}
+
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.jeditable.js"></script>
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.qtip-1.0.0-rc3.min.js"></script>
+
+<script src="~/Scripts/jquery.noty.js"></script>
+<script src="~/Scripts/center.js"></script>
+<script src="~/Scripts/default.js"></script>
+<script src="~/Scripts/top.js"></script>
+
+@*<script src="~/Scripts/AgileQuote/QuoteMaterialBundleInstall.js"></script>*@
+@*<script src="~/Scripts/AgileQuote/QuoteOverrideWarrenty.js"></script>*@
+<script src="~/Scripts/AgileQuote/QuoteWarrenty.js"></script>
+@*<script src="~/Scripts/AgileQuote/ClientBundleConfigure.js"></script>*@
+<script src="~/Scripts/AgileQuote/QuoteQualitativeInformation.js"></script>
+<script src="~/Scripts/AgileQuote/QuoteMaterialBundleList.js"></script>
+
+
+
+<input type="hidden" value="@ViewBag.QuoteID" id="QuoteID" />
+<div class="quote_list">
+    <table id="QuoteBundleMaterialDataTable"></table>
+    <div class="total-text">
+        <ul>
+            @*<li>
+                <label>Total Unit Price</label>
+                @Html.TextBoxFor(x => x.qQuoteBundleMaterial.qTotalUnitPrice, new { @readonly = "readonly", @id = "MaterialBundleTotalUnitPrice" })<span class="symbol">@ViewBag.symbol</span>
+            </li>*@
+            <li>
+                <label>Grand Total Gross Price</label>
+                @*<span class="symbol">@ViewBag.symbol</span>*@@Html.TextBoxFor(x => x.qQuoteBundleMaterial.qTotalGrossPrice, new { @readonly = "readonly", @id = "MaterialBundleTotalGrossPrice" })
+            </li>
+            <li>
+                <label>Overall Discount</label>
+                @Html.TextBoxFor(x => x.qQuoteBundleMaterial.qTotalDiscount, new { @readonly = "readonly", @id = "MaterialBundleTotalDiscount", @class = "DiscountClass" })
+                <span class="symbol">%</span>
+            </li>
+            <li>
+                <label>Grand Total Net Price</label>
+                @*<span class="symbol">@ViewBag.symbol</span>*@@Html.TextBoxFor(x => x.qQuoteBundleMaterial.qTotalNetPrice, new { @readonly = "readonly", @id = "MaterialBundleTotalNetPrice" })
+            </li>
+        </ul>
+    </div>
+    <div class="accord_btns">
+        <input type="button" id="AddBundleMaterial" value="Add Bundle / Material" />
+        <input type="button" value="Save As" id="SaveAsNewQuote" style="margin-left: 45%; display: none;" />
+    </div>
+</div>
+
+@*<input type="button" id="AddBundleMaterial" value="ADD MATERIAL" />*@
+
+<div class="light-popup" id="BundleMaterialPopup">
+    <a href="#" class="close" id="BundleMaterialPopup_close">
+        <img src="~/Content/images/fancy_close.png" class="btn_close" title="Close Window" alt="Close" /></a>
+    <div class="Title">
+        Select Item
+    </div>
+    <div id="MaterialBundleLightBox" class="popup-center">
+        <div class="create">
+            <ul class="tabs6">
+                <li class=""><a href="#DynamicMaterialDataTable">Material</a><span></span></li>
+                <li><a href="#DynamicBundleDataTable">Bundle</a><span></span></li>
+            </ul>
+            <div class="greay_box whitebox">
+                <div class="tab_content6" id="DynamicMaterialDataTable" style="display: block;">
+                </div>
+                <div class="clear"></div>
+                <div class="tab_content6" id="DynamicBundleDataTable" style="display: none;">
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="accord_btns center">
+        <input type="button" id="AddtoquoteList" value="Add Item" style="margin-top: 3%;" />
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div class="light-popup" id="SugectionOfferedPopup">
+    <a href="#" class="close" id="SugectionOfferedPopup_close">
+        <img src="~/Content/images/fancy_close.png" class="btn_close" title="Close Window" alt="Close" /></a>
+    <div class="Title">
+        Guide Material
+    </div>
+    <div class="popup-center">
+        <div class="create">
+            <input type="hidden" id="SugectionOfferedMaterialId" />
+            <ul class="tabs8">
+                <li class=""><a href="#DynamicSugectionMaterialDataTable">Suggestion</a><span></span></li>
+                <li><a href="#DynamicOfferedMaterialDataTable">Offer</a><span></span></li>
+                <li><a href="#DynamicGuidMaterial">Guid</a><span></span></li>
+            </ul>
+            <div class="greay_box whitebox">
+                <input type="hidden" id="GuidCategoryName" />
+                <div class="tab_content8" id="DynamicSugectionMaterialDataTable" style="display: block;">
+                </div>
+                <div class="clear"></div>
+                <div class="tab_content8" id="DynamicOfferedMaterialDataTable" style="display: none;">
+                </div>
+                <div class="tab_content8" id="DynamicGuidMaterial">
+                    <div id="Operation">
+                        <input type="radio" name="Opr" value="MIN" id="MinRadio" onclick="javascript: MinValueMaterial()" />Min
+                        <input type="radio" name="Opr" value="MAX" id="MaxRadio" onclick="javascript: MaxValueMaterial()" />Max
+                        <input type="radio" name="Opr" value="BETWEEN" id="RangeRadio" onclick="javascript: DropDownShow()" />Range
+                        <div id="BenweenOpr" style="display: none;">
+                            <p>
+                                <label for="amount">Price range:</label>
+                                <input type="text" id="amount" style="border: 0; color: #5C5C5F; font-weight: bold;">
+                            </p>
+                            <br />
+                            <div id="slider-range"></div>
+                        </div>
+                        <p>Materials</p>
+                        <div id="Dynamic_guidMaterial"></div>
+                    </div>                    
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="light-popup SingleRecordPopup" id="BundleMaterialRecordPopup">
+    <a href="#" class="close" id="BundleMaterialRecordPopup_close">
+        <img src="~/Content/images/fancy_close.png" class="btn_close" title="Close Window" alt="Close" /></a>
+
+    <div class="Title" id="BundleMaterialRecordTitle"></div>
+    <input type="hidden" id="BundleMaterialRecordId" />
+    <p id="BundleMaterialRecordName" class="SubTitle"></p>
+    <img src="#" id="RentalMaterialRecordImage" class="Image" />
+    <ul class="popup-data">
+
+        <li>
+            <label>Unit Price <span>:</span></label>
+            <input type="text" id="BundleMaterialRecordUnitprice" disabled="disabled"><span class="symbol">@ViewBag.symbol</span>
+        </li>
+
+        <li>
+            <label>Discount   <span>:</span></label>
+            <input type="text" id="BundleMaterialRecordDiscount" disabled="disabled"><span class="symbol">%</span>
+        </li>
+
+        <li>
+            <label>Quantity <span>:</span></label>
+            <input type="text" id="BundleMaterialRecordQuantity">
+        </li>
+
+        <li>
+            <label>Net Price<span>:</span></label>
+            <input type="text" id="BundleMaterialRecordNetprice" disabled="disabled"><span class="symbol">@ViewBag.symbol</span>
+        </li>
+
+        <li>
+            <label>Description <span>:</span></label>
+            <p id="#BundleMaterialRecordDesc"></p>
+        </li>
+        <li>
+            <div class="submit_box">
+                <label>&nbsp;</label>
+                <input type="button" value="Update" id="BundleMaterialRecordUpdate">
+            </div>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>
+
+<div id="MaterialRecordPopup" class="light-popup SingleRecordPopup">
+    <a id="MaterialPopup_close" class="close" href="#">
+        <img alt="Close" title="Close Window" class="btn_close" src="~/Content/images/fancy_close.png"></a>
+    <div class="Title">Material</div>
+    <p id="MaterialName" class="SubTitle"></p>
+    <img alt="" id="MaterialImage" class="Image">
+    <ul class="popup-data">
+        <li>
+            <label>Discount<span>:</span></label>
+            <input type="text" id="MaterialDiscount" disabled="disabled">
+        </li>
+
+        <li>
+            <label>Amount<span>:</span></label>
+            <input type="text" id="MaterialAmount" disabled="disabled">
+        </li>
+
+        <li>
+            <label>Description<span>:</span></label>
+            <p id="MaterialDescription"></p>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>
+
+
+@*<div class="light-popup" id="MaterialRecordPopup">
+    <a href="#" class="close" id="MaterialPopup_close">
+        <img src="~/Content/images/fancy_close.png" class="btn_close" title="Close Window" alt="Close" /></a>
+    <div class="Title">Material</div>
+    <div>
+        <p id="MaterialName"></p>
+        <br />
+        <img id="MaterialImage" />
+        <br />
+        Discount    :<p id="MaterialDiscount">
+        </p>
+        <br />
+        Amount      :<p id="MaterialAmount">
+        </p>
+        <br />
+        Description :<p id="MaterialDescription"></p>
+        <br />
+    </div>
+    <div class="clear"></div>
+</div>*@
+
+
+<div id="BundleRecordPopup" class="light-popup SingleRecordPopup" style="margin-top: -275px; margin-left: -263.5px; display: block;">
+    <a id="BundlePopup_close" class="close" href="#">
+        <img alt="Close" title="Close Window" class="btn_close" src="~/Content/images/fancy_close.png"></a>
+    <div class="Title">Bundle</div>
+    <p id="BundleName" class="SubTitle"></p>
+    <img alt="" id="BundleImage" class="Image">
+    <ul class="popup-data">
+        <li>
+            <label>Unit Price <span>:</span></label>
+            <input type="text" id="BundleUnitprice" disabled="disabled">
+        </li>
+
+        <li>
+            <label>Discount<span>:</span></label>
+            <input type="text" id="BundleDiscount" disabled="disabled">
+        </li>
+
+        <li>
+            <label>Net Price<span>:</span></label>
+            <input type="text" id="BundleNetprice" disabled="disabled">
+        </li>
+
+        <li>
+            <label>Description<span>:</span></label>
+            <p id="BundleDescription"></p>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>
+
+
+
+@*<div class="light-popup" id="BundleRecordPopup">
+    <a href="#" class="close" id="BundlePopup_close">
+        <img src="~/Content/images/fancy_close.png" class="btn_close" title="Close Window" alt="Close" /></a>
+    <div class="Title">Bundle</div>
+    <div>
+        <p id="BundleName"></p>
+        <br />
+        <img id="BundleImage" />
+        <br />
+        Unit price  :<p id="BundleUnitprice">
+        </p>
+        <br />
+        Discount    :<p id="BundleDiscount">
+        </p>
+        <br />
+        Net price      :<p id="BundleNetprice">
+        </p>
+        <br />
+        Description :<p id="BundleDescription"></p>
+        <br />
+    </div>
+    <div class="clear"></div>
+</div>*@
+

@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0AFC10EB-4FC3-4063-844D-2B6184248DD5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgileQuoteData</RootNamespace>
+    <AssemblyName>AgileQuoteData</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="LogWriter">
+      <HintPath>C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteWebApplication\bin\LogWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="DataLogic\CreateQuoteDL.cs" />
+    <Compile Include="DataLogic\LoginDL.cs" />
+    <Compile Include="DataLogic\QuoteDL.cs" />
+    <Compile Include="Data\AgileQuoteAdminEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgileQuoteAdminEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AgileQuoteAdminEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgileQuoteAdminEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AgileQuoteAdminEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgileQuoteAdminEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AgileQuoteMainEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgileQuoteMainEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AgileQuoteMainEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AgileQuoteMainEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgileQuoteMainEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\CurrencySelect_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\MaterialSelect_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RoleSelect_Result.cs">
+      <DependentUpon>AgileQuoteAdminEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SalesOrgSelect_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\selectQuote_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spAllAuthorizedRejectedQuote_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spApproveQuote_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spBundleCategoryBaseSelect_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spBundleSelect_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spCollaboratorQuote_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spGetCollaborators_Result.cs">
+      <DependentUpon>AgileQuoteAdminEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spMaterialCategoryBaseSelect_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spQuoteBasedMaterialBundleRecordSelect_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spQuoteBasedMaterialBundleWithoutConfigured_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spQuoteBasedMaterialBundle_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spRentalProductSelect_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spRentalSparsSelect_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spSaveAsNewQuote_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spSelectCreateQuote_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\spSelectQuote_Result.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SugectionMaterialMapping.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbAddress.cs">
+      <DependentUpon>AgileQuoteAdminEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbApproverRule.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbBundle.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbBundleMaterialMapping.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbBundleType.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbCategory.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbCompany.cs">
+      <DependentUpon>AgileQuoteAdminEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbCurrency.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbCustomerDetail.cs">
+      <DependentUpon>AgileQuoteAdminEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbCustomerRole.cs">
+      <DependentUpon>AgileQuoteAdminEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbImageCategory.cs">
+      <DependentUpon>AgileQuoteAdminEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbLoginMaintenance.cs">
+      <DependentUpon>AgileQuoteAdminEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbMaterial.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbMembershipLogin.cs">
+      <DependentUpon>AgileQuoteAdminEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbOfferedMaterialMapping.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbQuote.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbQuoteAuthorize.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbQuoteBoughtOutItem.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbQuoteBundleInstalation.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbQuoteBundleMapping.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbQuoteBusinessList.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbQuoteCollabrator.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbQuoteMaterialInstalation.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbQuoteMaterialMapping.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbQuoteQualitativeInformation.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbQuoteRentalProductMapping.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbQuoteRentalSparsMapping.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbQuoteService.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbQuoteShipping.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbQuoteStatu.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbRentalProduct.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbRentalSpar.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbSalesOrganization.cs">
+      <DependentUpon>AgileQuoteMainEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbUserImage.cs">
+      <DependentUpon>AgileQuoteAdminEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AgileQuoteProperty\AgileQuoteProperty.csproj">
+      <Project>{bd805578-27fe-47eb-b1b0-45f74910d9dc}</Project>
+      <Name>AgileQuoteProperty</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Data\AgileQuoteAdminEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AgileQuoteAdminEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\AgileQuoteAdminEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AgileQuoteAdminEntities.edmx</DependentUpon>
+      <LastGenOutput>AgileQuoteAdminEntities.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Data\AgileQuoteAdminEntities.edmx.diagram">
+      <DependentUpon>AgileQuoteAdminEntities.edmx</DependentUpon>
+    </None>
+    <None Include="Data\AgileQuoteAdminEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AgileQuoteAdminEntities.edmx</DependentUpon>
+      <LastGenOutput>AgileQuoteAdminEntities.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="Data\AgileQuoteMainEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AgileQuoteMainEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\AgileQuoteMainEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AgileQuoteMainEntities.edmx</DependentUpon>
+      <LastGenOutput>AgileQuoteMainEntities.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Data\AgileQuoteMainEntities.edmx.diagram">
+      <DependentUpon>AgileQuoteMainEntities.edmx</DependentUpon>
+    </None>
+    <None Include="Data\AgileQuoteMainEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AgileQuoteMainEntities.edmx</DependentUpon>
+      <LastGenOutput>AgileQuoteMainEntities.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

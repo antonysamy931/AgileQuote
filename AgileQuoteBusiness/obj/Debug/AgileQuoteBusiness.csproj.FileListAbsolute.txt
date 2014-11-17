@@ -1,0 +1,99 @@
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteBusiness\bin\Debug\AgileQuoteBusiness.dll
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteBusiness\bin\Debug\AgileQuoteBusiness.pdb
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteBusiness\bin\Debug\AgileQuoteData.dll
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteBusiness\bin\Debug\AgileQuoteProperty.dll
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteBusiness\bin\Debug\EntityFramework.dll
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteBusiness\bin\Debug\AgileQuoteData.pdb
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteBusiness\bin\Debug\AgileQuoteProperty.pdb
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteBusiness\bin\Debug\EntityFramework.xml
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.csprojResolveAssemblyReference.cache
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.dll
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.pdb
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteBusiness.dll
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteBusiness.pdb
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteData.dll
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteProperty.dll
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Web.Http.dll
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\EntityFramework.dll
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.dll
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.Formatting.dll
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteData.pdb
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteProperty.pdb
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Web.Http.xml
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\EntityFramework.xml
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.xml
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.Formatting.xml
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.csprojResolveAssemblyReference.cache
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.dll
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.pdb
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteBusiness.dll
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteBusiness.pdb
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteData.dll
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteProperty.dll
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Web.Http.dll
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\EntityFramework.dll
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.dll
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.Formatting.dll
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteData.pdb
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteProperty.pdb
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Web.Http.xml
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\EntityFramework.xml
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.xml
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.Formatting.xml
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.csprojResolveAssemblyReference.cache
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.dll
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.pdb
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteBusiness.dll
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteBusiness.pdb
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteData.dll
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteProperty.dll
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Web.Http.dll
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\bin\Debug\EntityFramework.dll
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.dll
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteData.pdb
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteProperty.pdb
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Web.Http.xml
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\bin\Debug\EntityFramework.xml
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.xml
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.csprojResolveAssemblyReference.cache
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.dll
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.pdb
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteBusiness.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteBusiness.pdb
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteData.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteProperty.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\LogWriter.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Web.Http.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\EntityFramework.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.Formatting.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteData.pdb
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteProperty.pdb
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Web.Http.xml
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\EntityFramework.xml
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.xml
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.Formatting.xml
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.csprojResolveAssemblyReference.cache
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.pdb
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteBusiness.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteBusiness.pdb
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteData.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteProperty.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Web.Http.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\EntityFramework.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.Formatting.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\Newtonsoft.Json.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteData.pdb
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\AgileQuoteProperty.pdb
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Web.Http.xml
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\EntityFramework.xml
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.xml
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\System.Net.Http.Formatting.xml
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\bin\Debug\Newtonsoft.Json.xml
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.csprojResolveAssemblyReference.cache
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteBusiness\obj\Debug\AgileQuoteBusiness.pdb

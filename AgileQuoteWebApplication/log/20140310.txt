@@ -1,0 +1,15 @@
+3/10/2014 5:52:33 PM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AgileQuoteWebApplication.AgileQuoteService.IService1.CompanyList()
+   at AgileQuoteWebApplication.AgileQuoteService.Service1Client.CompanyList() in d:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteWebApplication\Service References\AgileQuoteService\Reference.cs:line 370
+   at AgileQuoteWebApplication.Controllers.AccountController.Login() in d:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteWebApplication\Controllers\AccountController.cs:line 31

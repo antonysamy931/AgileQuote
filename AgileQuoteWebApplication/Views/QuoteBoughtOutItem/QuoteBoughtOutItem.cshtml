@@ -1,0 +1,78 @@
+﻿@model AgileQuoteProperty.Model.QuoteBoughtOutItemModel
+
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/AgileQuote/QuoteBoughtOutItem.js"></script>
+<input type="hidden" value="@ViewBag.QuoteID" id="QuoteID" />
+<div class="quote_list">
+    <div id="quoteBoughtoutItem">
+        <table id="QuoteBoughtItemDatatable"></table>
+        <div class="total-text" id="BoughtOutItemTotal">
+            <ul>
+                <li>
+                    <label>Grand Total Cost</label>
+                    @*<span class="symbol">@ViewBag.symbol</span>*@<input type="text" value="" readonly="readonly" id="BoughtNetPrice">
+                </li>
+                <li>
+                    <label>Grand Total Price</label>
+                    @*<span class="symbol">@ViewBag.symbol</span>*@<input type="text" value="" readonly="readonly" id="BoughtQuoteNetPrice">
+                </li>
+
+
+                @*<li>
+                    <label>Total Unit Cost</label>
+                    <span class="symbol">@ViewBag.symbol</span><input type="text" value="" readonly="readonly" id="BoughtUnitPrice">
+                </li>
+                <li>
+                    <label>Total Quantity</label>
+                    <input type="text" value="" readonly="readonly" id="BoughtQuantity">
+                </li>
+                <li>
+                    <label>Total Net Cost</label>
+                    <span class="symbol">@ViewBag.symbol</span><input type="text" value="" readonly="readonly" id="BoughtNetPrice">
+                </li>
+                <li>
+                    <label>Total Quoted Unit Price</label>
+                    <span class="symbol">@ViewBag.symbol</span><input type="text" value="" readonly="readonly" id="BoughtQuoteUnitPrice">
+                </li>
+                <li>
+                    <label>Total Quoted Net Price</label>
+                    <span class="symbol">@ViewBag.symbol</span><input type="text" value="" readonly="readonly" id="BoughtQuoteNetPrice">
+                </li>*@
+
+
+            </ul>
+        </div>
+        <div class="accord_btns">
+            <input type="button" value="Add Bought Out Item" id="AddItem">
+        </div>
+    </div>
+</div>
+
+<div class="light-popup SingleRecordPopup" id="AddBoughtItemPopup">
+    <a href="#" class="close" id="AddBoughtItemPopup_close">
+        <img src="~/Content/images/fancy_close.png" class="btn_close" title="Close Window" alt="Close" /></a>
+
+    <div class="Title" id="AddBoughtItemTitle">Bought Out Item</div>
+    <input type="hidden" id="AddBoughtItemRecordId" />
+    <ul class="popup-data">
+        <li>
+            <label>Name <span>:</span></label>
+            <input type="text" id="AddBoughtItemRecordName"><span style="color: red; font-size: 10px; float: left;" id="NameError">*</span>
+        </li>
+        <li>
+            <label>Unit Price <span>:</span></label>
+            <input type="text" id="AddBoughtItemRecordUnitprice"><span style="color: red; font-size: 10px; float: left;" id="UnitError">*</span><span class="symbol">@ViewBag.symbol</span>
+        </li>
+        <li>
+            <label>Quantity <span>:</span></label>
+            <input type="text" id="AddBoughtItemRecordQuantity"><span style="color: red; font-size: 10px; float: left;" id="QuantityError">*</span>
+        </li>
+        <li>
+            <div class="submit_box">
+                <label>&nbsp;</label>
+                <input type="button" value="Update" id="AddBoughtItemRecordUpdate">
+            </div>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>

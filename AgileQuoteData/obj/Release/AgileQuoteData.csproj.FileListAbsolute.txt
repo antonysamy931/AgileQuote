@@ -1,0 +1,11 @@
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\bin\Release\AgileQuoteData.dll.config
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\bin\Release\AgileQuoteData.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\bin\Release\AgileQuoteData.pdb
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\bin\Release\AgileQuoteProperty.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\bin\Release\EntityFramework.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\bin\Release\AgileQuoteProperty.pdb
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\bin\Release\EntityFramework.xml
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\obj\Release\AgileQuoteData.csprojResolveAssemblyReference.cache
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\obj\Release\AgileQuoteData.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\obj\Release\AgileQuoteData.pdb
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteData\obj\Release\AgileQuoteData.csprojResolveAssemblyReference.cache

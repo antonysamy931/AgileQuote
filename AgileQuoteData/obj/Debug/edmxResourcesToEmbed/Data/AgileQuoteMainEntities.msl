@@ -1,0 +1,666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AgileQuoteModelStoreContainer" CdmEntityContainer="AgileQuoteEntities">
+    <EntitySetMapping Name="tbBundles">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbBundle">
+        <MappingFragment StoreEntitySet="tbBundle">
+          <ScalarProperty Name="Installation" ColumnName="Installation" />
+          <ScalarProperty Name="BundleID" ColumnName="BundleID" />
+          <ScalarProperty Name="BundleName" ColumnName="BundleName" />
+          <ScalarProperty Name="BundleDescription" ColumnName="BundleDescription" />
+          <ScalarProperty Name="BundleType" ColumnName="BundleType" />
+          <ScalarProperty Name="BundleCategory" ColumnName="BundleCategory" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Warrenty" ColumnName="Warrenty" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbBundleMaterialMappings">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbBundleMaterialMapping">
+        <MappingFragment StoreEntitySet="tbBundleMaterialMapping">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="BundleMaterialMapID" ColumnName="BundleMaterialMapID" />
+          <ScalarProperty Name="BundleID" ColumnName="BundleID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbBundleTypes">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbBundleType">
+        <MappingFragment StoreEntitySet="tbBundleType">
+          <ScalarProperty Name="BundleTypeID" ColumnName="BundleTypeID" />
+          <ScalarProperty Name="BundleType" ColumnName="BundleType" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCategories">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbCategory">
+        <MappingFragment StoreEntitySet="tbCategory">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCurrencies">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbCurrency">
+        <MappingFragment StoreEntitySet="tbCurrency">
+          <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMaterials">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbMaterial">
+        <MappingFragment StoreEntitySet="tbMaterial">
+          <ScalarProperty Name="Installation" ColumnName="Installation" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="MaterialDescription" ColumnName="MaterialDescription" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuotes">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbQuote">
+        <MappingFragment StoreEntitySet="tbQuote">
+          <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+          <ScalarProperty Name="ShippingCost" ColumnName="ShippingCost" />
+          <ScalarProperty Name="BoughtOutItemCost" ColumnName="BoughtOutItemCost" />
+          <ScalarProperty Name="InstallationCost" ColumnName="InstallationCost" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="QuoteName" ColumnName="QuoteName" />
+          <ScalarProperty Name="QuoteDescription" ColumnName="QuoteDescription" />
+          <ScalarProperty Name="QuoteStatus" ColumnName="QuoteStatus" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="SalesOrganizationName" ColumnName="SalesOrganizationName" />
+          <ScalarProperty Name="ReferenceCustomerCode" ColumnName="ReferenceCustomerCode" />
+          <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+          <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+          <ScalarProperty Name="BudgetRateTarget" ColumnName="BudgetRateTarget" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuoteAuthorizes">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbQuoteAuthorize">
+        <MappingFragment StoreEntitySet="tbQuoteAuthorize">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="AuthorizedUserId" ColumnName="AuthorizedUserId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuoteBundleMappings">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbQuoteBundleMapping">
+        <MappingFragment StoreEntitySet="tbQuoteBundleMapping">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="BundleID" ColumnName="BundleID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Warrent" ColumnName="Warrent" />
+          <ScalarProperty Name="OverrideWarrent" ColumnName="OverrideWarrent" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuoteMaterialMappings">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbQuoteMaterialMapping">
+        <MappingFragment StoreEntitySet="tbQuoteMaterialMapping">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Warrenty" ColumnName="Warrenty" />
+          <ScalarProperty Name="OverrideWarrenty" ColumnName="OverrideWarrenty" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuoteRentalProductMappings">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbQuoteRentalProductMapping">
+        <MappingFragment StoreEntitySet="tbQuoteRentalProductMapping">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="RentalProductID" ColumnName="RentalProductID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Warrenty" ColumnName="Warrenty" />
+          <ScalarProperty Name="OverrideWarrenty" ColumnName="OverrideWarrenty" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuoteRentalSparsMappings">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbQuoteRentalSparsMapping">
+        <MappingFragment StoreEntitySet="tbQuoteRentalSparsMapping">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="RentalSparsID" ColumnName="RentalSparsID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Warrenty" ColumnName="Warrenty" />
+          <ScalarProperty Name="OverrideWarrenty" ColumnName="OverrideWarrenty" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuoteStatus">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbQuoteStatu">
+        <MappingFragment StoreEntitySet="tbQuoteStatus">
+          <ScalarProperty Name="QuoteStatusID" ColumnName="QuoteStatusID" />
+          <ScalarProperty Name="QuoteStatusName" ColumnName="QuoteStatusName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbRentalProducts">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbRentalProduct">
+        <MappingFragment StoreEntitySet="tbRentalProducts">
+          <ScalarProperty Name="RentalProductsID" ColumnName="RentalProductsID" />
+          <ScalarProperty Name="RentalProductsName" ColumnName="RentalProductsName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Warrenty" ColumnName="Warrenty" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbRentalSpars">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbRentalSpar">
+        <MappingFragment StoreEntitySet="tbRentalSpars">
+          <ScalarProperty Name="RentalSparsID" ColumnName="RentalSparsID" />
+          <ScalarProperty Name="RentalSparsName" ColumnName="RentalSparsName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Warrenty" ColumnName="Warrenty" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSalesOrganizations">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbSalesOrganization">
+        <MappingFragment StoreEntitySet="tbSalesOrganization">
+          <ScalarProperty Name="SalesOrganizationCode" ColumnName="SalesOrganizationCode" />
+          <ScalarProperty Name="SalesOrganizationName" ColumnName="SalesOrganizationName" />
+          <ScalarProperty Name="ReferenceCustomerCode" ColumnName="ReferenceCustomerCode" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CurrencySelect" FunctionName="AgileQuoteModel.Store.CurrencySelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.CurrencySelect_Result">
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+          <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MaterialSelect" FunctionName="AgileQuoteModel.Store.MaterialSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.MaterialSelect_Result">
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="MaterialDescription" ColumnName="MaterialDescription" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SalesOrgSelect" FunctionName="AgileQuoteModel.Store.SalesOrgSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.SalesOrgSelect_Result">
+          <ScalarProperty Name="SalesOrganizationCode" ColumnName="SalesOrganizationCode" />
+          <ScalarProperty Name="SalesOrganizationName" ColumnName="SalesOrganizationName" />
+          <ScalarProperty Name="ReferenceCustomerCode" ColumnName="ReferenceCustomerCode" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="selectQuote" FunctionName="AgileQuoteModel.Store.selectQuote">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.selectQuote_Result">
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="QuoteName" ColumnName="QuoteName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+          <ScalarProperty Name="SalesOrganizationName" ColumnName="SalesOrganizationName" />
+          <ScalarProperty Name="QuoteStatus" ColumnName="QuoteStatus" />
+          <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spBundleCategoryBaseSelect" FunctionName="AgileQuoteModel.Store.spBundleCategoryBaseSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.spBundleCategoryBaseSelect_Result">
+          <ScalarProperty Name="BundleID" ColumnName="BundleID" />
+          <ScalarProperty Name="BundleName" ColumnName="BundleName" />
+          <ScalarProperty Name="BundleDescription" ColumnName="BundleDescription" />
+          <ScalarProperty Name="BundleType" ColumnName="BundleType" />
+          <ScalarProperty Name="BundleCategory" ColumnName="BundleCategory" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Warrenty" ColumnName="Warrenty" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spBundleSelect" FunctionName="AgileQuoteModel.Store.spBundleSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.spBundleSelect_Result">
+          <ScalarProperty Name="BundleID" ColumnName="BundleID" />
+          <ScalarProperty Name="BundleName" ColumnName="BundleName" />
+          <ScalarProperty Name="BundleDescription" ColumnName="BundleDescription" />
+          <ScalarProperty Name="BundleType" ColumnName="BundleType" />
+          <ScalarProperty Name="BundleCategory" ColumnName="BundleCategory" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Warrenty" ColumnName="Warrenty" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spMaterialCategoryBaseSelect" FunctionName="AgileQuoteModel.Store.spMaterialCategoryBaseSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.spMaterialCategoryBaseSelect_Result">
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="MaterialDescription" ColumnName="MaterialDescription" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spQuoteBasedMaterialBundle" FunctionName="AgileQuoteModel.Store.spQuoteBasedMaterialBundle">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.spQuoteBasedMaterialBundle_Result">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Discription" ColumnName="Discription" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Warrenty" ColumnName="Warrenty" />
+          <ScalarProperty Name="OverrideWarrenty" ColumnName="OverrideWarrenty" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spQuoteBasedMaterialBundleRecordSelect" FunctionName="AgileQuoteModel.Store.spQuoteBasedMaterialBundleRecordSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.spQuoteBasedMaterialBundleRecordSelect_Result">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Discription" ColumnName="Discription" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="Warrenty" ColumnName="Warrenty" />
+          <ScalarProperty Name="OverrideWarrenty" ColumnName="OverrideWarrenty" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spRentalProductSelect" FunctionName="AgileQuoteModel.Store.spRentalProductSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.spRentalProductSelect_Result">
+          <ScalarProperty Name="RentalProductsID" ColumnName="RentalProductsID" />
+          <ScalarProperty Name="RentalProductsName" ColumnName="RentalProductsName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="Warrenty" ColumnName="Warrenty" />
+          <ScalarProperty Name="OverrideWarrenty" ColumnName="OverrideWarrenty" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spRentalSparsSelect" FunctionName="AgileQuoteModel.Store.spRentalSparsSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.spRentalSparsSelect_Result">
+          <ScalarProperty Name="RentalSparsID" ColumnName="RentalSparsID" />
+          <ScalarProperty Name="RentalSparsName" ColumnName="RentalSparsName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="Warrenty" ColumnName="Warrenty" />
+          <ScalarProperty Name="OverrideWarrenty" ColumnName="OverrideWarrenty" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tbQuoteBundleInstalations">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbQuoteBundleInstalation">
+        <MappingFragment StoreEntitySet="tbQuoteBundleInstalation">
+          <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="InstalationCharges" ColumnName="InstalationCharges" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="BundleID" ColumnName="BundleID" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuoteMaterialInstalations">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbQuoteMaterialInstalation">
+        <MappingFragment StoreEntitySet="tbQuoteMaterialInstalation">
+          <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="IntallationCharges" ColumnName="IntallationCharges" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuoteServices">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbQuoteService">
+        <MappingFragment StoreEntitySet="tbQuoteService">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="NoDays" ColumnName="NoDays" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="PerdayCost" ColumnName="PerdayCost" />
+          <ScalarProperty Name="NoEmp" ColumnName="NoEmp" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuoteBoughtOutItems">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbQuoteBoughtOutItem">
+        <MappingFragment StoreEntitySet="tbQuoteBoughtOutItem">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TotalPriceQuoted" ColumnName="TotalPriceQuoted" />
+          <ScalarProperty Name="UnitPriceQuoted" ColumnName="UnitPriceQuoted" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="boughtItem" ColumnName="boughtItem" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spQuoteBasedMaterialBundleWithoutConfigured" FunctionName="AgileQuoteModel.Store.spQuoteBasedMaterialBundleWithoutConfigured">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.spQuoteBasedMaterialBundleWithoutConfigured_Result">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Discription" ColumnName="Discription" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Warrenty" ColumnName="Warrenty" />
+          <ScalarProperty Name="OverrideWarrenty" ColumnName="OverrideWarrenty" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tbQuoteCollabrators">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbQuoteCollabrator">
+        <MappingFragment StoreEntitySet="tbQuoteCollabrator">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ColabratorID" ColumnName="ColabratorID" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spSelectQuote" FunctionName="AgileQuoteModel.Store.spSelectQuote">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.spSelectQuote_Result">
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="QuoteName" ColumnName="QuoteName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+          <ScalarProperty Name="SalesOrganizationName" ColumnName="SalesOrganizationName" />
+          <ScalarProperty Name="QuoteStatus" ColumnName="QuoteStatus" />
+          <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+          <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spSelectCreateQuote" FunctionName="AgileQuoteModel.Store.spSelectCreateQuote">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.spSelectCreateQuote_Result">
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="QuoteName" ColumnName="QuoteName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+          <ScalarProperty Name="SalesOrganizationName" ColumnName="SalesOrganizationName" />
+          <ScalarProperty Name="QuoteStatus" ColumnName="QuoteStatus" />
+          <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+          <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spAllAuthorizedRejectedQuote" FunctionName="AgileQuoteModel.Store.spAllAuthorizedRejectedQuote">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.spAllAuthorizedRejectedQuote_Result">
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="QuoteName" ColumnName="QuoteName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+          <ScalarProperty Name="SalesOrganizationName" ColumnName="SalesOrganizationName" />
+          <ScalarProperty Name="QuoteStatus" ColumnName="QuoteStatus" />
+          <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+          <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tbQuoteShippings">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbQuoteShipping">
+        <MappingFragment StoreEntitySet="tbQuoteShipping">
+          <ScalarProperty Name="OtherCost" ColumnName="OtherCost" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DieselCost" ColumnName="DieselCost" />
+          <ScalarProperty Name="TruckCost" ColumnName="TruckCost" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="ShippingID" ColumnName="ShippingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuoteBusinessLists">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbQuoteBusinessList">
+        <MappingFragment StoreEntitySet="tbQuoteBusinessList">
+          <ScalarProperty Name="QuoteBusinessName" ColumnName="QuoteBusinessName" />
+          <ScalarProperty Name="QuoteBusinessID" ColumnName="QuoteBusinessID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbQuoteQualitativeInformations">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbQuoteQualitativeInformation">
+        <MappingFragment StoreEntitySet="tbQuoteQualitativeInformation">
+          <ScalarProperty Name="AnyOtherComments" ColumnName="AnyOtherComments" />
+          <ScalarProperty Name="NewRepeatBusiness" ColumnName="NewRepeatBusiness" />
+          <ScalarProperty Name="RiskMitigation" ColumnName="RiskMitigation" />
+          <ScalarProperty Name="PaymentTerms" ColumnName="PaymentTerms" />
+          <ScalarProperty Name="SellingPrice" ColumnName="SellingPrice" />
+          <ScalarProperty Name="PrimaryCompetitor" ColumnName="PrimaryCompetitor" />
+          <ScalarProperty Name="ExecutiveSummary" ColumnName="ExecutiveSummary" />
+          <ScalarProperty Name="ScopeofWork" ColumnName="ScopeofWork" />
+          <ScalarProperty Name="WinProbability" ColumnName="WinProbability" />
+          <ScalarProperty Name="Leadtime" ColumnName="Leadtime" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spSaveAsNewQuote" FunctionName="AgileQuoteModel.Store.spSaveAsNewQuote">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.spSaveAsNewQuote_Result">
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCollaboratorQuote" FunctionName="AgileQuoteModel.Store.spCollaboratorQuote">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.spCollaboratorQuote_Result">
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="QuoteName" ColumnName="QuoteName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+          <ScalarProperty Name="SalesOrganizationName" ColumnName="SalesOrganizationName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+          <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spApproveQuote" FunctionName="AgileQuoteModel.Store.spApproveQuote">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteModel.spApproveQuote_Result">
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="QuoteName" ColumnName="QuoteName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+          <ScalarProperty Name="SalesOrganizationName" ColumnName="SalesOrganizationName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PreparedBy" ColumnName="PreparedBy" />
+          <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="SugectionMaterialMappings">
+      <EntityTypeMapping TypeName="AgileQuoteModel.SugectionMaterialMapping">
+        <MappingFragment StoreEntitySet="SugectionMaterialMapping">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="MappringMaterialId" ColumnName="MappringMaterialId" />
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+          <ScalarProperty Name="SugectionId" ColumnName="SugectionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbApproverRules">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbApproverRule">
+        <MappingFragment StoreEntitySet="tbApproverRules">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="MaximumDiscount" ColumnName="MaximumDiscount" />
+          <ScalarProperty Name="MinimumDiscount" ColumnName="MinimumDiscount" />
+          <ScalarProperty Name="MaximumAmount" ColumnName="MaximumAmount" />
+          <ScalarProperty Name="MinimumAmount" ColumnName="MinimumAmount" />
+          <ScalarProperty Name="RuleId" ColumnName="RuleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbOfferedMaterialMappings">
+      <EntityTypeMapping TypeName="AgileQuoteModel.tbOfferedMaterialMapping">
+        <MappingFragment StoreEntitySet="tbOfferedMaterialMapping">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="MappingMaterialId" ColumnName="MappingMaterialId" />
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+          <ScalarProperty Name="OfferedMaterialId" ColumnName="OfferedMaterialId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

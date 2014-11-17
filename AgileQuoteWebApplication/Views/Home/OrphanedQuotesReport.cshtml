@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Orphaned Quotes";
+    Layout = null;
+}
+
+<link href="~/Content/QuoteList.css" rel="stylesheet" />
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        loadManagerDashboardOR();
+    });
+
+    function loadManagerDashboardOR() {
+        //var quoteID = $('#QuoteID').val();
+        $('table').css('width', '100%');
+
+        $('.TestingOrphaned').dataTable({
+            "aaData": [
+            /* Reduced data set */
+            ["1401", "Customer A", "01-July-2013", 632, "Brad Dane", "Stephen Hall"],
+            ["1410", "Customer B", "12-July-2013", 450, "Chris Lemon ", "Verity Conway"],
+            ["1415", "Customer C", "12-Aug-2013", 785, "Aparna Kapoor", "Fiona Foster"],
+            ["1430", "Customer D", "20-Aug-2013", 145, "Heiko Little", "Stanley Morgenstern"],
+            ["1450", "Customer E", "28-Aug-2013", 365, "John Bing", "Jane Sandberg"],
+            ["1459", "Customer F", "01-July-2013", 630, "Ronald Steigerwald", "Talal Abdulaziz"],
+            ["1456", "Customer G", "12-July-2013", 450, "Gerard King ", "Luis Delaney"],
+            ["1478", "Customer H", "12-Aug-2013", 785, "Amy Hayes", "Paul Costolo"],
+            ["1444", "Customer I", "20-Aug-2013", 145, "John Dorsey", "Anand Katri"],
+            ["1457", "Customer J", "28-Aug-2013", 365, "Ronald Steigerwald", "Dan Cresmann"]
+            ],
+            //"bServerSide": true,
+            //"sAjaxSource": "/Home/GeQuoteToClosetManager",
+            "bProcessing": true,
+            "sPaginationType": "full_numbers",
+            //"iDisplayLength": 1,
+            "bDestroy": true,
+
+            "aoColumns": [
+                        { "sTitle": "Quote#" },
+                        { "sTitle": "Customer Name" },
+                        { "sTitle": "Quote Date" },
+                        { "sTitle": "Quote Amount" },
+                        { "sTitle": "Old Contact" },
+                        { "sTitle": "New Contact" }
+            ]
+        });
+    }
+
+</script>
+
+@*<section class="c12 main-title">
+    <div class="c6 quote">
+        <img src="~/Content/images/qoute-ion.png" alt="img1">
+        <p id="QuoteTitle">Orphaned Quotes</p>
+    </div>
+</section>*@
+
+<section>
+
+    <div class="create">
+        <div class="greay_box whitebox">          
+            <div class="quote_list">
+                <table class="TestingOrphaned" id="OrphanedQuotes"></table>
+            </div>           
+        </div>
+    </div>
+</section>
+

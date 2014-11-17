@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ChangepondProductModelStoreContainer" CdmEntityContainer="ChangepondProductEntities">
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="ChangepondProductModel.Currency">
+        <MappingFragment StoreEntitySet="Currency">
+          <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currency_value">
+      <EntityTypeMapping TypeName="ChangepondProductModel.Currency_value">
+        <MappingFragment StoreEntitySet="Currency_value">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginDetails">
+      <EntityTypeMapping TypeName="ChangepondProductModel.LoginDetail">
+        <MappingFragment StoreEntitySet="LoginDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Materials">
+      <EntityTypeMapping TypeName="ChangepondProductModel.Material">
+        <MappingFragment StoreEntitySet="Material">
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+          <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaterialCategory_mapping">
+      <EntityTypeMapping TypeName="ChangepondProductModel.MaterialCategory_mapping">
+        <MappingFragment StoreEntitySet="MaterialCategory_mapping">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="ChangepondProductModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="ProductCategory" ColumnName="ProductCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_category">
+      <EntityTypeMapping TypeName="ChangepondProductModel.Product_category">
+        <MappingFragment StoreEntitySet="Product_category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_type">
+      <EntityTypeMapping TypeName="ChangepondProductModel.Product_type">
+        <MappingFragment StoreEntitySet="Product_type">
+          <ScalarProperty Name="Product_typeID" ColumnName="Product_typeID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductMaterial_Mapping">
+      <EntityTypeMapping TypeName="ChangepondProductModel.ProductMaterial_Mapping">
+        <MappingFragment StoreEntitySet="ProductMaterial_Mapping">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+          <ScalarProperty Name="Material_Id" ColumnName="Material_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quotes">
+      <EntityTypeMapping TypeName="ChangepondProductModel.Quote">
+        <MappingFragment StoreEntitySet="Quote">
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="QuoteName" ColumnName="QuoteName" />
+          <ScalarProperty Name="SalesOrg" ColumnName="SalesOrg" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="CustomerDescription" ColumnName="CustomerDescription" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuoteAuthorize_Mapping">
+      <EntityTypeMapping TypeName="ChangepondProductModel.QuoteAuthorize_Mapping">
+        <MappingFragment StoreEntitySet="QuoteAuthorize_Mapping">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="QuoteAuthorizerID" ColumnName="QuoteAuthorizerID" />
+          <ScalarProperty Name="QuoteAuthorizeStatus" ColumnName="QuoteAuthorizeStatus" />
+          <ScalarProperty Name="QuoteStatusDescription" ColumnName="QuoteStatusDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuoteStatus">
+      <EntityTypeMapping TypeName="ChangepondProductModel.QuoteStatu">
+        <MappingFragment StoreEntitySet="QuoteStatus">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="ChangepondProductModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesOrganizations">
+      <EntityTypeMapping TypeName="ChangepondProductModel.SalesOrganization">
+        <MappingFragment StoreEntitySet="SalesOrganization">
+          <ScalarProperty Name="SalesOrgCode" ColumnName="SalesOrgCode" />
+          <ScalarProperty Name="SalesOrgName" ColumnName="SalesOrgName" />
+          <ScalarProperty Name="ReferenceCustomerCode" ColumnName="ReferenceCustomerCode" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Territories">
+      <EntityTypeMapping TypeName="ChangepondProductModel.Territory">
+        <MappingFragment StoreEntitySet="Territory">
+          <ScalarProperty Name="TerritoryCode" ColumnName="TerritoryCode" />
+          <ScalarProperty Name="TerritoryName" ColumnName="TerritoryName" />
+          <ScalarProperty Name="IsBoundedWarehouse" ColumnName="IsBoundedWarehouse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ChangepondProductModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="UserGroupID" ColumnName="UserGroupID" />
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="LastAccessDate" ColumnName="LastAccessDate" />
+          <ScalarProperty Name="IsAdminUser" ColumnName="IsAdminUser" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CurrencySelect" FunctionName="ChangepondProductModel.Store.CurrencySelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChangepondProductModel.CurrencySelect_Result">
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+          <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ListSelect" FunctionName="ChangepondProductModel.Store.ListSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChangepondProductModel.ListSelect_Result">
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+          <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MaterialSelect" FunctionName="ChangepondProductModel.Store.MaterialSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChangepondProductModel.MaterialSelect_Result">
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+          <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RoleSelect" FunctionName="ChangepondProductModel.Store.RoleSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChangepondProductModel.RoleSelect_Result">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SalesOrgSelect" FunctionName="ChangepondProductModel.Store.SalesOrgSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChangepondProductModel.SalesOrgSelect_Result">
+          <ScalarProperty Name="SalesOrgCode" ColumnName="SalesOrgCode" />
+          <ScalarProperty Name="SalesOrgName" ColumnName="SalesOrgName" />
+          <ScalarProperty Name="ReferenceCustomerCode" ColumnName="ReferenceCustomerCode" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="selectQuote" FunctionName="ChangepondProductModel.Store.selectQuote">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChangepondProductModel.selectQuote_Result">
+          <ScalarProperty Name="Quote_ID" ColumnName="Quote ID" />
+          <ScalarProperty Name="Quote_Name" ColumnName="Quote Name" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer Name" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created Date" />
+          <ScalarProperty Name="Customer_Required" ColumnName="Customer Required" />
+          <ScalarProperty Name="Sales_Organization_Name" ColumnName="Sales Organization Name" />
+          <ScalarProperty Name="PreperdBy" ColumnName="PreperdBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.17.0.147:8090/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://172.17.0.147:8090/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" />
+  <xs:import schemaLocation="http://172.17.0.147:8090/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/AgileQuoteServices" />
+  <xs:element name="CompanyList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompanyListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CompanyListResult" nillable="true" type="q1:ArrayOfKeyValueOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckAuthentication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="oLogin" nillable="true" type="q2:Login" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckAuthenticationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckAuthenticationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckUsername">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="oLogin" nillable="true" type="q3:Login" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckUsernameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckUsernameResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="oLogin" nillable="true" type="q4:Login" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetUserIDResult" nillable="true" type="q5:ArrayOfKeyValueOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetImageArray">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetImageArrayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetImageArrayResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuoteList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="qDetails" nillable="true" type="q6:QuoteDetails" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuoteListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="GetQuoteListResult" nillable="true" type="q7:ArrayOfQuoteDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadCurrency">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadCurrencyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="LoadCurrencyResult" nillable="true" type="q8:ArrayOfCurrencyValues" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadSalesOrg">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadSalesOrgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="LoadSalesOrgResult" nillable="true" type="q9:ArrayOfSalesOrganizations" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadStatus">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LoadStatusResult" nillable="true" type="q10:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertQuoteDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="qQuote" nillable="true" type="q11:Quote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertQuoteDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertQuoteDetailsResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertQuotePriceDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertQuotePriceDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertQuotePriceDetailsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalProductListBasedOnQuoteId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalProductListBasedOnQuoteIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="RentalProductListBasedOnQuoteIdResult" nillable="true" type="q12:RentalProductsPropertyList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalProductBasedOnQuoteId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+        <xs:element minOccurs="0" name="RentalProductID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalProductBasedOnQuoteIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="RentalProductBasedOnQuoteIdResult" nillable="true" type="q13:RentalProductsProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalProductList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BugetTargetRate" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalProductListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="RentalProductListResult" nillable="true" type="q14:ArrayOfRentalProductsProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalProductSingleRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RentalProductID" type="xs:int" />
+        <xs:element minOccurs="0" name="BudgetTargetRate" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalProductSingleRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="RentalProductSingleRecordResult" nillable="true" type="q15:RentalProductsProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalSparsListBasedOnQuoteId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalSparsListBasedOnQuoteIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="RentalSparsListBasedOnQuoteIdResult" nillable="true" type="q16:RentalSparsPropertyList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalSparsBasedOnQuoteId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+        <xs:element minOccurs="0" name="RentalSparsID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalSparsBasedOnQuoteIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="RentalSparsBasedOnQuoteIdResult" nillable="true" type="q17:RentalSparsPropery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalSparsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BudgetTargetRate" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalSparsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="RentalSparsListResult" nillable="true" type="q18:ArrayOfRentalSparsPropery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalSparsSingleRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RentalSparsID" type="xs:int" />
+        <xs:element minOccurs="0" name="BudgetTargetRate" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RentalSparsSingleRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="RentalSparsSingleRecordResult" nillable="true" type="q19:RentalSparsPropery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuoteBaseMaterialBundleList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuoteBaseMaterialBundleListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="GetQuoteBaseMaterialBundleListResult" nillable="true" type="q20:QuoteBundleMaterialList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuoteBaseMaterialBundle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+        <xs:element minOccurs="0" name="MaterialID" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="BundleID" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuoteBaseMaterialBundleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="GetQuoteBaseMaterialBundleResult" nillable="true" type="q21:QuoteBundleMaterial" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuoteDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuoteDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="GetQuoteDetailsResult" nillable="true" type="q22:Quote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialListBasedOnCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BudgetTargetRate" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialListBasedOnCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="GetMaterialListBasedOnCategoryResult" nillable="true" type="q23:ArrayOfMaterialProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBundleListBasedOnCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BudgetTargetRate" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBundleListBasedOnCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="GetBundleListBasedOnCategoryResult" nillable="true" type="q24:ArrayOfBundleProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategoryNameList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategoryNameListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetCategoryNameListResult" nillable="true" type="q25:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialSingleRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MaterialID" type="xs:int" />
+        <xs:element minOccurs="0" name="BudgetTargetRate" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialSingleRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="GetMaterialSingleRecordResult" nillable="true" type="q26:MaterialProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBundleSingleRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BundleID" type="xs:int" />
+        <xs:element minOccurs="0" name="BudgetTargetRate" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBundleSingleRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="GetBundleSingleRecordResult" nillable="true" type="q27:BundleProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBundleMaterialRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+        <xs:element minOccurs="0" name="MaterialID" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="BundleID" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+        <xs:element minOccurs="0" name="NetPrice" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBundleMaterialRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateBundleMaterialRecordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRentalProductRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+        <xs:element minOccurs="0" name="RentalProductID" type="xs:int" />
+        <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+        <xs:element minOccurs="0" name="NetPrice" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRentalProductRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateRentalProductRecordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRentalSparRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+        <xs:element minOccurs="0" name="RentalSparID" type="xs:int" />
+        <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+        <xs:element minOccurs="0" name="NetPrice" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRentalSparRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateRentalSparRecordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBundleMaterialRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+        <xs:element minOccurs="0" name="MaterialID" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="BundleID" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBundleMaterialRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteBundleMaterialRecordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRentalProductRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+        <xs:element minOccurs="0" name="RentalProductID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRentalProductRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteRentalProductRecordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRentalSparRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+        <xs:element minOccurs="0" name="RentalSparID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRentalSparRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteRentalSparRecordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddBundleMaterialToQuote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MaterialIDlist" nillable="true" type="q28:ArrayOfint" />
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BundleIDlist" nillable="true" type="q29:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddBundleMaterialToQuoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddBundleMaterialToQuoteResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRentalProductToQuote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RentalProductIDlist" nillable="true" type="q30:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRentalProductToQuoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddRentalProductToQuoteResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRentalSparToQuote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+        <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RentalSparIDlist" nillable="true" type="q31:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRentalSparToQuoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddRentalSparToQuoteResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuoteMaterialBundleTotal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuoteMaterialBundleTotalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="GetQuoteMaterialBundleTotalResult" nillable="true" type="q32:TotalUnitDiscount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuoteRentalProductTotal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuoteRentalProductTotalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="GetQuoteRentalProductTotalResult" nillable="true" type="q33:TotalUnitDiscount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuoteRentalSparTotal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQuoteRentalSparTotalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" minOccurs="0" name="GetQuoteRentalSparTotalResult" nillable="true" type="q34:TotalUnitDiscount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSymbol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QuoteID" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="CurrencyName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSymbolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSymbolResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContract">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/AgileQuoteServices" minOccurs="0" name="composite" nillable="true" type="q35:CompositeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataUsingDataContractResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/AgileQuoteServices" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q36:CompositeType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

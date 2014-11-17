@@ -1,0 +1,363 @@
+﻿
+@charset "utf-8";
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+/* Reset */
+a, abbr, acronym, address, applet, article, aside, audio, b, blockquote, big, body, canvas, caption, cite, code, command, datalist, dd, del, details, dfn, dl, div, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, keygen, label, legend, li, meter, nav, object, ol, output, p, pre, progress, q, s, samp, section, small, span, source, strike, strong, sub, sup, table, tbody, tfoot, thead, th, tr, tdvideo, tt, u, ul, var {
+    background: transparent;
+    border: 0 none;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+/* HTML5 reset */
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {
+    display: block;
+}
+
+mark, rp, rt, ruby, summary, time {
+    display: inline;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clear {
+    clear: both;
+}
+
+body {
+}
+
+.RowSelect {
+    background-color: #ccc;
+}
+
+/*.edit {
+    background-color: #ccc;
+    background: url("../Content/themes/base/images/ButtonImages.jpg") no-repeat rgb(0, 0, 0);
+    background-position: -40px -35px;
+    width: 25px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.delete {
+    background: url("../Content/themes/base/images/ButtonImages.jpg") no-repeat rgb(0, 0, 0);
+    background-position: -74px -70px;
+    width: 25px;
+    height: 35px;
+    cursor: pointer;
+}*/
+
+.light-popup {
+    display: none;
+    width: 60% !important;
+    min-height: 220px;
+    background: #fff;
+    padding: 0px;
+    border: 1px solid #ddd;
+    float: left;
+    font-size: 1.2em;
+    position: fixed !important;
+    top: 50%;
+    left: 50%;
+    z-index: 99999;
+    box-shadow: 1px 0px 20px #999; /* CSS3 */
+    -moz-box-shadow: 0px 0px 20px #999; /* Firefox */
+    -webkit-box-shadow: 0px 0px 20px #999; /* Safari, Chrome */
+    border-radius: 9px 9px 9px 9px;
+    -moz-border-radius: 9px; /* Firefox */
+    -webkit-border-radius: 9px; /* Safari, Chrome */
+}
+
+.popup-center {
+    padding: 0 3%;
+}
+
+#mask {
+    display: none;
+    background: #000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7!important;
+    z-index: 999;
+}
+
+
+img.btn_close {
+    float: right;
+    margin: -22px -22px 0 0;
+}
+
+.light-popup table tbody tr td a {
+    float: none !important;
+    text-align: center;
+}
+
+.height {
+    height: 500px;
+}
+
+.DisplayNone {
+    display: none;
+}
+
+/******/
+.SingleRecordPopup {
+    width: 40% !important;
+}
+
+/*#BundleMaterialRecordTitle {
+    background: #1971B5;
+    border-radius: 5px 5px 0 0;
+    color: #FFFFFF;
+    font-size:24px;
+    font-family:"CenturyGothic";
+    font-weight:bold;
+    padding-left: 5px;
+    text-align: center;
+    line-height:40px;
+    width: 100%;
+}*/
+
+.SubTitle {
+    color: #464646;
+    font-family: 'CandaraRegular';
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 5px 5px 13%;
+    width: 100%;
+}
+
+/*#RentalMaterialRecordImage {
+    display: block;
+    height: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 165px;
+    border: 1px solid #CCCCCC;
+}*/
+
+.popup-data {
+    float: left;
+    margin: 0;
+    padding: 10px 10px 30px 16% !important;
+    width: 90%;
+}
+
+
+#AddShippingPopup .popup-data {
+    float: left;
+    margin: 0;
+    padding: 30px 10px 10px 16% !important;
+    width: 90%;
+}
+
+.popup-data li {
+    float: left;
+    min-height: 0;
+    padding-bottom: 10px;
+    width: 80%;
+}
+
+#AddShippingPopup .popup-data li {
+    width: 90%;
+}
+
+#OverrideWarrentyPopup .popup-data li {
+    width: 90%;
+}
+
+.popup-data li label {
+    color: #555555;
+    float: left;
+    font-family: 'CandaraRegular';
+    font-size: 13px;
+    width: 30%;
+}
+
+#AddShippingPopup .popup-data li label {
+    width: 42%;
+}
+
+#OverrideWarrentyPopup .popup-data li label {
+    width: 40%;
+}
+
+#OverrideWarrentyRecordOverrideWarrenty {
+    margin-top: 2%;
+}
+
+.popup-data li p {
+    float: left;
+    width: 100%;
+    font-family: 'CandaraRegular';
+    font-size: 13px;
+    line-height: 16px;
+    width: 56%;
+}
+
+.popup-data li input[type=text] {
+    margin-left: 20px;
+    width: 50%!important;
+}
+
+.popup-data li select {
+    margin-left: 20px;
+    width: 50% !important;
+}
+
+#AddShippingPopup .popup-data li input[type="text"] {
+    width: 45%!important;
+    margin-left: 17px !important;
+}
+
+.Image {
+    border: 1px solid #CCCCCC;
+    display: block;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+/*#BundleMaterialRecordUpdate{
+	background: #1971B5;
+    color: #FFFFFF;
+    float: left;
+    font: 14px Arial;
+	cursor:pointer;
+	border:none;
+	padding:5px;
+    width:18px;
+	height:28px;
+}*/
+
+
+/*Tool tip*/
+.ui-tooltip, .arrow:after {
+    background: black;
+    border: 2px solid white;
+}
+
+.ui-tooltip {
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    font: bold 14px "Helvetica Neue", Sans-Serif;
+    text-transform: uppercase;
+    box-shadow: 0 0 7px black;
+}
+
+.arrow {
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: -16px;
+}
+
+    .arrow.top {
+        top: -16px;
+        bottom: auto;
+    }
+
+    .arrow.left {
+        left: 20%;
+    }
+
+    .arrow:after {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: -20px;
+        width: 25px;
+        height: 25px;
+        box-shadow: 6px 5px 9px -9px black;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        tranform: rotate(45deg);
+    }
+
+    .arrow.top:after {
+        bottom: -20px;
+        top: auto;
+    }
+
+.ellipsis {
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+#ShippingQuoteTable_length
+{
+    display:none !important;
+}
+
+#ShippingQuoteTable_filter
+{
+    display:none !important;
+}
+
+#ShippingQuoteTable_info
+{
+    display:none !important;
+}
+
+#ShippingQuoteTable_paginate
+{
+    display:none !important;
+}
+
+.innerDetails {
+  margin-left: 5%;
+  padding: 2% 0;
+  width: 90%;
+}
+
+    .innerDetails td
+    {
+        padding:10px !important;
+    }
+
+.toolTip
+{
+    background: #1971b5; /* Old browsers */
+    background: -moz-linear-gradient(left, #1971b5 0%, #1971b5 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#1971b5), color-stop(100%,#1971b5)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #1971b5 0%,#1971b5 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #1971b5 0%,#1971b5 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #1971b5 0%,#1971b5 100%); /* IE10+ */
+    background: linear-gradient(to right, #1971b5 0%,#1971b5 100%); /* W3C */
+}
+
+#QuoteBoardContainer .dataTables_length {
+  display: none !important;
+}
+
+#SubmitedQuoteContainer .dataTables_length {
+  display: none !important;
+}

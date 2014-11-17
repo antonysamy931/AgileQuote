@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChangepondProductModel1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ChangepondProductImage" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserImages" EntityType="ChangepondProductModel1.UserImage" />
+  </EntityContainer>
+  <EntityType Name="UserImage">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="ImageContent" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="Extension" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="IsVisible" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,400 @@
+﻿@model AgileQuoteProperty.Model.Quote
+@{
+    ViewBag.Title = "QuoteBoard";
+    Layout = "~/Views/Shared/_Layout.cshtml";    
+}
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+<script src="~/Scripts/countries.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<link href="~/Content/QuoteList.css" rel="stylesheet" />
+<script src="~/Scripts/AgileQuote/CreateQuote.js"></script>
+
+
+
+@using (Html.BeginForm("CreateQuote", "QuoteList", FormMethod.Post, new { @id = "CreateQuoteFormID" }))
+{
+    
+    <input type="hidden" name="QuoteID" id="QuoteID" value="@Model.QuoteID" />
+    <input type="hidden" id="BillingCountryHidden" value="@Model.BillingCountry" />
+    <input type="hidden" id="BillingStateHidden" value="@Model.BillingState" />
+    <input type="hidden" id="ShippingCountryHidden" value="@Model.ShippingCountry" />
+    <input type="hidden" id="ShippingStateHidden" value="@Model.ShippingState" />
+     @Html.HiddenFor(x => x.qCreateBy, new { @id = "QuoteEditAutho" })
+    @*
+    
+    if (Model.QuoteID == null && Model.QuoteID == 0)
+    {
+    @Html.HiddenFor(x => x.QuoteID, new { @id = "QuoteIDvalue" })    
+    <input type="hidden" id="BillingCountryHidden" value="@Model.BillingCountry" />
+    <input type="hidden" id="BillingStateHidden" value="@Model.BillingState" />
+    <input type="hidden" id="ShippingCountryHidden" value="@Model.ShippingCountry" />
+    <input type="hidden" id="ShippingStateHidden" value="@Model.ShippingState" />
+    }
+    else
+    {
+    <input type="hidden" id="BillingCountryHidden" value="@Model.BillingCountry" />
+    <input type="hidden" id="BillingStateHidden" value="@Model.BillingState" />    
+    @Html.TextBoxFor(x => x.QuoteID, new { @id = "QuoteIDvalue" }) 
+    <input type="hidden" id="ShippingCountryHidden" value="@Model.ShippingCountry" />
+    <input type="hidden" id="ShippingStateHidden" value="@Model.ShippingState" />
+    }
+    @Html.TextBoxFor(x => x.QuoteID, new { @id = "QuoteIDvalue" }) 
+    @Html.HiddenFor(x => x.qCreateBy, new { @id = "QuoteEditAutho" })
+    *@
+    
+    <input type="hidden" id="quoteType" value="@ViewBag.QuoteType" />
+    
+    <section class="c12 main-title">
+        <div class="c6 quote">
+            <img src="~/Content/images/qoute-ion.png" alt="img1" />
+            <p id="QuoteTitle">Create New Quote</p>
+        </div>
+        <div class="save-settings">
+            <a href="#">
+                <img src="~/Content/images/settings.png" alt="settings" /></a>
+            <input type="button" value="Save As">
+        </div>
+    </section>
+    <ul class="greay_box" style="margin: 20px 0 0; display: none;" id="EditQuoteDetailsList">
+        <li style="min-height: 20px;">
+            <input type="checkbox" id="EditQuoteDetails" style="float: left; margin: 0 5px 0 4%;" />
+            <label>Edit Quote Details</label>
+        </li>
+    </ul>
+    
+    <section>
+        <div class="create" id="QuoteCreateTab">
+            <ul class="tabs">
+                <li><a href="#Quote">Quote</a><span></span></li>
+                <li><a href="#BillingAddress">Billing Address</a><span></span></li>
+                <li><a href="#ShippingAddress">Shipping Address</a><span></span></li>
+            </ul>
+            <div class="greay_box" id="QuoteAddressTab">
+                <div id="Quote" class="tab_content">
+                    <ul>
+                        <li>
+                            <label>Sales Organization Code <span>*</span> </label>
+                            @Html.TextBoxFor(x => x.CustomerCode, new { @id = "CustomerCode", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(x => x.CustomerCode)
+                        </li>
+
+                        <li>
+                            <label>Sales Organization Name <span>*</span>  </label>
+                            @Html.DropDownListFor(x => x.salesOrgName, new SelectList(Model.SalesOrg, "customerCode", "salesOrgName", Model.defaultSalesOrg), "Select Organization", new { @id = "SalesOrgName", onChange = "javascript:SalesChange(this)" })
+                            @Html.ValidationMessageFor(x => x.salesOrgName)
+                        </li>
+
+                        <li>
+                            <label>Customer Name <span>*</span>  </label>
+                            @Html.TextBoxFor(x => x.CustomerName, new { @id = "CustomerName" })
+                            @Html.ValidationMessageFor(x => x.CustomerName)
+                        </li>
+
+                        <li>
+                            <label>Quote Requested Date <span>*</span>  </label>
+                            @Html.TextBoxFor(x => x.RequrestedDate, new { @id = "RequestedDate", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(x => x.RequrestedDate)
+                        </li>
+
+                        <li>
+                            <label>Currency <span>*</span>  </label>
+                            @Html.DropDownListFor(x => x.currencyName, new SelectList(Model.Currency, "ValueCurrency", "CurrencyName", Model.defaultCurrency), "Select Currency", new { @id = "CurrencyNameField", onChange = "javascript:CurrencyChange(this)" })
+                            @Html.ValidationMessageFor(x => x.currencyName)
+                        </li>
+
+                        <li style="display: none;">
+                            <label>Budget Rate Target <span>*</span>  </label>
+                            @Html.TextBoxFor(x => x.BudgetValue, new { @id = "BudgetValue", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(x => x.BudgetValue)
+                        </li>
+
+                        <li>
+                            <label>Quote Name <span>*</span></label>
+                            @Html.TextBoxFor(x => x.QuoteName)
+                            @Html.ValidationMessageFor(x => x.QuoteName)
+                        </li>
+
+                        <li>
+                            <label>Prepared By <span>*</span> </label>
+                            @Html.TextBoxFor(x => x.PreparedBy, new { @id = "PreparedBy", @readonly = "readonly" })
+                        </li>
+
+                        <li>
+                            <label>Status <span>*</span> </label>
+                            @Html.DropDownListFor(x => x.Status, new SelectList(Model.StatusList, Model.defaultStatus), new { @id = "Status", @disabled = "disabled" })
+                        </li>
+                    </ul>
+                </div>
+                <div id="BillingAddress" class="tab_content">
+                    <ul>
+                        <li>
+                            <label>Customer Name <span>*</span>  </label>
+                            @Html.TextBoxFor(x => x.CustomerName, new { @id = "CustomerNameBill", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(x => x.CustomerName)
+                        </li>
+                        <li>
+                            <label>Address Line One <span>*</span> </label>
+                            @Html.TextBoxFor(x => x.BillingAddressOne, new { @id = "BillAddressOne" })
+                            @Html.ValidationMessageFor(x => x.BillingAddressOne)
+                        </li>
+                        <li>
+                            <label>Address Line Two <span></span></label>
+                            @Html.TextBoxFor(x => x.BillingAddressTwo, new { @id = "BillAddressTwo" })
+                        </li>
+                        <li>
+                            <label>Country <span>*</span>  </label>
+                            @*@Html.TextBoxFor(x => x.BillingCountry, new { @id = "BillCountry" })*@
+                            <select id="BillCountry" name="BillingCountry" onchange="print_state('BillState',this.selectedIndex);"></select>
+                            <script language="javascript">print_country("BillCountry")</script>
+                            @Html.ValidationMessageFor(x => x.BillingCountry)
+                        </li>
+                        <li>
+                            <label>State @*<span>*</span>*@  </label>
+                            @*@Html.TextBoxFor(x => x.BillingState, new { @id = "BillState" })*@
+                            <select name="BillingState" id="BillState"></select>
+                            @Html.ValidationMessageFor(x => x.BillingState)
+                        </li>
+                        <li>
+                            <label>City <span>*</span>  </label>
+                            @Html.TextBoxFor(x => x.BillingCity, new { @id = "BillCity" })
+                            @Html.ValidationMessageFor(x => x.BillingCity)
+                        </li>
+                        <li>
+                            <label>Zip Code <span>*</span>  </label>
+                            @Html.TextBoxFor(x => x.BillingPostalCode, new { @id = "BillPostalCode" })
+                            @Html.ValidationMessageFor(x => x.BillingPostalCode)
+                        </li>
+                        <li>
+                            <label>Phone Number<span>*</span>  </label>
+                            @Html.TextBoxFor(x => x.BillingPhoneNumber, new { @id = "BillPhone" })
+                            @Html.ValidationMessageFor(x => x.BillingPhoneNumber)
+                        </li>
+                        @*<li>
+                            <label>Mobile Number <span>*</span> </label>
+                            @Html.TextBoxFor(x => x.BillingMobileNumber, new { @id = "BillMobile" })
+                            @Html.ValidationMessageFor(x => x.BillingMobileNumber)
+                        </li>*@
+
+                    </ul>
+                </div>
+                <div id="ShippingAddress" class="tab_content">
+                    <ul>
+                        <li class="shipping-addr">
+                            <input type="checkbox" name="shipping_addr" id="SameBillingAddress" />
+                            <label>Same as billing address</label>
+                        </li>
+                        <li>
+                            <label>Customer Name <span>*</span>  </label>
+                            @Html.TextBoxFor(x => x.CustomerName, new { @id = "CustomerNameShip", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(x => x.CustomerName)
+                        </li>
+                        <li>
+                            <label>Address Line One <span>*</span> </label>
+                            @Html.TextBoxFor(x => x.ShippingAddressOne, new { @id = "ShipAddressOne" })
+                            @Html.ValidationMessageFor(x => x.ShippingAddressOne)
+                        </li>
+                        <li>
+                            <label>Address Line Two <span></span></label>
+                            @Html.TextBoxFor(x => x.ShippingAddressTwo, new { @id = "ShipAddressTwo" })
+                        </li>
+                        <li>
+                            <label>Country <span>*</span>  </label>
+                            @*@Html.TextBoxFor(x => x.ShippingCountry, new { @id = "ShipCountry" })*@
+                            <select name="ShippingCountry" id="ShipCountry" onchange="print_state('ShipState',this.selectedIndex);"></select>
+                            <script language="javascript">print_country("ShipCountry")</script>
+                            @Html.ValidationMessageFor(x => x.ShippingCountry)
+                        </li>
+                        <li>
+                            <label>State @*<span>*</span>*@  </label>
+                            @*@Html.TextBoxFor(x => x.ShippingState, new { @id = "ShipState" })*@
+                            <select name="ShippingState" id="ShipState"></select>
+                            @Html.ValidationMessageFor(x => x.ShippingState)
+                        </li>
+                        <li>
+                            <label>City <span>*</span>  </label>
+                            @Html.TextBoxFor(x => x.ShippingCity, new { @id = "ShipCity" })
+                            @Html.ValidationMessageFor(x => x.ShippingCity)
+                        </li>
+                        <li>
+                            <label>Zip Code <span>*</span>  </label>
+                            @Html.TextBoxFor(x => x.ShippingPostalCode, new { @id = "ShipPostalCode" })
+                            @Html.ValidationMessageFor(x => x.ShippingPostalCode)
+                        </li>
+                        <li>
+                            <label>Phone Number <span>*</span> </label>
+                            @Html.TextBoxFor(x => x.ShippingPhoneNumber, new { @id = "ShipPhone" })
+                            @Html.ValidationMessageFor(x => x.ShippingPhoneNumber)
+                        </li>
+                        @*<li>
+                            <label>Mobile Number <span>*</span> </label>
+                            @Html.TextBoxFor(x => x.ShippingMobileNumber, new { @id = "ShipMobile" })
+                            @Html.ValidationMessageFor(x => x.ShippingMobileNumber)
+                        </li>*@
+                        @*<li>
+                            @Html.ValidationSummary(true)
+                        </li>*@
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="submit_box">
+            <input type="submit" id="createQuote" value="Save" />
+            <input type="button" value="Clear" id="createClear" />
+            @*<input type="button" value="Approve Quote" id="approveQuote" />
+            <input type="button" value="Reject Quote" id="rejectQuote" />
+            <input type="button" value="Review Comment" id="ColabratorUpdate" />
+            <input type="button" value="Reject" id="ColabratorCancel" />
+            *@@*<input type="button" value="Summary" id="SummarryPage" />*@
+            @*<input type="button" value="Save As" id="SaveAsNewQuote" />*@
+            <input type="button" value="Update" id="UpdateQuoteDetails" style="display: none;" />
+        </div>
+    </section>  
+    if (Model.QuoteID != null && Model.QuoteID != 0)
+    {
+    <div class="quout_accordion">
+        <!-- accordian-->
+        <div class="accordionButton active-accord">Step 1: Products</div>
+        <div class="accordionContent first">
+            <div class="create">
+                @*<ul class="tabs2">
+                    <li class=""><a href="#materials"></a></li>
+                    <li><a href="#products">Rental Products</a></li>
+                    <li><a href="#spares">Rental Spares</a></li>
+                </ul>*@
+                <div class="greay_box whitebox">
+                    <div class="tab_content2" id="materials" style="display: block;">
+                        @*@Html.Action("QuoteMaterialBundleList", "QuoteList", new { QuoteID = Model.QuoteID })*@
+                        @Html.Action("QuoteMaterialBundleList", "QuoteMaterialBundleList", new { QuoteID = Model.QuoteID })
+                    </div>
+                    @*<div class="tab_content2" id="products" style="display: none;">
+                        @Html.Action("QuoteRentalProductList", "QuoteList", new { QuoteID = Model.QuoteID })
+                    </div>
+                    <div class="tab_content2" id="spares" style="display: none;">
+                        @Html.Action("QuoteRentalSparsList", "QuoteList", new { QuoteID = Model.QuoteID })
+                    </div>*@
+                </div>
+            </div>
+        </div>
+
+        @*<div class="accordionButton">Step 2: Configure</div>
+        <div class="accordionContent">
+            <div class="create">                
+                <div class="greay_box whitebox">
+                    <div id="bundle" class="tab_content3">
+                        @Html.Action("ClientConfigureBundlePartial", "QuoteList", new { QuoteID = Model.QuoteID })
+                    </div>
+                </div>
+            </div>
+        </div>       
+        </div>*@
+
+        <div class="accordionButton">Step 2: Services</div>
+        <div class="accordionContent">
+            <!-- -->
+            <div class="create">
+                <ul class="tabs4">
+                    <li><a href="#consumables">Installation Charges</a><span></span></li>
+                    <li class=""><a href="#onsite-support">Shipping Charges</a><span></span></li>
+                    <li><a href="#warranty">Warranty Period </a><span></span></li>
+                    @*<li><a href="#over-warranty">Override Warranty Period  </a></li>*@
+                </ul>
+                <div class="greay_box whitebox">
+                    <div class="tab_content4" id="consumables" style="display: block;">
+                        @*@Html.Action("QuoteInstall", "QuoteList", new { QuoteID = Model.QuoteID })*@
+                        @Html.Action("QuoteInstall", "QuoteInstall", new { QuoteID = Model.QuoteID })
+                    </div>
+                    <div class="tab_content4" id="onsite-support" style="display: none;">
+                        @*@Html.Action("QuoteMaterialBundleInstall", "QuoteList", new { QuoteID = Model.QuoteID })*@
+                        @*@Html.Action("ShippingQuote", "QuoteList", new { QuoteID = Model.QuoteID })*@
+                        @Html.Action("ShippingQuote", "ShippingQuote", new { QuoteID = Model.QuoteID })
+                    </div>
+                    <div class="tab_content4" id="warranty" style="display: none;">
+                        @*@Html.Action("QuoteMaterialBundleWarrenty", "QuoteList", new { QuoteID = Model.QuoteID })*@
+                        @Html.Action("QuoteMaterialBundleWarrenty", "QuoteMaterialBundleWarrenty", new { QuoteID = Model.QuoteID })
+                    </div>
+                    @*<div class="tab_content4" id="over-warranty" style="display: none;">
+                        @Html.Action("QuoteMaterialBundleOverrideWarrenty", "QuoteList", new { QuoteID = Model.QuoteID })
+                    </div>*@
+                </div>
+            </div>
+            <!-- -->
+        </div>
+        <div class="accordionButton">Step 3: Solution Selling</div>
+
+        <div class="accordionContent">
+            <div class="create">
+                <div class="greay_box whitebox">
+                    <div id="bought" class="tab_content5">
+                        @*@Html.Action("QuoteBoughtOutItem", "QuoteList", new { QuoteID = Model.QuoteID })*@
+                        @Html.Action("QuoteBoughtOutItem", "QuoteBoughtOutItem", new { QuoteID = Model.QuoteID })
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if (Model.CreatedBy == (int)Session["UserID"] || ViewBag.QuoteType == "AllQuote")
+        {
+            <div class="accordionButton">Step 4: Collaborate</div>
+        
+            <div class="accordionContent">
+                <div class="create">
+                    <div class="greay_box whitebox">
+                        <div>
+                            @*@Html.Action("QuoteCollabrator", "QuoteList", new { QuoteID = Model.QuoteID })*@
+                            @Html.Action("QuoteCollabrator", "QuoteCollabrator", new { QuoteID = Model.QuoteID })
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div class="accordionButton">Step 5: Seek Approval</div>
+        
+            <div class="accordionContent">
+                <div class="create">
+                    <div class="greay_box whitebox">
+                        <div>
+                            @Html.Action("QuoteAuthorisationRequest", "Qualitative", new { QuoteID = Model.QuoteID })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordionButton">Step 6: Quote History</div>
+        
+            <div class="accordionContent">
+                <div class="create">
+                    <div class="greay_box whitebox">
+                        <div>
+                            @*@Html.Action("QuoteStatus", "QuoteList", new { QuoteID = Model.QuoteID })*@
+                            @Html.Action("QuoteStatus", "QuoteStatus", new { QuoteID = Model.QuoteID })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+    }
+    
+    @*<div class="accord_btns">        
+         <input type="button" value="Save As" id="SaveAsNewQuote" style="margin-left:45%; display:none;"/>
+    </div>*@
+}
+
+<div class="light-popup" id="CollabratorComments">
+    <a href="#" class="close" id="CollabratorComments_close">
+        <img src="~/Content/images/fancy_close.png" class="btn_close" title="Close Window" alt="Close" /></a>
+    <div class="Title">
+        Enter Your Comments
+    </div>
+    <div id="CollabratorCommentsLightBox" class="popup-center">
+        <div class="create">
+            <input type="hidden" id="ColabratorStatus" />
+            <textarea id="collabratorCommentbox" cols="40" rows="15"></textarea>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    @*<div class="accord_btns center" style="text-align: center !important;">
+        <input type="button" id="CollabratorCommentsButton" value="Submit" />
+    </div>*@
+    <div class="clear"></div>
+</div>

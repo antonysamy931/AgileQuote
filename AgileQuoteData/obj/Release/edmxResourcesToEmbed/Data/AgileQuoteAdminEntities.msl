@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AgileQuoteAdminModelStoreContainer" CdmEntityContainer="AgileQuoteAdminEntities">
+    <EntitySetMapping Name="tbAddresses">
+      <EntityTypeMapping TypeName="AgileQuoteAdminModel.tbAddress">
+        <MappingFragment StoreEntitySet="tbAddress">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AddressOne" ColumnName="AddressOne" />
+          <ScalarProperty Name="AddressTwo" ColumnName="AddressTwo" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCompanies">
+      <EntityTypeMapping TypeName="AgileQuoteAdminModel.tbCompany">
+        <MappingFragment StoreEntitySet="tbCompany">
+          <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCustomerDetails">
+      <EntityTypeMapping TypeName="AgileQuoteAdminModel.tbCustomerDetail">
+        <MappingFragment StoreEntitySet="tbCustomerDetails">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+          <ScalarProperty Name="IsAdminUser" ColumnName="IsAdminUser" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="LastAccessDate" ColumnName="LastAccessDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCustomerRoles">
+      <EntityTypeMapping TypeName="AgileQuoteAdminModel.tbCustomerRole">
+        <MappingFragment StoreEntitySet="tbCustomerRoles">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbImageCategories">
+      <EntityTypeMapping TypeName="AgileQuoteAdminModel.tbImageCategory">
+        <MappingFragment StoreEntitySet="tbImageCategory">
+          <ScalarProperty Name="ImageCategoryId" ColumnName="ImageCategoryId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ImageFormat" ColumnName="ImageFormat" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Widht" ColumnName="Widht" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbLoginMaintenances">
+      <EntityTypeMapping TypeName="AgileQuoteAdminModel.tbLoginMaintenance">
+        <MappingFragment StoreEntitySet="tbLoginMaintenance">
+          <ScalarProperty Name="MaintenanceId" ColumnName="MaintenanceId" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="LoginEmail" ColumnName="LoginEmail" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+          <ScalarProperty Name="LogoutTime" ColumnName="LogoutTime" />
+          <ScalarProperty Name="TimeDuration" ColumnName="TimeDuration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMembershipLogins">
+      <EntityTypeMapping TypeName="AgileQuoteAdminModel.tbMembershipLogin">
+        <MappingFragment StoreEntitySet="tbMembershipLogin">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbUserImages">
+      <EntityTypeMapping TypeName="AgileQuoteAdminModel.tbUserImage">
+        <MappingFragment StoreEntitySet="tbUserImage">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ImageContent" ColumnName="ImageContent" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="RoleSelect" FunctionName="AgileQuoteAdminModel.Store.RoleSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteAdminModel.RoleSelect_Result">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spGetCollaborators" FunctionName="AgileQuoteAdminModel.Store.spGetCollaborators">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AgileQuoteAdminModel.spGetCollaborators_Result">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spSaveAsNewQuoteAddress" FunctionName="AgileQuoteAdminModel.Store.spSaveAsNewQuoteAddress" />
+  </EntityContainerMapping>
+</Mapping>

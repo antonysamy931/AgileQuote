@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AgileQuoteAdminModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="AgileQuoteAdminEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbAddresses" EntityType="AgileQuoteAdminModel.tbAddress" />
+    <EntitySet Name="tbCompanies" EntityType="AgileQuoteAdminModel.tbCompany" />
+    <EntitySet Name="tbCustomerDetails" EntityType="AgileQuoteAdminModel.tbCustomerDetail" />
+    <EntitySet Name="tbCustomerRoles" EntityType="AgileQuoteAdminModel.tbCustomerRole" />
+    <EntitySet Name="tbImageCategories" EntityType="AgileQuoteAdminModel.tbImageCategory" />
+    <EntitySet Name="tbLoginMaintenances" EntityType="AgileQuoteAdminModel.tbLoginMaintenance" />
+    <EntitySet Name="tbMembershipLogins" EntityType="AgileQuoteAdminModel.tbMembershipLogin" />
+    <EntitySet Name="tbUserImages" EntityType="AgileQuoteAdminModel.tbUserImage" />
+    <AssociationSet Name="FK_tbAddress_tbCustomerDetails" Association="AgileQuoteAdminModel.FK_tbAddress_tbCustomerDetails">
+      <End Role="tbCustomerDetails" EntitySet="tbCustomerDetails" />
+      <End Role="tbAddress" EntitySet="tbAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerDetails_Company" Association="AgileQuoteAdminModel.FK_CustomerDetails_Company">
+      <End Role="tbCompany" EntitySet="tbCompanies" />
+      <End Role="tbCustomerDetails" EntitySet="tbCustomerDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserImage_CustomerDetails" Association="AgileQuoteAdminModel.FK_UserImage_CustomerDetails">
+      <End Role="tbCustomerDetails" EntitySet="tbCustomerDetails" />
+      <End Role="tbUserImage" EntitySet="tbUserImages" />
+    </AssociationSet>
+    <FunctionImport Name="RoleSelect" ReturnType="Collection(AgileQuoteAdminModel.RoleSelect_Result)">
+      <Parameter Name="value" Mode="In" Type="String" />
+    </FunctionImport>
+    <AssociationSet Name="FK_tbLoginMaintenance_tbCustomerDetails" Association="AgileQuoteAdminModel.FK_tbLoginMaintenance_tbCustomerDetails">
+      <End Role="tbCustomerDetail" EntitySet="tbCustomerDetails" />
+      <End Role="tbLoginMaintenance" EntitySet="tbLoginMaintenances" />
+    </AssociationSet>
+    <FunctionImport Name="spGetCollaborators" ReturnType="Collection(AgileQuoteAdminModel.spGetCollaborators_Result)">
+      <Parameter Name="companyCode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spSaveAsNewQuoteAddress">
+      <Parameter Name="quoteIdOld" Mode="In" Type="Int32" />
+      <Parameter Name="quoteIdNew" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="tbAddress">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuoteID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="AddressOne" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="AddressTwo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MobileNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="State" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Country" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AddressType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbCustomerDetail" Relationship="AgileQuoteAdminModel.FK_tbAddress_tbCustomerDetails" FromRole="tbAddress" ToRole="tbCustomerDetails" />
+  </EntityType>
+  <EntityType Name="tbCompany">
+    <Key>
+      <PropertyRef Name="CompanyCode" />
+    </Key>
+    <Property Name="CompanyCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbCustomerDetails" Relationship="AgileQuoteAdminModel.FK_CustomerDetails_Company" FromRole="tbCompany" ToRole="tbCustomerDetails" />
+  </EntityType>
+  <EntityType Name="tbCustomerDetail">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EmailID" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="RoleName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="CompanyCode" Type="Int32" Nullable="false" />
+    <Property Name="IsAdminUser" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastAccessDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDelete" Type="Boolean" />
+    <NavigationProperty Name="tbAddresses" Relationship="AgileQuoteAdminModel.FK_tbAddress_tbCustomerDetails" FromRole="tbCustomerDetails" ToRole="tbAddress" />
+    <NavigationProperty Name="tbCompany" Relationship="AgileQuoteAdminModel.FK_CustomerDetails_Company" FromRole="tbCustomerDetails" ToRole="tbCompany" />
+    <NavigationProperty Name="tbUserImages" Relationship="AgileQuoteAdminModel.FK_UserImage_CustomerDetails" FromRole="tbCustomerDetails" ToRole="tbUserImage" />
+    <NavigationProperty Name="tbLoginMaintenances" Relationship="AgileQuoteAdminModel.FK_tbLoginMaintenance_tbCustomerDetails" FromRole="tbCustomerDetail" ToRole="tbLoginMaintenance" />
+  </EntityType>
+  <EntityType Name="tbCustomerRole">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Priority" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbImageCategory">
+    <Key>
+      <PropertyRef Name="ImageCategoryId" />
+    </Key>
+    <Property Name="ImageCategoryId" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ImageFormat" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Height" Type="Int32" Nullable="false" />
+    <Property Name="Widht" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbLoginMaintenance">
+    <Key>
+      <PropertyRef Name="MaintenanceId" />
+    </Key>
+    <Property Name="MaintenanceId" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="LoginEmail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Company" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LoginTime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LogoutTime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TimeDuration" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tbCustomerDetail" Relationship="AgileQuoteAdminModel.FK_tbLoginMaintenance_tbCustomerDetails" FromRole="tbLoginMaintenance" ToRole="tbCustomerDetail" />
+  </EntityType>
+  <EntityType Name="tbMembershipLogin">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="EmailID" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbUserImage">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="ImageContent" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbCustomerDetail" Relationship="AgileQuoteAdminModel.FK_UserImage_CustomerDetails" FromRole="tbUserImage" ToRole="tbCustomerDetails" />
+  </EntityType>
+  <Association Name="FK_tbAddress_tbCustomerDetails">
+    <End Role="tbCustomerDetails" Type="AgileQuoteAdminModel.tbCustomerDetail" Multiplicity="0..1" />
+    <End Role="tbAddress" Type="AgileQuoteAdminModel.tbAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbCustomerDetails">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tbAddress">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerDetails_Company">
+    <End Role="tbCompany" Type="AgileQuoteAdminModel.tbCompany" Multiplicity="1" />
+    <End Role="tbCustomerDetails" Type="AgileQuoteAdminModel.tbCustomerDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbCompany">
+        <PropertyRef Name="CompanyCode" />
+      </Principal>
+      <Dependent Role="tbCustomerDetails">
+        <PropertyRef Name="CompanyCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserImage_CustomerDetails">
+    <End Role="tbCustomerDetails" Type="AgileQuoteAdminModel.tbCustomerDetail" Multiplicity="1" />
+    <End Role="tbUserImage" Type="AgileQuoteAdminModel.tbUserImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbCustomerDetails">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tbUserImage">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="RoleSelect_Result">
+    <Property Type="Int32" Name="RoleID" Nullable="false" />
+    <Property Type="String" Name="RoleName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Priority" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+  </ComplexType>
+  <Association Name="FK_tbLoginMaintenance_tbCustomerDetails">
+    <End Type="AgileQuoteAdminModel.tbCustomerDetail" Role="tbCustomerDetail" Multiplicity="1" />
+    <End Type="AgileQuoteAdminModel.tbLoginMaintenance" Role="tbLoginMaintenance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbCustomerDetail">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tbLoginMaintenance">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="spGetCollaborators_Result">
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="RoleName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="100" />
+  </ComplexType>
+</Schema>

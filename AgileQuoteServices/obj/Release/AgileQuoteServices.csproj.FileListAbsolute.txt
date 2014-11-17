@@ -1,0 +1,14 @@
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\bin\AgileQuoteServices.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\bin\AgileQuoteServices.pdb
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\bin\AgileQuoteBusiness.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\bin\AgileQuoteProperty.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\bin\AgileQuoteData.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\bin\EntityFramework.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\bin\AgileQuoteBusiness.pdb
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\bin\AgileQuoteProperty.pdb
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\bin\AgileQuoteData.pdb
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\bin\EntityFramework.xml
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\obj\Release\AgileQuoteServices.csprojResolveAssemblyReference.cache
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\obj\Release\AgileQuoteServices.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\obj\Release\AgileQuoteServices.pdb
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteServices\obj\Release\AgileQuoteServices.csprojResolveAssemblyReference.cache

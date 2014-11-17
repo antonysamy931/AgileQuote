@@ -1,0 +1,61 @@
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteData\bin\Debug\AgileQuoteData.dll.config
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteData\bin\Debug\AgileQuoteData.dll
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteData\bin\Debug\AgileQuoteData.pdb
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteData\bin\Debug\AgileQuoteProperty.dll
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteData\bin\Debug\EntityFramework.dll
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteData\bin\Debug\AgileQuoteProperty.pdb
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteData\bin\Debug\EntityFramework.xml
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteData\obj\Debug\AgileQuoteData.csprojResolveAssemblyReference.cache
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteData\obj\Debug\AgileQuoteData.dll
+D:\AgileQuote\trunk\AgileQuoteServices\AgileQuoteData\obj\Debug\AgileQuoteData.pdb
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteData.dll.config
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteData.dll
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteData.pdb
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteProperty.dll
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteData\bin\Debug\EntityFramework.dll
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteProperty.pdb
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteData\bin\Debug\EntityFramework.xml
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteData\obj\Debug\AgileQuoteData.csprojResolveAssemblyReference.cache
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteData\obj\Debug\AgileQuoteData.dll
+D:\AgileQuote\Source\trunk\AgileQuote\AgileQuoteData\obj\Debug\AgileQuoteData.pdb
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteData.dll.config
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteData.dll
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteData.pdb
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteProperty.dll
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteData\bin\Debug\EntityFramework.dll
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteProperty.pdb
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteData\bin\Debug\EntityFramework.xml
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteData\obj\Debug\AgileQuoteData.csprojResolveAssemblyReference.cache
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteData\obj\Debug\AgileQuoteData.dll
+D:\AgileQuote First Demo\trunk\AgileQuote\AgileQuoteData\obj\Debug\AgileQuoteData.pdb
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteData.dll.config
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteData.dll
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteData.pdb
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteProperty.dll
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteData\bin\Debug\EntityFramework.dll
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteProperty.pdb
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteData\bin\Debug\EntityFramework.xml
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteData\obj\Debug\AgileQuoteData.csprojResolveAssemblyReference.cache
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteData\obj\Debug\AgileQuoteData.dll
+C:\Users\Rajeshkumar.s\Desktop\AgileQuote\AgileQuoteData\obj\Debug\AgileQuoteData.pdb
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteData.dll.config
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteData.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteData.pdb
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteProperty.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\bin\Debug\EntityFramework.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\bin\Debug\LogWriter.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteProperty.pdb
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\bin\Debug\EntityFramework.xml
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\obj\Debug\AgileQuoteData.csprojResolveAssemblyReference.cache
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\obj\Debug\AgileQuoteData.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteData\obj\Debug\AgileQuoteData.pdb
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteData.dll.config
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteData.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteData.pdb
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteProperty.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteData\bin\Debug\EntityFramework.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteData\bin\Debug\AgileQuoteProperty.pdb
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteData\bin\Debug\EntityFramework.xml
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteData\obj\Debug\AgileQuoteData.csprojResolveAssemblyReference.cache
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteData\obj\Debug\AgileQuoteData.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteData\obj\Debug\AgileQuoteData.pdb

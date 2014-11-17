@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileQuoteBusiness", "AgileQuoteBusiness\AgileQuoteBusiness.csproj", "{A4963490-2B4C-4562-8D87-DD580D4D8968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileQuoteData", "AgileQuoteData\AgileQuoteData.csproj", "{0AFC10EB-4FC3-4063-844D-2B6184248DD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileQuoteProperty", "AgileQuoteProperty\AgileQuoteProperty.csproj", "{BD805578-27FE-47EB-B1B0-45F74910D9DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileQuoteWebApplication", "AgileQuoteWebApplication\AgileQuoteWebApplication.csproj", "{C91D4DCF-5C28-45D8-9EDF-3E59F5876820}"
+	ProjectSection(ProjectDependencies) = postProject
+		{53EB0256-3C25-4778-A21D-A5856E4EB1C8} = {53EB0256-3C25-4778-A21D-A5856E4EB1C8}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileQuoteWebApplication.Tests", "AgileQuoteWebApplication.Tests\AgileQuoteWebApplication.Tests.csproj", "{67B83B24-7309-46AF-8EEC-CF353691ADCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileQuoteServices", "AgileQuoteServices\AgileQuoteServices.csproj", "{53EB0256-3C25-4778-A21D-A5856E4EB1C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A4963490-2B4C-4562-8D87-DD580D4D8968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4963490-2B4C-4562-8D87-DD580D4D8968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4963490-2B4C-4562-8D87-DD580D4D8968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4963490-2B4C-4562-8D87-DD580D4D8968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AFC10EB-4FC3-4063-844D-2B6184248DD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AFC10EB-4FC3-4063-844D-2B6184248DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AFC10EB-4FC3-4063-844D-2B6184248DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AFC10EB-4FC3-4063-844D-2B6184248DD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD805578-27FE-47EB-B1B0-45F74910D9DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD805578-27FE-47EB-B1B0-45F74910D9DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD805578-27FE-47EB-B1B0-45F74910D9DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD805578-27FE-47EB-B1B0-45F74910D9DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C91D4DCF-5C28-45D8-9EDF-3E59F5876820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C91D4DCF-5C28-45D8-9EDF-3E59F5876820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C91D4DCF-5C28-45D8-9EDF-3E59F5876820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C91D4DCF-5C28-45D8-9EDF-3E59F5876820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67B83B24-7309-46AF-8EEC-CF353691ADCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B83B24-7309-46AF-8EEC-CF353691ADCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B83B24-7309-46AF-8EEC-CF353691ADCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B83B24-7309-46AF-8EEC-CF353691ADCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53EB0256-3C25-4778-A21D-A5856E4EB1C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53EB0256-3C25-4778-A21D-A5856E4EB1C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53EB0256-3C25-4778-A21D-A5856E4EB1C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53EB0256-3C25-4778-A21D-A5856E4EB1C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChangepondProductModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ChangepondProductEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Currencies" EntityType="ChangepondProductModel.Currency" />
+    <EntitySet Name="Currency_value" EntityType="ChangepondProductModel.Currency_value" />
+    <EntitySet Name="LoginDetails" EntityType="ChangepondProductModel.LoginDetail" />
+    <EntitySet Name="Materials" EntityType="ChangepondProductModel.Material" />
+    <EntitySet Name="MaterialCategory_mapping" EntityType="ChangepondProductModel.MaterialCategory_mapping" />
+    <EntitySet Name="Products" EntityType="ChangepondProductModel.Product" />
+    <EntitySet Name="Product_category" EntityType="ChangepondProductModel.Product_category" />
+    <EntitySet Name="Product_type" EntityType="ChangepondProductModel.Product_type" />
+    <EntitySet Name="ProductMaterial_Mapping" EntityType="ChangepondProductModel.ProductMaterial_Mapping" />
+    <EntitySet Name="Quotes" EntityType="ChangepondProductModel.Quote" />
+    <EntitySet Name="QuoteAuthorize_Mapping" EntityType="ChangepondProductModel.QuoteAuthorize_Mapping" />
+    <EntitySet Name="QuoteStatus" EntityType="ChangepondProductModel.QuoteStatu" />
+    <EntitySet Name="Roles" EntityType="ChangepondProductModel.Role" />
+    <EntitySet Name="SalesOrganizations" EntityType="ChangepondProductModel.SalesOrganization" />
+    <EntitySet Name="Territories" EntityType="ChangepondProductModel.Territory" />
+    <EntitySet Name="Users" EntityType="ChangepondProductModel.User" />
+    <AssociationSet Name="FK_Currency_value_Currency" Association="ChangepondProductModel.FK_Currency_value_Currency">
+      <End Role="Currency" EntitySet="Currencies" />
+      <End Role="Currency_value" EntitySet="Currency_value" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaterialCategory_mapping_Material" Association="ChangepondProductModel.FK_MaterialCategory_mapping_Material">
+      <End Role="Material" EntitySet="Materials" />
+      <End Role="MaterialCategory_mapping" EntitySet="MaterialCategory_mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMaterial_Mapping_Material" Association="ChangepondProductModel.FK_ProductMaterial_Mapping_Material">
+      <End Role="Material" EntitySet="Materials" />
+      <End Role="ProductMaterial_Mapping" EntitySet="ProductMaterial_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaterialCategory_mapping_Product_category" Association="ChangepondProductModel.FK_MaterialCategory_mapping_Product_category">
+      <End Role="Product_category" EntitySet="Product_category" />
+      <End Role="MaterialCategory_mapping" EntitySet="MaterialCategory_mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Product_category" Association="ChangepondProductModel.FK_Product_Product_category">
+      <End Role="Product_category" EntitySet="Product_category" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Product_type" Association="ChangepondProductModel.FK_Product_Product_type">
+      <End Role="Product_type" EntitySet="Product_type" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMaterial_Mapping_Product" Association="ChangepondProductModel.FK_ProductMaterial_Mapping_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductMaterial_Mapping" EntitySet="ProductMaterial_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quote_Product" Association="ChangepondProductModel.FK_Quote_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Quote" EntitySet="Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quote_QuoteStatus" Association="ChangepondProductModel.FK_Quote_QuoteStatus">
+      <End Role="QuoteStatus" EntitySet="QuoteStatus" />
+      <End Role="Quote" EntitySet="Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quote_SalesOrganization" Association="ChangepondProductModel.FK_Quote_SalesOrganization">
+      <End Role="SalesOrganization" EntitySet="SalesOrganizations" />
+      <End Role="Quote" EntitySet="Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quote_User" Association="ChangepondProductModel.FK_Quote_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Quote" EntitySet="Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quote_User1" Association="ChangepondProductModel.FK_Quote_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Quote" EntitySet="Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quote_User2" Association="ChangepondProductModel.FK_Quote_User2">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Quote" EntitySet="Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuoteAuthorize_Mapping_Quote" Association="ChangepondProductModel.FK_QuoteAuthorize_Mapping_Quote">
+      <End Role="Quote" EntitySet="Quotes" />
+      <End Role="QuoteAuthorize_Mapping" EntitySet="QuoteAuthorize_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuoteAuthorize_Mapping_QuoteStatus" Association="ChangepondProductModel.FK_QuoteAuthorize_Mapping_QuoteStatus">
+      <End Role="QuoteStatus" EntitySet="QuoteStatus" />
+      <End Role="QuoteAuthorize_Mapping" EntitySet="QuoteAuthorize_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuoteAuthorize_Mapping_User" Association="ChangepondProductModel.FK_QuoteAuthorize_Mapping_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="QuoteAuthorize_Mapping" EntitySet="QuoteAuthorize_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="ChangepondProductModel.FK_User_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <FunctionImport Name="CurrencySelect" ReturnType="Collection(ChangepondProductModel.CurrencySelect_Result)">
+      <Parameter Name="value" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ListSelect" ReturnType="Collection(ChangepondProductModel.ListSelect_Result)">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="value" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="MaterialSelect" ReturnType="Collection(ChangepondProductModel.MaterialSelect_Result)">
+      <Parameter Name="value" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RoleSelect" ReturnType="Collection(ChangepondProductModel.RoleSelect_Result)">
+      <Parameter Name="value" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SalesOrgSelect" ReturnType="Collection(ChangepondProductModel.SalesOrgSelect_Result)">
+      <Parameter Name="value" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="selectQuote" ReturnType="Collection(ChangepondProductModel.selectQuote_Result)">
+      <Parameter Name="quoteID" Mode="In" Type="Int32" />
+      <Parameter Name="quoteName" Mode="In" Type="String" />
+      <Parameter Name="salesOrg" Mode="In" Type="String" />
+      <Parameter Name="customerName" Mode="In" Type="String" />
+      <Parameter Name="prepareBy" Mode="In" Type="String" />
+      <Parameter Name="createDate" Mode="In" Type="String" />
+      <Parameter Name="requiredDate" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="CurrencyId" />
+    </Key>
+    <Property Name="CurrencyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CurrencyCode" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CurrencyName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDelete" Type="Boolean" />
+    <NavigationProperty Name="Currency_value" Relationship="ChangepondProductModel.FK_Currency_value_Currency" FromRole="Currency" ToRole="Currency_value" />
+  </EntityType>
+  <EntityType Name="Currency_value">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CurrencyID" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <NavigationProperty Name="Currency" Relationship="ChangepondProductModel.FK_Currency_value_Currency" FromRole="Currency_value" ToRole="Currency" />
+  </EntityType>
+  <EntityType Name="LoginDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDelete" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="MaterialId" />
+    </Key>
+    <Property Name="MaterialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaterialCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MaterialName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="MaterialCategory_mapping" Relationship="ChangepondProductModel.FK_MaterialCategory_mapping_Material" FromRole="Material" ToRole="MaterialCategory_mapping" />
+    <NavigationProperty Name="ProductMaterial_Mapping" Relationship="ChangepondProductModel.FK_ProductMaterial_Mapping_Material" FromRole="Material" ToRole="ProductMaterial_Mapping" />
+  </EntityType>
+  <EntityType Name="MaterialCategory_mapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaterialID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Material" Relationship="ChangepondProductModel.FK_MaterialCategory_mapping_Material" FromRole="MaterialCategory_mapping" ToRole="Material" />
+    <NavigationProperty Name="Product_category" Relationship="ChangepondProductModel.FK_MaterialCategory_mapping_Product_category" FromRole="MaterialCategory_mapping" ToRole="Product_category" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ProductType" Type="Int32" />
+    <Property Name="ProductCategory" Type="Int32" />
+    <NavigationProperty Name="Product_category" Relationship="ChangepondProductModel.FK_Product_Product_category" FromRole="Product" ToRole="Product_category" />
+    <NavigationProperty Name="Product_type" Relationship="ChangepondProductModel.FK_Product_Product_type" FromRole="Product" ToRole="Product_type" />
+    <NavigationProperty Name="ProductMaterial_Mapping" Relationship="ChangepondProductModel.FK_ProductMaterial_Mapping_Product" FromRole="Product" ToRole="ProductMaterial_Mapping" />
+    <NavigationProperty Name="Quotes" Relationship="ChangepondProductModel.FK_Quote_Product" FromRole="Product" ToRole="Quote" />
+  </EntityType>
+  <EntityType Name="Product_category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="MaterialCategory_mapping" Relationship="ChangepondProductModel.FK_MaterialCategory_mapping_Product_category" FromRole="Product_category" ToRole="MaterialCategory_mapping" />
+    <NavigationProperty Name="Products" Relationship="ChangepondProductModel.FK_Product_Product_category" FromRole="Product_category" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Product_type">
+    <Key>
+      <PropertyRef Name="Product_typeID" />
+    </Key>
+    <Property Name="Product_typeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Products" Relationship="ChangepondProductModel.FK_Product_Product_type" FromRole="Product_type" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductMaterial_Mapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Product_Id" Type="Int32" Nullable="false" />
+    <Property Name="Material_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Material" Relationship="ChangepondProductModel.FK_ProductMaterial_Mapping_Material" FromRole="ProductMaterial_Mapping" ToRole="Material" />
+    <NavigationProperty Name="Product" Relationship="ChangepondProductModel.FK_ProductMaterial_Mapping_Product" FromRole="ProductMaterial_Mapping" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Quote">
+    <Key>
+      <PropertyRef Name="QuoteID" />
+    </Key>
+    <Property Name="QuoteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuoteName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SalesOrg" Type="Int32" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CustomerDescription" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <Property Name="RequiredDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="ChangepondProductModel.FK_Quote_Product" FromRole="Quote" ToRole="Product" />
+    <NavigationProperty Name="QuoteStatu" Relationship="ChangepondProductModel.FK_Quote_QuoteStatus" FromRole="Quote" ToRole="QuoteStatus" />
+    <NavigationProperty Name="SalesOrganization" Relationship="ChangepondProductModel.FK_Quote_SalesOrganization" FromRole="Quote" ToRole="SalesOrganization" />
+    <NavigationProperty Name="User" Relationship="ChangepondProductModel.FK_Quote_User" FromRole="Quote" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="ChangepondProductModel.FK_Quote_User1" FromRole="Quote" ToRole="User" />
+    <NavigationProperty Name="User2" Relationship="ChangepondProductModel.FK_Quote_User2" FromRole="Quote" ToRole="User" />
+    <NavigationProperty Name="QuoteAuthorize_Mapping" Relationship="ChangepondProductModel.FK_QuoteAuthorize_Mapping_Quote" FromRole="Quote" ToRole="QuoteAuthorize_Mapping" />
+  </EntityType>
+  <EntityType Name="QuoteAuthorize_Mapping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuoteID" Type="Int32" Nullable="false" />
+    <Property Name="QuoteAuthorizerID" Type="Int32" Nullable="false" />
+    <Property Name="QuoteAuthorizeStatus" Type="Int32" Nullable="false" />
+    <Property Name="QuoteStatusDescription" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Quote" Relationship="ChangepondProductModel.FK_QuoteAuthorize_Mapping_Quote" FromRole="QuoteAuthorize_Mapping" ToRole="Quote" />
+    <NavigationProperty Name="QuoteStatu" Relationship="ChangepondProductModel.FK_QuoteAuthorize_Mapping_QuoteStatus" FromRole="QuoteAuthorize_Mapping" ToRole="QuoteStatus" />
+    <NavigationProperty Name="User" Relationship="ChangepondProductModel.FK_QuoteAuthorize_Mapping_User" FromRole="QuoteAuthorize_Mapping" ToRole="User" />
+  </EntityType>
+  <EntityType Name="QuoteStatu">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Quotes" Relationship="ChangepondProductModel.FK_Quote_QuoteStatus" FromRole="QuoteStatus" ToRole="Quote" />
+    <NavigationProperty Name="QuoteAuthorize_Mapping" Relationship="ChangepondProductModel.FK_QuoteAuthorize_Mapping_QuoteStatus" FromRole="QuoteStatus" ToRole="QuoteAuthorize_Mapping" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Priority" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDelete" Type="Boolean" />
+    <NavigationProperty Name="Users" Relationship="ChangepondProductModel.FK_User_Role" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="SalesOrganization">
+    <Key>
+      <PropertyRef Name="SalesOrgCode" />
+    </Key>
+    <Property Name="SalesOrgCode" Type="Int32" Nullable="false" />
+    <Property Name="SalesOrgName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ReferenceCustomerCode" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDelete" Type="Boolean" />
+    <NavigationProperty Name="Quotes" Relationship="ChangepondProductModel.FK_Quote_SalesOrganization" FromRole="SalesOrganization" ToRole="Quote" />
+  </EntityType>
+  <EntityType Name="Territory">
+    <Key>
+      <PropertyRef Name="TerritoryCode" />
+    </Key>
+    <Property Name="TerritoryCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TerritoryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsBoundedWarehouse" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EmailID" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="UserGroupID" Type="Int32" />
+    <Property Name="Roles" Type="Int32" />
+    <Property Name="LastAccessDate" Type="DateTime" Precision="0" />
+    <Property Name="IsAdminUser" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Computed" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDelete" Type="Boolean" />
+    <NavigationProperty Name="Quotes" Relationship="ChangepondProductModel.FK_Quote_User" FromRole="User" ToRole="Quote" />
+    <NavigationProperty Name="Quotes1" Relationship="ChangepondProductModel.FK_Quote_User1" FromRole="User" ToRole="Quote" />
+    <NavigationProperty Name="Quotes2" Relationship="ChangepondProductModel.FK_Quote_User2" FromRole="User" ToRole="Quote" />
+    <NavigationProperty Name="QuoteAuthorize_Mapping" Relationship="ChangepondProductModel.FK_QuoteAuthorize_Mapping_User" FromRole="User" ToRole="QuoteAuthorize_Mapping" />
+    <NavigationProperty Name="Role" Relationship="ChangepondProductModel.FK_User_Role" FromRole="User" ToRole="Role" />
+  </EntityType>
+  <Association Name="FK_Currency_value_Currency">
+    <End Role="Currency" Type="ChangepondProductModel.Currency" Multiplicity="1" />
+    <End Role="Currency_value" Type="ChangepondProductModel.Currency_value" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="CurrencyId" />
+      </Principal>
+      <Dependent Role="Currency_value">
+        <PropertyRef Name="CurrencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaterialCategory_mapping_Material">
+    <End Role="Material" Type="ChangepondProductModel.Material" Multiplicity="1" />
+    <End Role="MaterialCategory_mapping" Type="ChangepondProductModel.MaterialCategory_mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="MaterialId" />
+      </Principal>
+      <Dependent Role="MaterialCategory_mapping">
+        <PropertyRef Name="MaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMaterial_Mapping_Material">
+    <End Role="Material" Type="ChangepondProductModel.Material" Multiplicity="1" />
+    <End Role="ProductMaterial_Mapping" Type="ChangepondProductModel.ProductMaterial_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="MaterialId" />
+      </Principal>
+      <Dependent Role="ProductMaterial_Mapping">
+        <PropertyRef Name="Material_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaterialCategory_mapping_Product_category">
+    <End Role="Product_category" Type="ChangepondProductModel.Product_category" Multiplicity="1" />
+    <End Role="MaterialCategory_mapping" Type="ChangepondProductModel.MaterialCategory_mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="MaterialCategory_mapping">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Product_category">
+    <End Role="Product_category" Type="ChangepondProductModel.Product_category" Multiplicity="0..1" />
+    <End Role="Product" Type="ChangepondProductModel.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ProductCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Product_type">
+    <End Role="Product_type" Type="ChangepondProductModel.Product_type" Multiplicity="0..1" />
+    <End Role="Product" Type="ChangepondProductModel.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_type">
+        <PropertyRef Name="Product_typeID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ProductType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMaterial_Mapping_Product">
+    <End Role="Product" Type="ChangepondProductModel.Product" Multiplicity="1" />
+    <End Role="ProductMaterial_Mapping" Type="ChangepondProductModel.ProductMaterial_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductMaterial_Mapping">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quote_Product">
+    <End Role="Product" Type="ChangepondProductModel.Product" Multiplicity="0..1" />
+    <End Role="Quote" Type="ChangepondProductModel.Quote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Quote">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quote_QuoteStatus">
+    <End Role="QuoteStatus" Type="ChangepondProductModel.QuoteStatu" Multiplicity="1" />
+    <End Role="Quote" Type="ChangepondProductModel.Quote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuoteStatus">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Quote">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quote_SalesOrganization">
+    <End Role="SalesOrganization" Type="ChangepondProductModel.SalesOrganization" Multiplicity="0..1" />
+    <End Role="Quote" Type="ChangepondProductModel.Quote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SalesOrganization">
+        <PropertyRef Name="SalesOrgCode" />
+      </Principal>
+      <Dependent Role="Quote">
+        <PropertyRef Name="SalesOrg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quote_User">
+    <End Role="User" Type="ChangepondProductModel.User" Multiplicity="1" />
+    <End Role="Quote" Type="ChangepondProductModel.Quote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Quote">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quote_User1">
+    <End Role="User" Type="ChangepondProductModel.User" Multiplicity="0..1" />
+    <End Role="Quote" Type="ChangepondProductModel.Quote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Quote">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quote_User2">
+    <End Role="User" Type="ChangepondProductModel.User" Multiplicity="0..1" />
+    <End Role="Quote" Type="ChangepondProductModel.Quote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Quote">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuoteAuthorize_Mapping_Quote">
+    <End Role="Quote" Type="ChangepondProductModel.Quote" Multiplicity="1" />
+    <End Role="QuoteAuthorize_Mapping" Type="ChangepondProductModel.QuoteAuthorize_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="QuoteAuthorize_Mapping">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuoteAuthorize_Mapping_QuoteStatus">
+    <End Role="QuoteStatus" Type="ChangepondProductModel.QuoteStatu" Multiplicity="1" />
+    <End Role="QuoteAuthorize_Mapping" Type="ChangepondProductModel.QuoteAuthorize_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuoteStatus">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="QuoteAuthorize_Mapping">
+        <PropertyRef Name="QuoteAuthorizeStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuoteAuthorize_Mapping_User">
+    <End Role="User" Type="ChangepondProductModel.User" Multiplicity="1" />
+    <End Role="QuoteAuthorize_Mapping" Type="ChangepondProductModel.QuoteAuthorize_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="QuoteAuthorize_Mapping">
+        <PropertyRef Name="QuoteAuthorizerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Role="Role" Type="ChangepondProductModel.Role" Multiplicity="0..1" />
+    <End Role="User" Type="ChangepondProductModel.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Roles" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="CurrencySelect_Result">
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="CurrencyId" Nullable="false" />
+    <Property Type="String" Name="CurrencyName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="true" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="ListSelect_Result">
+    <Property Type="Int32" Name="MaterialId" Nullable="false" />
+    <Property Type="String" Name="MaterialCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MaterialName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="Discount" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="MaterialSelect_Result">
+    <Property Type="Int32" Name="MaterialId" Nullable="false" />
+    <Property Type="String" Name="MaterialCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MaterialName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="Discount" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="RoleSelect_Result">
+    <Property Type="Int32" Name="RoleID" Nullable="false" />
+    <Property Type="String" Name="RoleName" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="Priority" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SalesOrgSelect_Result">
+    <Property Type="Int32" Name="SalesOrgCode" Nullable="false" />
+    <Property Type="String" Name="SalesOrgName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ReferenceCustomerCode" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="selectQuote_Result">
+    <Property Type="Int32" Name="Quote_ID" Nullable="false" />
+    <Property Type="String" Name="Quote_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Customer_Name" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="Created_Date" Nullable="false" />
+    <Property Type="DateTime" Name="Customer_Required" Nullable="true" />
+    <Property Type="String" Name="Sales_Organization_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PreperdBy" Nullable="true" MaxLength="101" />
+  </ComplexType>
+</Schema>

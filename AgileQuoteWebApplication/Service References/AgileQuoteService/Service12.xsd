@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.17.0.147:8090/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Error">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Error" nillable="true" type="tns:Error" />
+  <xs:complexType name="Login">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CompanyList" nillable="true" type="q1:ArrayOfKeyValueOfintstring" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RandomNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Login" nillable="true" type="tns:Login" />
+  <xs:complexType name="QuoteDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BudgetValue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Currency" nillable="true" type="tns:ArrayOfCurrencyValues" />
+      <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SalesOrg" nillable="true" type="tns:ArrayOfSalesOrganizations" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="StatusList" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="currencyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="displayCreateDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="displayRequireDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qCreatDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="qCustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qPrepareBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qQuoteID" type="xs:int" />
+      <xs:element minOccurs="0" name="qQuoteName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qRequireDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="qSalesOrgCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qSalesOrganization" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QuoteDetails" nillable="true" type="tns:QuoteDetails" />
+  <xs:complexType name="ArrayOfCurrencyValues">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CurrencyValues" nillable="true" type="tns:CurrencyValues" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurrencyValues" nillable="true" type="tns:ArrayOfCurrencyValues" />
+  <xs:complexType name="CurrencyValues">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrencyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValueCurrency" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CurrencyValues" nillable="true" type="tns:CurrencyValues" />
+  <xs:complexType name="ArrayOfSalesOrganizations">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesOrganizations" nillable="true" type="tns:SalesOrganizations" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSalesOrganizations" nillable="true" type="tns:ArrayOfSalesOrganizations" />
+  <xs:complexType name="SalesOrganizations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="salesOrgName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesOrganizations" nillable="true" type="tns:SalesOrganizations" />
+  <xs:complexType name="ArrayOfQuoteDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QuoteDetails" nillable="true" type="tns:QuoteDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQuoteDetails" nillable="true" type="tns:ArrayOfQuoteDetails" />
+  <xs:complexType name="Quote">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BillingAddressOne" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingAddressTwo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingMobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingPostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BudgetValue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CreateDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="Currency" nillable="true" type="tns:ArrayOfCurrencyValues" />
+      <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreparedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuoteID" type="xs:int" />
+      <xs:element minOccurs="0" name="QuoteName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequrestedDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SalesOrg" nillable="true" type="tns:ArrayOfSalesOrganizations" />
+      <xs:element minOccurs="0" name="ShippingAddressOne" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingAddressTwo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingMobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingPostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="StatusList" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="currencyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="defaultCurrency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="defaultSalesOrg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="defaultStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="salesOrgName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Quote" nillable="true" type="tns:Quote" />
+  <xs:complexType name="RentalProductsPropertyList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RentalProductsList" nillable="true" type="tns:ArrayOfRentalProductsProperty" />
+      <xs:element minOccurs="0" name="rRentalProductProperty" nillable="true" type="tns:RentalProductsProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RentalProductsPropertyList" nillable="true" type="tns:RentalProductsPropertyList" />
+  <xs:complexType name="ArrayOfRentalProductsProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RentalProductsProperty" nillable="true" type="tns:RentalProductsProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRentalProductsProperty" nillable="true" type="tns:ArrayOfRentalProductsProperty" />
+  <xs:complexType name="RentalProductsProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Discount" type="xs:int" />
+      <xs:element minOccurs="0" name="NetPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="RentalProductID" type="xs:int" />
+      <xs:element minOccurs="0" name="RentalProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pTotalDiscount" type="xs:int" />
+      <xs:element minOccurs="0" name="pTotalNetPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pTotalUnitPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="sNo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RentalProductsProperty" nillable="true" type="tns:RentalProductsProperty" />
+  <xs:complexType name="RentalSparsPropertyList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RentalSparsList" nillable="true" type="tns:ArrayOfRentalSparsPropery" />
+      <xs:element minOccurs="0" name="rsRentalSparsProperty" nillable="true" type="tns:RentalSparsPropery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RentalSparsPropertyList" nillable="true" type="tns:RentalSparsPropertyList" />
+  <xs:complexType name="ArrayOfRentalSparsPropery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RentalSparsPropery" nillable="true" type="tns:RentalSparsPropery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRentalSparsPropery" nillable="true" type="tns:ArrayOfRentalSparsPropery" />
+  <xs:complexType name="RentalSparsPropery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Discount" type="xs:int" />
+      <xs:element minOccurs="0" name="NetPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="RentalSparsID" type="xs:int" />
+      <xs:element minOccurs="0" name="RentalSparsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="sNo" type="xs:int" />
+      <xs:element minOccurs="0" name="sTotalDiscount" type="xs:int" />
+      <xs:element minOccurs="0" name="sTotalNetPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="sTotalUnitPrice" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RentalSparsPropery" nillable="true" type="tns:RentalSparsPropery" />
+  <xs:complexType name="QuoteBundleMaterialList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListQuoteBundleMaterial" nillable="true" type="tns:ArrayOfQuoteBundleMaterial" />
+      <xs:element minOccurs="0" name="qQuoteBundleMaterial" nillable="true" type="tns:QuoteBundleMaterial" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QuoteBundleMaterialList" nillable="true" type="tns:QuoteBundleMaterialList" />
+  <xs:complexType name="ArrayOfQuoteBundleMaterial">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QuoteBundleMaterial" nillable="true" type="tns:QuoteBundleMaterial" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQuoteBundleMaterial" nillable="true" type="tns:ArrayOfQuoteBundleMaterial" />
+  <xs:complexType name="QuoteBundleMaterial">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Discount" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NetPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="Sno" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="qTotalDiscount" type="xs:int" />
+      <xs:element minOccurs="0" name="qTotalNetPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="qTotalUnitPrice" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QuoteBundleMaterial" nillable="true" type="tns:QuoteBundleMaterial" />
+  <xs:complexType name="ArrayOfMaterialProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaterialProperty" nillable="true" type="tns:MaterialProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaterialProperty" nillable="true" type="tns:ArrayOfMaterialProperty" />
+  <xs:complexType name="MaterialProperty">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CategoryName" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element minOccurs="0" name="MaterialAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MaterialCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaterialDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaterialDiscount" type="xs:int" />
+      <xs:element minOccurs="0" name="MaterialId" type="xs:int" />
+      <xs:element minOccurs="0" name="MaterialName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sno" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaterialProperty" nillable="true" type="tns:MaterialProperty" />
+  <xs:complexType name="ArrayOfBundleProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BundleProperty" nillable="true" type="tns:BundleProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBundleProperty" nillable="true" type="tns:ArrayOfBundleProperty" />
+  <xs:complexType name="BundleProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BundleDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BundleDiscount" type="xs:int" />
+      <xs:element minOccurs="0" name="BundleId" type="xs:int" />
+      <xs:element minOccurs="0" name="BundleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BundleNetPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BundleUnitPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="sno" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BundleProperty" nillable="true" type="tns:BundleProperty" />
+  <xs:complexType name="TotalUnitDiscount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TotalDiscount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalNetPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalUnitPrice" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TotalUnitDiscount" nillable="true" type="tns:TotalUnitDiscount" />
+</xs:schema>

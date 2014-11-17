@@ -1,0 +1,900 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AgileQuoteModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="AgileQuoteEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbBundles" EntityType="AgileQuoteModel.tbBundle" />
+    <EntitySet Name="tbBundleMaterialMappings" EntityType="AgileQuoteModel.tbBundleMaterialMapping" />
+    <EntitySet Name="tbBundleTypes" EntityType="AgileQuoteModel.tbBundleType" />
+    <EntitySet Name="tbCategories" EntityType="AgileQuoteModel.tbCategory" />
+    <EntitySet Name="tbCurrencies" EntityType="AgileQuoteModel.tbCurrency" />
+    <EntitySet Name="tbMaterials" EntityType="AgileQuoteModel.tbMaterial" />
+    <EntitySet Name="tbQuotes" EntityType="AgileQuoteModel.tbQuote" />
+    <EntitySet Name="tbQuoteAuthorizes" EntityType="AgileQuoteModel.tbQuoteAuthorize" />
+    <EntitySet Name="tbQuoteBundleMappings" EntityType="AgileQuoteModel.tbQuoteBundleMapping" />
+    <EntitySet Name="tbQuoteMaterialMappings" EntityType="AgileQuoteModel.tbQuoteMaterialMapping" />
+    <EntitySet Name="tbQuoteRentalProductMappings" EntityType="AgileQuoteModel.tbQuoteRentalProductMapping" />
+    <EntitySet Name="tbQuoteRentalSparsMappings" EntityType="AgileQuoteModel.tbQuoteRentalSparsMapping" />
+    <EntitySet Name="tbQuoteStatus" EntityType="AgileQuoteModel.tbQuoteStatu" />
+    <EntitySet Name="tbRentalProducts" EntityType="AgileQuoteModel.tbRentalProduct" />
+    <EntitySet Name="tbRentalSpars" EntityType="AgileQuoteModel.tbRentalSpar" />
+    <EntitySet Name="tbSalesOrganizations" EntityType="AgileQuoteModel.tbSalesOrganization" />
+    <AssociationSet Name="FK_QuoteBundleMapping_tbBundle" Association="AgileQuoteModel.FK_QuoteBundleMapping_tbBundle">
+      <End Role="tbBundle" EntitySet="tbBundles" />
+      <End Role="tbQuoteBundleMapping" EntitySet="tbQuoteBundleMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuoteMaterialMapping_tbMaterial" Association="AgileQuoteModel.FK_QuoteMaterialMapping_tbMaterial">
+      <End Role="tbMaterial" EntitySet="tbMaterials" />
+      <End Role="tbQuoteMaterialMapping" EntitySet="tbQuoteMaterialMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuoteBundleMapping_tbQuote1" Association="AgileQuoteModel.FK_QuoteBundleMapping_tbQuote1">
+      <End Role="tbQuote" EntitySet="tbQuotes" />
+      <End Role="tbQuoteBundleMapping" EntitySet="tbQuoteBundleMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuoteMaterialMapping_tbQuote" Association="AgileQuoteModel.FK_QuoteMaterialMapping_tbQuote">
+      <End Role="tbQuote" EntitySet="tbQuotes" />
+      <End Role="tbQuoteMaterialMapping" EntitySet="tbQuoteMaterialMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuoteRentalProductMapping_tbQuote" Association="AgileQuoteModel.FK_QuoteRentalProductMapping_tbQuote">
+      <End Role="tbQuote" EntitySet="tbQuotes" />
+      <End Role="tbQuoteRentalProductMapping" EntitySet="tbQuoteRentalProductMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuoteRentalSparsMapping_tbQuote" Association="AgileQuoteModel.FK_QuoteRentalSparsMapping_tbQuote">
+      <End Role="tbQuote" EntitySet="tbQuotes" />
+      <End Role="tbQuoteRentalSparsMapping" EntitySet="tbQuoteRentalSparsMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbQuoteAuthorize_tbQuote" Association="AgileQuoteModel.FK_tbQuoteAuthorize_tbQuote">
+      <End Role="tbQuote" EntitySet="tbQuotes" />
+      <End Role="tbQuoteAuthorize" EntitySet="tbQuoteAuthorizes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuoteRentalProductMapping_RentalProducts" Association="AgileQuoteModel.FK_QuoteRentalProductMapping_RentalProducts">
+      <End Role="tbRentalProducts" EntitySet="tbRentalProducts" />
+      <End Role="tbQuoteRentalProductMapping" EntitySet="tbQuoteRentalProductMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuoteRentalSparsMapping_RentalSpars" Association="AgileQuoteModel.FK_QuoteRentalSparsMapping_RentalSpars">
+      <End Role="tbRentalSpars" EntitySet="tbRentalSpars" />
+      <End Role="tbQuoteRentalSparsMapping" EntitySet="tbQuoteRentalSparsMappings" />
+    </AssociationSet>
+    <FunctionImport Name="CurrencySelect" ReturnType="Collection(AgileQuoteModel.CurrencySelect_Result)">
+      <Parameter Name="value" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="MaterialSelect" ReturnType="Collection(AgileQuoteModel.MaterialSelect_Result)">
+      <Parameter Name="value" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SalesOrgSelect" ReturnType="Collection(AgileQuoteModel.SalesOrgSelect_Result)">
+      <Parameter Name="value" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="selectQuote" ReturnType="Collection(AgileQuoteModel.selectQuote_Result)">
+      <Parameter Name="quoteID" Mode="In" Type="String" />
+      <Parameter Name="currencyName" Mode="In" Type="String" />
+      <Parameter Name="salesOrg" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="prepareBy" Mode="In" Type="String" />
+      <Parameter Name="createDate" Mode="In" Type="String" />
+      <Parameter Name="requiredDate" Mode="In" Type="String" />
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="customerName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spBundleCategoryBaseSelect" ReturnType="Collection(AgileQuoteModel.spBundleCategoryBaseSelect_Result)">
+      <Parameter Name="categoryName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spBundleSelect" ReturnType="Collection(AgileQuoteModel.spBundleSelect_Result)">
+      <Parameter Name="BundleID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spMaterialCategoryBaseSelect" ReturnType="Collection(AgileQuoteModel.spMaterialCategoryBaseSelect_Result)">
+      <Parameter Name="categoryName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spQuoteBasedMaterialBundle" ReturnType="Collection(AgileQuoteModel.spQuoteBasedMaterialBundle_Result)">
+      <Parameter Name="QuoteID" Mode="In" Type="Int32" />
+      <Parameter Name="Createdby" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spQuoteBasedMaterialBundleRecordSelect" ReturnType="Collection(AgileQuoteModel.spQuoteBasedMaterialBundleRecordSelect_Result)">
+      <Parameter Name="type" Mode="In" Type="String" />
+      <Parameter Name="QuoteId" Mode="In" Type="Int32" />
+      <Parameter Name="MaterialID" Mode="In" Type="Int32" />
+      <Parameter Name="BundleID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spRentalProductSelect" ReturnType="Collection(AgileQuoteModel.spRentalProductSelect_Result)">
+      <Parameter Name="QuoteID" Mode="In" Type="Int32" />
+      <Parameter Name="RentalProductID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spRentalSparsSelect" ReturnType="Collection(AgileQuoteModel.spRentalSparsSelect_Result)">
+      <Parameter Name="QuoteID" Mode="In" Type="Int32" />
+      <Parameter Name="RentalSparsID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="tbQuoteBundleInstalations" EntityType="AgileQuoteModel.tbQuoteBundleInstalation" />
+    <EntitySet Name="tbQuoteMaterialInstalations" EntityType="AgileQuoteModel.tbQuoteMaterialInstalation" />
+    <EntitySet Name="tbQuoteServices" EntityType="AgileQuoteModel.tbQuoteService" />
+    <AssociationSet Name="FK_tbQuoteBundleInstalation_tbQuote" Association="AgileQuoteModel.FK_tbQuoteBundleInstalation_tbQuote">
+      <End Role="tbQuote" EntitySet="tbQuotes" />
+      <End Role="tbQuoteBundleInstalation" EntitySet="tbQuoteBundleInstalations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbQuoteMaterialInstalation_tbQuote" Association="AgileQuoteModel.FK_tbQuoteMaterialInstalation_tbQuote">
+      <End Role="tbQuote" EntitySet="tbQuotes" />
+      <End Role="tbQuoteMaterialInstalation" EntitySet="tbQuoteMaterialInstalations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbQuoteService_tbQuote" Association="AgileQuoteModel.FK_tbQuoteService_tbQuote">
+      <End Role="tbQuote" EntitySet="tbQuotes" />
+      <End Role="tbQuoteService" EntitySet="tbQuoteServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbQuoteService_tbQuote1" Association="AgileQuoteModel.FK_tbQuoteService_tbQuote1">
+      <End Role="tbQuote" EntitySet="tbQuotes" />
+      <End Role="tbQuoteService" EntitySet="tbQuoteServices" />
+    </AssociationSet>
+    <EntitySet Name="tbQuoteBoughtOutItems" EntityType="AgileQuoteModel.tbQuoteBoughtOutItem" />
+    <AssociationSet Name="FK_tbQuoteBoughtOutItem_tbQuote" Association="AgileQuoteModel.FK_tbQuoteBoughtOutItem_tbQuote">
+      <End Role="tbQuote" EntitySet="tbQuotes" />
+      <End Role="tbQuoteBoughtOutItem" EntitySet="tbQuoteBoughtOutItems" />
+    </AssociationSet>
+    <FunctionImport Name="spQuoteBasedMaterialBundleWithoutConfigured" ReturnType="Collection(AgileQuoteModel.spQuoteBasedMaterialBundleWithoutConfigured_Result)">
+      <Parameter Name="QuoteID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="tbQuoteCollabrators" EntityType="AgileQuoteModel.tbQuoteCollabrator" />
+    <FunctionImport Name="spSelectQuote" ReturnType="Collection(AgileQuoteModel.spSelectQuote_Result)">
+      <Parameter Name="userID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spSelectCreateQuote" ReturnType="Collection(AgileQuoteModel.spSelectCreateQuote_Result)">
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spAllAuthorizedRejectedQuote" ReturnType="Collection(AgileQuoteModel.spAllAuthorizedRejectedQuote_Result)">
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="tbQuoteShippings" EntityType="AgileQuoteModel.tbQuoteShipping" />
+    <AssociationSet Name="FK_tbQuoteShipping_tbQuote" Association="AgileQuoteModel.FK_tbQuoteShipping_tbQuote">
+      <End Role="tbQuote" EntitySet="tbQuotes" />
+      <End Role="tbQuoteShipping" EntitySet="tbQuoteShippings" />
+    </AssociationSet>
+    <EntitySet Name="tbQuoteBusinessLists" EntityType="AgileQuoteModel.tbQuoteBusinessList" />
+    <EntitySet Name="tbQuoteQualitativeInformations" EntityType="AgileQuoteModel.tbQuoteQualitativeInformation" />
+    <FunctionImport Name="spSaveAsNewQuote" ReturnType="Collection(AgileQuoteModel.spSaveAsNewQuote_Result)">
+      <Parameter Name="quoteId" Mode="In" Type="Int32" />
+      <Parameter Name="createdBy" Mode="In" Type="Int32" />
+      <Parameter Name="companyCode" Mode="In" Type="Int32" />
+      <Parameter Name="preparedBy" Mode="In" Type="String" />
+      <Parameter Name="requestedDateConstant" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCollaboratorQuote" ReturnType="Collection(AgileQuoteModel.spCollaboratorQuote_Result)">
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spApproveQuote" ReturnType="Collection(AgileQuoteModel.spApproveQuote_Result)">
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="tbBundle">
+    <Key>
+      <PropertyRef Name="BundleID" />
+    </Key>
+    <Property Name="BundleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BundleName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BundleDescription" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="BundleType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BundleCategory" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="Warrenty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Discount" Type="Int32" />
+    <Property Name="NetPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbQuoteBundleMappings" Relationship="AgileQuoteModel.FK_QuoteBundleMapping_tbBundle" FromRole="tbBundle" ToRole="tbQuoteBundleMapping" />
+    <Property Type="Decimal" Name="Installation" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tbBundleMaterialMapping">
+    <Key>
+      <PropertyRef Name="BundleMaterialMapID" />
+    </Key>
+    <Property Name="BundleMaterialMapID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BundleID" Type="Int32" Nullable="false" />
+    <Property Name="MaterialID" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbBundleType">
+    <Key>
+      <PropertyRef Name="BundleTypeID" />
+    </Key>
+    <Property Name="BundleTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BundleType" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbCurrency">
+    <Key>
+      <PropertyRef Name="CurrencyId" />
+    </Key>
+    <Property Name="CurrencyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CurrencyName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDelete" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbMaterial">
+    <Key>
+      <PropertyRef Name="MaterialID" />
+    </Key>
+    <Property Name="MaterialID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaterialCode" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="MaterialName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="MaterialDescription" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Warranty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbQuoteMaterialMappings" Relationship="AgileQuoteModel.FK_QuoteMaterialMapping_tbMaterial" FromRole="tbMaterial" ToRole="tbQuoteMaterialMapping" />
+    <Property Type="Decimal" Name="Installation" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tbQuote">
+    <Key>
+      <PropertyRef Name="QuoteID" />
+    </Key>
+    <Property Name="QuoteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuoteName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="QuoteDescription" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="QuoteStatus" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="SalesOrganizationName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ReferenceCustomerCode" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PreparedBy" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CurrencyName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BudgetRateTarget" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <Property Name="DeletedBy" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="Int32" />
+    <Property Name="NetPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="RequiredDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbQuoteBundleMappings" Relationship="AgileQuoteModel.FK_QuoteBundleMapping_tbQuote1" FromRole="tbQuote" ToRole="tbQuoteBundleMapping" />
+    <NavigationProperty Name="tbQuoteMaterialMappings" Relationship="AgileQuoteModel.FK_QuoteMaterialMapping_tbQuote" FromRole="tbQuote" ToRole="tbQuoteMaterialMapping" />
+    <NavigationProperty Name="tbQuoteRentalProductMappings" Relationship="AgileQuoteModel.FK_QuoteRentalProductMapping_tbQuote" FromRole="tbQuote" ToRole="tbQuoteRentalProductMapping" />
+    <NavigationProperty Name="tbQuoteRentalSparsMappings" Relationship="AgileQuoteModel.FK_QuoteRentalSparsMapping_tbQuote" FromRole="tbQuote" ToRole="tbQuoteRentalSparsMapping" />
+    <NavigationProperty Name="tbQuoteAuthorizes" Relationship="AgileQuoteModel.FK_tbQuoteAuthorize_tbQuote" FromRole="tbQuote" ToRole="tbQuoteAuthorize" />
+    <NavigationProperty Name="tbQuoteBundleInstalations" Relationship="AgileQuoteModel.FK_tbQuoteBundleInstalation_tbQuote" FromRole="tbQuote" ToRole="tbQuoteBundleInstalation" />
+    <NavigationProperty Name="tbQuoteMaterialInstalations" Relationship="AgileQuoteModel.FK_tbQuoteMaterialInstalation_tbQuote" FromRole="tbQuote" ToRole="tbQuoteMaterialInstalation" />
+    <NavigationProperty Name="tbQuoteServices" Relationship="AgileQuoteModel.FK_tbQuoteService_tbQuote" FromRole="tbQuote" ToRole="tbQuoteService" />
+    <NavigationProperty Name="tbQuoteServices1" Relationship="AgileQuoteModel.FK_tbQuoteService_tbQuote1" FromRole="tbQuote" ToRole="tbQuoteService" />
+    <NavigationProperty Name="tbQuoteBoughtOutItems" Relationship="AgileQuoteModel.FK_tbQuoteBoughtOutItem_tbQuote" FromRole="tbQuote" ToRole="tbQuoteBoughtOutItem" />
+    <Property Type="Decimal" Name="InstallationCost" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BoughtOutItemCost" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="ShippingCost" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="CompanyCode" />
+    <NavigationProperty Name="tbQuoteShippings" Relationship="AgileQuoteModel.FK_tbQuoteShipping_tbQuote" FromRole="tbQuote" ToRole="tbQuoteShipping" />
+  </EntityType>
+  <EntityType Name="tbQuoteAuthorize">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuoteID" Type="Int32" Nullable="false" />
+    <Property Name="AuthorizedUserId" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbQuote" Relationship="AgileQuoteModel.FK_tbQuoteAuthorize_tbQuote" FromRole="tbQuoteAuthorize" ToRole="tbQuote" />
+  </EntityType>
+  <EntityType Name="tbQuoteBundleMapping">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuoteID" Type="Int32" Nullable="false" />
+    <Property Name="BundleID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Warrent" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OverrideWarrent" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Discount" Type="Int32" />
+    <Property Name="NetPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbBundle" Relationship="AgileQuoteModel.FK_QuoteBundleMapping_tbBundle" FromRole="tbQuoteBundleMapping" ToRole="tbBundle" />
+    <NavigationProperty Name="tbQuote" Relationship="AgileQuoteModel.FK_QuoteBundleMapping_tbQuote1" FromRole="tbQuoteBundleMapping" ToRole="tbQuote" />
+  </EntityType>
+  <EntityType Name="tbQuoteMaterialMapping">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuoteID" Type="Int32" Nullable="false" />
+    <Property Name="MaterialID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Warrenty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OverrideWarrenty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Discount" Type="Int32" />
+    <Property Name="NetPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbMaterial" Relationship="AgileQuoteModel.FK_QuoteMaterialMapping_tbMaterial" FromRole="tbQuoteMaterialMapping" ToRole="tbMaterial" />
+    <NavigationProperty Name="tbQuote" Relationship="AgileQuoteModel.FK_QuoteMaterialMapping_tbQuote" FromRole="tbQuoteMaterialMapping" ToRole="tbQuote" />
+  </EntityType>
+  <EntityType Name="tbQuoteRentalProductMapping">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuoteID" Type="Int32" />
+    <Property Name="RentalProductID" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Warrenty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OverrideWarrenty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Discount" Type="Int32" />
+    <Property Name="NetPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbQuote" Relationship="AgileQuoteModel.FK_QuoteRentalProductMapping_tbQuote" FromRole="tbQuoteRentalProductMapping" ToRole="tbQuote" />
+    <NavigationProperty Name="tbRentalProduct" Relationship="AgileQuoteModel.FK_QuoteRentalProductMapping_RentalProducts" FromRole="tbQuoteRentalProductMapping" ToRole="tbRentalProducts" />
+  </EntityType>
+  <EntityType Name="tbQuoteRentalSparsMapping">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuoteID" Type="Int32" />
+    <Property Name="RentalSparsID" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Warrenty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OverrideWarrenty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Discount" Type="Int32" />
+    <Property Name="NetPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbQuote" Relationship="AgileQuoteModel.FK_QuoteRentalSparsMapping_tbQuote" FromRole="tbQuoteRentalSparsMapping" ToRole="tbQuote" />
+    <NavigationProperty Name="tbRentalSpar" Relationship="AgileQuoteModel.FK_QuoteRentalSparsMapping_RentalSpars" FromRole="tbQuoteRentalSparsMapping" ToRole="tbRentalSpars" />
+  </EntityType>
+  <EntityType Name="tbQuoteStatu">
+    <Key>
+      <PropertyRef Name="QuoteStatusID" />
+    </Key>
+    <Property Name="QuoteStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuoteStatusName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbRentalProduct">
+    <Key>
+      <PropertyRef Name="RentalProductsID" />
+    </Key>
+    <Property Name="RentalProductsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RentalProductsName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Warrenty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Discount" Type="Int32" />
+    <Property Name="NetPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CreateDate" Type="DateTime" Precision="0" />
+    <Property Name="DeleteDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbQuoteRentalProductMappings" Relationship="AgileQuoteModel.FK_QuoteRentalProductMapping_RentalProducts" FromRole="tbRentalProducts" ToRole="tbQuoteRentalProductMapping" />
+  </EntityType>
+  <EntityType Name="tbRentalSpar">
+    <Key>
+      <PropertyRef Name="RentalSparsID" />
+    </Key>
+    <Property Name="RentalSparsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RentalSparsName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Warrenty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Discount" Type="Int32" />
+    <Property Name="NetPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbQuoteRentalSparsMappings" Relationship="AgileQuoteModel.FK_QuoteRentalSparsMapping_RentalSpars" FromRole="tbRentalSpars" ToRole="tbQuoteRentalSparsMapping" />
+  </EntityType>
+  <EntityType Name="tbSalesOrganization">
+    <Key>
+      <PropertyRef Name="SalesOrganizationCode" />
+    </Key>
+    <Property Name="SalesOrganizationCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrganizationName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ReferenceCustomerCode" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_QuoteBundleMapping_tbBundle">
+    <End Role="tbBundle" Type="AgileQuoteModel.tbBundle" Multiplicity="1" />
+    <End Role="tbQuoteBundleMapping" Type="AgileQuoteModel.tbQuoteBundleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbBundle">
+        <PropertyRef Name="BundleID" />
+      </Principal>
+      <Dependent Role="tbQuoteBundleMapping">
+        <PropertyRef Name="BundleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuoteMaterialMapping_tbMaterial">
+    <End Role="tbMaterial" Type="AgileQuoteModel.tbMaterial" Multiplicity="1" />
+    <End Role="tbQuoteMaterialMapping" Type="AgileQuoteModel.tbQuoteMaterialMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbMaterial">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="tbQuoteMaterialMapping">
+        <PropertyRef Name="MaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuoteBundleMapping_tbQuote1">
+    <End Role="tbQuote" Type="AgileQuoteModel.tbQuote" Multiplicity="1" />
+    <End Role="tbQuoteBundleMapping" Type="AgileQuoteModel.tbQuoteBundleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbQuote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="tbQuoteBundleMapping">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuoteMaterialMapping_tbQuote">
+    <End Role="tbQuote" Type="AgileQuoteModel.tbQuote" Multiplicity="1" />
+    <End Role="tbQuoteMaterialMapping" Type="AgileQuoteModel.tbQuoteMaterialMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbQuote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="tbQuoteMaterialMapping">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuoteRentalProductMapping_tbQuote">
+    <End Role="tbQuote" Type="AgileQuoteModel.tbQuote" Multiplicity="0..1" />
+    <End Role="tbQuoteRentalProductMapping" Type="AgileQuoteModel.tbQuoteRentalProductMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbQuote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="tbQuoteRentalProductMapping">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuoteRentalSparsMapping_tbQuote">
+    <End Role="tbQuote" Type="AgileQuoteModel.tbQuote" Multiplicity="0..1" />
+    <End Role="tbQuoteRentalSparsMapping" Type="AgileQuoteModel.tbQuoteRentalSparsMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbQuote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="tbQuoteRentalSparsMapping">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbQuoteAuthorize_tbQuote">
+    <End Role="tbQuote" Type="AgileQuoteModel.tbQuote" Multiplicity="1" />
+    <End Role="tbQuoteAuthorize" Type="AgileQuoteModel.tbQuoteAuthorize" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbQuote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="tbQuoteAuthorize">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuoteRentalProductMapping_RentalProducts">
+    <End Role="tbRentalProducts" Type="AgileQuoteModel.tbRentalProduct" Multiplicity="0..1" />
+    <End Role="tbQuoteRentalProductMapping" Type="AgileQuoteModel.tbQuoteRentalProductMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbRentalProducts">
+        <PropertyRef Name="RentalProductsID" />
+      </Principal>
+      <Dependent Role="tbQuoteRentalProductMapping">
+        <PropertyRef Name="RentalProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuoteRentalSparsMapping_RentalSpars">
+    <End Role="tbRentalSpars" Type="AgileQuoteModel.tbRentalSpar" Multiplicity="0..1" />
+    <End Role="tbQuoteRentalSparsMapping" Type="AgileQuoteModel.tbQuoteRentalSparsMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbRentalSpars">
+        <PropertyRef Name="RentalSparsID" />
+      </Principal>
+      <Dependent Role="tbQuoteRentalSparsMapping">
+        <PropertyRef Name="RentalSparsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="CurrencySelect_Result">
+    <Property Type="String" Name="CurrencyCode" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CurrencyId" Nullable="false" />
+    <Property Type="String" Name="CurrencyName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="true" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+  </ComplexType>
+  <ComplexType Name="MaterialSelect_Result">
+    <Property Type="Int32" Name="MaterialID" Nullable="false" />
+    <Property Type="String" Name="MaterialCode" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="MaterialName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="MaterialDescription" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="Warranty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="Discount" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SalesOrgSelect_Result">
+    <Property Type="Int32" Name="SalesOrganizationCode" Nullable="false" />
+    <Property Type="String" Name="SalesOrganizationName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ReferenceCustomerCode" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="selectQuote_Result">
+    <Property Type="Int32" Name="QuoteID" Nullable="false" />
+    <Property Type="String" Name="QuoteName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="200" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <Property Type="DateTime" Name="RequiredDate" Nullable="true" />
+    <Property Type="String" Name="SalesOrganizationName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="QuoteStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PreparedBy" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spBundleCategoryBaseSelect_Result">
+    <Property Type="Int32" Name="BundleID" Nullable="false" />
+    <Property Type="String" Name="BundleName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BundleDescription" Nullable="true" />
+    <Property Type="String" Name="BundleType" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BundleCategory" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="Decimal" Name="Warrenty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="Discount" Nullable="true" />
+    <Property Type="Decimal" Name="NetPrice" Nullable="true" Precision="19" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="spBundleSelect_Result">
+    <Property Type="Int32" Name="BundleID" Nullable="false" />
+    <Property Type="String" Name="BundleName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BundleDescription" Nullable="true" />
+    <Property Type="String" Name="BundleType" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BundleCategory" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="Decimal" Name="Warrenty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="Discount" Nullable="true" />
+    <Property Type="Decimal" Name="NetPrice" Nullable="true" Precision="19" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="spMaterialCategoryBaseSelect_Result">
+    <Property Type="Int32" Name="MaterialID" Nullable="false" />
+    <Property Type="String" Name="MaterialCode" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="MaterialName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="MaterialDescription" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="Warranty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="Discount" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="spQuoteBasedMaterialBundle_Result">
+    <Property Type="Int32" Name="Code" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Discription" Nullable="true" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="Discount" Nullable="true" />
+    <Property Type="Decimal" Name="Warrenty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="OverrideWarrenty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="NetPrice" Nullable="true" Precision="19" />
+    <Property Type="String" Name="Type" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="spQuoteBasedMaterialBundleRecordSelect_Result">
+    <Property Type="Int32" Name="Code" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Discription" Nullable="true" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="Discount" Nullable="true" />
+    <Property Type="Decimal" Name="NetPrice" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Warrenty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="OverrideWarrenty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Type" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="spRentalProductSelect_Result">
+    <Property Type="Int32" Name="RentalProductsID" Nullable="false" />
+    <Property Type="String" Name="RentalProductsName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="Discount" Nullable="true" />
+    <Property Type="Decimal" Name="NetPrice" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Warrenty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="OverrideWarrenty" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="spRentalSparsSelect_Result">
+    <Property Type="Int32" Name="RentalSparsID" Nullable="false" />
+    <Property Type="String" Name="RentalSparsName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="Discount" Nullable="true" />
+    <Property Type="Decimal" Name="NetPrice" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Warrenty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="OverrideWarrenty" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <EntityType Name="tbQuoteBundleInstalation">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Type="Int32" Name="Sno" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="QuoteID" Nullable="false" />
+    <Property Type="Int32" Name="BundleID" Nullable="false" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="Decimal" Name="InstalationCharges" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TotalCost" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Boolean" Name="isActive" Nullable="false" />
+    <Property Type="Boolean" Name="isDelete" Nullable="false" />
+    <NavigationProperty Name="tbQuote" Relationship="AgileQuoteModel.FK_tbQuoteBundleInstalation_tbQuote" FromRole="tbQuoteBundleInstalation" ToRole="tbQuote" />
+  </EntityType>
+  <EntityType Name="tbQuoteMaterialInstalation">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Type="Int32" Name="Sno" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="QuoteID" Nullable="false" />
+    <Property Type="Int32" Name="MaterialID" Nullable="false" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="Decimal" Name="IntallationCharges" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TotalCost" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Boolean" Name="isActive" Nullable="false" />
+    <Property Type="Boolean" Name="isDelete" Nullable="false" />
+    <NavigationProperty Name="tbQuote" Relationship="AgileQuoteModel.FK_tbQuoteMaterialInstalation_tbQuote" FromRole="tbQuoteMaterialInstalation" ToRole="tbQuote" />
+  </EntityType>
+  <EntityType Name="tbQuoteService">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Type="Int32" Name="Sno" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="QuoteID" Nullable="false" />
+    <Property Type="Int32" Name="NoEmp" Nullable="false" />
+    <Property Type="Decimal" Name="PerdayCost" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TotalCost" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="NoDays" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+    <NavigationProperty Name="tbQuote" Relationship="AgileQuoteModel.FK_tbQuoteService_tbQuote" FromRole="tbQuoteService" ToRole="tbQuote" />
+    <NavigationProperty Name="tbQuote1" Relationship="AgileQuoteModel.FK_tbQuoteService_tbQuote1" FromRole="tbQuoteService" ToRole="tbQuote" />
+  </EntityType>
+  <Association Name="FK_tbQuoteBundleInstalation_tbQuote">
+    <End Type="AgileQuoteModel.tbQuote" Role="tbQuote" Multiplicity="1" />
+    <End Type="AgileQuoteModel.tbQuoteBundleInstalation" Role="tbQuoteBundleInstalation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbQuote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="tbQuoteBundleInstalation">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbQuoteMaterialInstalation_tbQuote">
+    <End Type="AgileQuoteModel.tbQuote" Role="tbQuote" Multiplicity="1" />
+    <End Type="AgileQuoteModel.tbQuoteMaterialInstalation" Role="tbQuoteMaterialInstalation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbQuote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="tbQuoteMaterialInstalation">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbQuoteService_tbQuote">
+    <End Type="AgileQuoteModel.tbQuote" Role="tbQuote" Multiplicity="1" />
+    <End Type="AgileQuoteModel.tbQuoteService" Role="tbQuoteService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbQuote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="tbQuoteService">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbQuoteService_tbQuote1">
+    <End Type="AgileQuoteModel.tbQuote" Role="tbQuote" Multiplicity="1" />
+    <End Type="AgileQuoteModel.tbQuoteService" Role="tbQuoteService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbQuote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="tbQuoteService">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbQuoteBoughtOutItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="QuoteID" Nullable="false" />
+    <Property Type="String" Name="boughtItem" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="Decimal" Name="TotalCost" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="UnitPriceQuoted" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TotalPriceQuoted" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+    <NavigationProperty Name="tbQuote" Relationship="AgileQuoteModel.FK_tbQuoteBoughtOutItem_tbQuote" FromRole="tbQuoteBoughtOutItem" ToRole="tbQuote" />
+  </EntityType>
+  <Association Name="FK_tbQuoteBoughtOutItem_tbQuote">
+    <End Type="AgileQuoteModel.tbQuote" Role="tbQuote" Multiplicity="1" />
+    <End Type="AgileQuoteModel.tbQuoteBoughtOutItem" Role="tbQuoteBoughtOutItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbQuote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="tbQuoteBoughtOutItem">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="spQuoteBasedMaterialBundleWithoutConfigured_Result">
+    <Property Type="Int32" Name="Code" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Discription" Nullable="true" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="Discount" Nullable="true" />
+    <Property Type="Decimal" Name="Warrenty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="OverrideWarrenty" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="NetPrice" Nullable="true" Precision="19" />
+    <Property Type="String" Name="Type" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <EntityType Name="tbQuoteCollabrator">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Type="Int32" Name="Sno" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="QuoteID" Nullable="false" />
+    <Property Type="Int32" Name="ColabratorID" Nullable="false" />
+    <Property Type="String" Name="Status" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" />
+    <Property Type="Boolean" Name="IsDelete" />
+    <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Remarks" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="spSelectQuote_Result">
+    <Property Type="Int32" Name="QuoteID" Nullable="false" />
+    <Property Type="String" Name="QuoteName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="200" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <Property Type="DateTime" Name="RequiredDate" Nullable="true" />
+    <Property Type="String" Name="SalesOrganizationName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="QuoteStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PreparedBy" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="AccessLevel" Nullable="false" MaxLength="11" />
+  </ComplexType>
+  <ComplexType Name="spSelectCreateQuote_Result">
+    <Property Type="Int32" Name="QuoteID" Nullable="false" />
+    <Property Type="String" Name="QuoteName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="200" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <Property Type="DateTime" Name="RequiredDate" Nullable="true" />
+    <Property Type="String" Name="SalesOrganizationName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="QuoteStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PreparedBy" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="AccessLevel" Nullable="false" MaxLength="6" />
+  </ComplexType>
+  <ComplexType Name="spAllAuthorizedRejectedQuote_Result">
+    <Property Type="Int32" Name="QuoteID" Nullable="false" />
+    <Property Type="String" Name="QuoteName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="200" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <Property Type="DateTime" Name="RequiredDate" Nullable="true" />
+    <Property Type="String" Name="SalesOrganizationName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="QuoteStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PreparedBy" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="AccessLevel" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <EntityType Name="tbQuoteShipping">
+    <Key>
+      <PropertyRef Name="ShippingID" />
+    </Key>
+    <Property Type="Int32" Name="ShippingID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="QuoteID" Nullable="false" />
+    <Property Type="Decimal" Name="TruckCost" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="DieselCost" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+    <NavigationProperty Name="tbQuote" Relationship="AgileQuoteModel.FK_tbQuoteShipping_tbQuote" FromRole="tbQuoteShipping" ToRole="tbQuote" />
+    <Property Type="Decimal" Name="OtherCost" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+  <Association Name="FK_tbQuoteShipping_tbQuote">
+    <End Type="AgileQuoteModel.tbQuote" Role="tbQuote" Multiplicity="1" />
+    <End Type="AgileQuoteModel.tbQuoteShipping" Role="tbQuoteShipping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbQuote">
+        <PropertyRef Name="QuoteID" />
+      </Principal>
+      <Dependent Role="tbQuoteShipping">
+        <PropertyRef Name="QuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbQuoteBusinessList">
+    <Key>
+      <PropertyRef Name="QuoteBusinessID" />
+    </Key>
+    <Property Type="Int32" Name="QuoteBusinessID" Nullable="false" />
+    <Property Type="String" Name="QuoteBusinessName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbQuoteQualitativeInformation">
+    <Key>
+      <PropertyRef Name="QuoteID" />
+    </Key>
+    <Property Type="Int32" Name="QuoteID" Nullable="false" />
+    <Property Type="String" Name="Leadtime" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="WinProbability" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ScopeofWork" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ExecutiveSummary" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PrimaryCompetitor" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SellingPrice" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PaymentTerms" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RiskMitigation" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="NewRepeatBusiness" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AnyOtherComments" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="spSaveAsNewQuote_Result">
+    <Property Type="Int32" Name="QuoteID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="spCollaboratorQuote_Result">
+    <Property Type="Int32" Name="QuoteID" Nullable="false" />
+    <Property Type="String" Name="QuoteName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="200" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <Property Type="DateTime" Name="RequiredDate" Nullable="true" />
+    <Property Type="String" Name="SalesOrganizationName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PreparedBy" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="AccessLevel" Nullable="false" MaxLength="11" />
+    <Property Type="Int32" Name="Flag" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="spApproveQuote_Result">
+    <Property Type="Int32" Name="QuoteID" Nullable="false" />
+    <Property Type="String" Name="QuoteName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="200" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+    <Property Type="DateTime" Name="RequiredDate" Nullable="true" />
+    <Property Type="String" Name="SalesOrganizationName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PreparedBy" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="AccessLevel" Nullable="false" MaxLength="9" />
+    <Property Type="Int32" Name="Flag" Nullable="false" />
+  </ComplexType>
+</Schema>

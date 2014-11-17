@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Awesome.Utilities.System</id>
+    <version>0.1.1.0</version>
+    <title />
+    <authors>Christian Droulers and Mathieu Germain</authors>
+    <owners>Christian Droulers and Mathieu Germain</owners>
+    <licenseUrl>http://awesome-utilities.googlecode.com/hg/LICENSE</licenseUrl>
+    <projectUrl>http://code.google.com/p/awesome-utilities/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Useful utilities!</description>
+  </metadata>
+</package>

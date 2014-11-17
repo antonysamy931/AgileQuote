@@ -1,0 +1,1790 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://172.17.0.147:8090/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.17.0.147:8090/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" />
+      <xsd:import schemaLocation="http://172.17.0.147:8090/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.17.0.147:8090/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://172.17.0.147:8090/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/AgileQuoteServices" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_CompanyList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CompanyList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CompanyList_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q1:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckAuthentication_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckAuthentication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckAuthentication_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q2:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUsername" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckUsername_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q3:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserID_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q4:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRole" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserRole_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q5:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadCurrency_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCurrency" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadCurrency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadCurrencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadCurrency_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q6:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadSalesOrg_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadSalesOrg" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadSalesOrg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadSalesOrgResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadSalesOrg_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q7:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadStatus_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q8:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadBusinessStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadBusinessStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadBusinessStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadBusinessStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadBusinessStatus_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q9:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertQuoteDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertQuoteDetails" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertQuoteDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertQuoteDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertQuoteDetails_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q10:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_QuoteSaveAsNewQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:QuoteSaveAsNewQuote" />
+  </wsdl:message>
+  <wsdl:message name="IService1_QuoteSaveAsNewQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QuoteSaveAsNewQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_QuoteSaveAsNewQuote_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q11:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateQuoteDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuoteDetails" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateQuoteDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuoteDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateQuoteDetails_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q12:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertQuotePriceDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertQuotePriceDetails" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertQuotePriceDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertQuotePriceDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertQuotePriceDetails_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q13:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_QuoteShippingInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:QuoteShippingInsert" />
+  </wsdl:message>
+  <wsdl:message name="IService1_QuoteShippingInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QuoteShippingInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_QuoteShippingInsert_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q14:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteShippingList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteShippingList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteShippingList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteShippingListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteShippingList_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q15:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteShippingTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteShippingTotal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteShippingTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteShippingTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteShippingTotal_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q16:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateQuoteShipping_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuoteShipping" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateQuoteShipping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuoteShippingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateQuoteShipping_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q17:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteShippingChargesDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteShippingChargesDetails" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteShippingChargesDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteShippingChargesDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteShippingChargesDetails_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q18:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteBaseMaterialBundleList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteBaseMaterialBundleList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteBaseMaterialBundleList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteBaseMaterialBundleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteBaseMaterialBundleList_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q19:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteListForCreate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteListForCreate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteListForCreate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteListForCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteListForCreate_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q20:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteListForApprove_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteListForApprove" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteListForApprove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteListForApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteListForApprove_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q21:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteListForCollaborate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteListForCollaborate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteListForCollaborate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteListForCollaborateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteListForCollaborate_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q22:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAuthorizedRejectedQuoteList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthorizedRejectedQuoteList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAuthorizedRejectedQuoteList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthorizedRejectedQuoteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAuthorizedRejectedQuoteList_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q23:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteBaseMaterialBundle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteBaseMaterialBundle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteBaseMaterialBundle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteBaseMaterialBundleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteBaseMaterialBundle_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q24:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteDetails" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteDetails_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q25:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQualitativeInfomation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQualitativeInfomation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQualitativeInfomation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQualitativeInfomationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQualitativeInfomation_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q26:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTotalQuoteQualitativeTotalService_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalQuoteQualitativeTotalService" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTotalQuoteQualitativeTotalService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalQuoteQualitativeTotalServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTotalQuoteQualitativeTotalService_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q27:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMinimumMaximumAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMinimumMaximumAmount" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMinimumMaximumAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMinimumMaximumAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMinimumMaximumAmount_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q28:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMaterialListBasedOnCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialListBasedOnCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMaterialListBasedOnCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialListBasedOnCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMaterialListBasedOnCategory_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q29:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSugectionMaterial_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSugectionMaterial" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSugectionMaterial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSugectionMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSugectionMaterial_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q30:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOfferedMaterial_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfferedMaterial" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOfferedMaterial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfferedMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOfferedMaterial_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q31:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBundleMappingMaterial_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBundleMappingMaterial" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBundleMappingMaterial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBundleMappingMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBundleMappingMaterial_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q32:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBundleListBasedOnCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBundleListBasedOnCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBundleListBasedOnCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBundleListBasedOnCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBundleListBasedOnCategory_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q33:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCategoryNameList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryNameList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCategoryNameList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryNameListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCategoryNameList_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q34:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMaterialSingleRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialSingleRecord" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMaterialSingleRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialSingleRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMaterialSingleRecord_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q35:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBundleSingleRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBundleSingleRecord" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBundleSingleRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBundleSingleRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBundleSingleRecord_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q36:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateBundleMaterialRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBundleMaterialRecord" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateBundleMaterialRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBundleMaterialRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateBundleMaterialRecord_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q37:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateBundleMaterialRecordDiscount_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBundleMaterialRecordDiscount" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateBundleMaterialRecordDiscount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBundleMaterialRecordDiscountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateBundleMaterialRecordDiscount_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q38:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteBundleMaterialRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBundleMaterialRecord" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteBundleMaterialRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBundleMaterialRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteBundleMaterialRecord_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q39:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddBundleMaterialToQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBundleMaterialToQuote" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddBundleMaterialToQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBundleMaterialToQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddBundleMaterialToQuote_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q40:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteMaterialBundleTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteMaterialBundleTotal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteMaterialBundleTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteMaterialBundleTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteMaterialBundleTotal_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q41:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSymbol_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSymbol" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSymbol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSymbolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSymbol_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q42:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AssignedApproverToQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssignedApproverToQuote" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AssignedApproverToQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssignedApproverToQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AssignedApproverToQuote_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q43:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ApprovedQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApprovedQuote" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ApprovedQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApprovedQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ApprovedQuote_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q44:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RejectQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:RejectQuote" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RejectQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RejectQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RejectQuote_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q45:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RejectCreatorQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:RejectCreatorQuote" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RejectCreatorQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RejectCreatorQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RejectCreatorQuote_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q46:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertShippingToQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertShippingToQuote" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertShippingToQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertShippingToQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertShippingToQuote_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q47:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertQualitativeInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertQualitativeInformation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertQualitativeInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertQualitativeInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertQualitativeInformation_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q48:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertQualitativeInformationUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertQualitativeInformationUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertQualitativeInformationUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertQualitativeInformationUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertQualitativeInformationUpdate_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q49:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteShippingDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteShippingDetails" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteShippingDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteShippingDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteShippingDetails_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q50:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteMaterialBundleListwithwarranty_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteMaterialBundleListwithwarranty" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteMaterialBundleListwithwarranty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteMaterialBundleListwithwarrantyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteMaterialBundleListwithwarranty_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q51:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateMaterialBundleWarrentyRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialBundleWarrentyRecord" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateMaterialBundleWarrentyRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialBundleWarrentyRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateMaterialBundleWarrentyRecord_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q52:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertQuoteBoughtOutItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertQuoteBoughtOutItem" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertQuoteBoughtOutItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertQuoteBoughtOutItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertQuoteBoughtOutItem_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q53="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q53:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteBasedBoughtoutItemList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteBasedBoughtoutItemList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteBasedBoughtoutItemList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteBasedBoughtoutItemListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteBasedBoughtoutItemList_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q54:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteBasedBoughtoutItemRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteBasedBoughtoutItemRecord" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteBasedBoughtoutItemRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuoteBasedBoughtoutItemRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetQuoteBasedBoughtoutItemRecord_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q55="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q55:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateQuoteBasedBoughtoutItemRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuoteBasedBoughtoutItemRecord" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateQuoteBasedBoughtoutItemRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuoteBasedBoughtoutItemRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateQuoteBasedBoughtoutItemRecord_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q56:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteQuoteBasedBoughtoutItemRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteQuoteBasedBoughtoutItemRecord" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteQuoteBasedBoughtoutItemRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteQuoteBasedBoughtoutItemRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteQuoteBasedBoughtoutItemRecord_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q57="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q57:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTotalCostBoughtoutItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalCostBoughtoutItem" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTotalCostBoughtoutItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalCostBoughtoutItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTotalCostBoughtoutItem_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q58="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q58:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRoleNameList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleNameList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRoleNameList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleNameListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRoleNameList_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q59="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q59:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_QuoteAuthorizeStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:QuoteAuthorizeStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_QuoteAuthorizeStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QuoteAuthorizeStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_QuoteAuthorizeStatus_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q60="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q60:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetcollabratorListOnQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetcollabratorListOnQuote" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetcollabratorListOnQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetcollabratorListOnQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetcollabratorListOnQuote_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q61="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q61:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCollaboratorList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollaboratorList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCollaboratorList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollaboratorListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCollaboratorList_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q62="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q62:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCollaboratorRemarks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollaboratorRemarks" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCollaboratorRemarks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollaboratorRemarksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCollaboratorRemarks_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q63="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q63:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertCollabratorQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCollabratorQuote" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertCollabratorQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCollabratorQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertCollabratorQuote_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q64="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q64:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCollabratorStatusForQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCollabratorStatusForQuote" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCollabratorStatusForQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCollabratorStatusForQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCollabratorStatusForQuote_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q65="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q65:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetApproverQuoteStatusList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApproverQuoteStatusList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetApproverQuoteStatusList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApproverQuoteStatusListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetApproverQuoteStatusList_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q66="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q66:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q67="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q67:Error" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q68="http://schemas.datacontract.org/2004/07/AgileQuoteProperty.Model" name="detail" element="q68:Error" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="CompanyList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CompanyList" message="tns:IService1_CompanyList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CompanyListResponse" message="tns:IService1_CompanyList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/CompanyListErrorFault" name="ErrorFault" message="tns:IService1_CompanyList_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAuthentication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CheckAuthentication" message="tns:IService1_CheckAuthentication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CheckAuthenticationResponse" message="tns:IService1_CheckAuthentication_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/CheckAuthenticationErrorFault" name="ErrorFault" message="tns:IService1_CheckAuthentication_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CheckUsername" message="tns:IService1_CheckUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CheckUsernameResponse" message="tns:IService1_CheckUsername_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/CheckUsernameErrorFault" name="ErrorFault" message="tns:IService1_CheckUsername_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUserID" message="tns:IService1_GetUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUserIDResponse" message="tns:IService1_GetUserID_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetUserIDErrorFault" name="ErrorFault" message="tns:IService1_GetUserID_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUserRole" message="tns:IService1_GetUserRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUserRoleResponse" message="tns:IService1_GetUserRole_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetUserRoleErrorFault" name="ErrorFault" message="tns:IService1_GetUserRole_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadCurrency">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadCurrency" message="tns:IService1_LoadCurrency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadCurrencyResponse" message="tns:IService1_LoadCurrency_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/LoadCurrencyErrorFault" name="ErrorFault" message="tns:IService1_LoadCurrency_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadSalesOrg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadSalesOrg" message="tns:IService1_LoadSalesOrg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadSalesOrgResponse" message="tns:IService1_LoadSalesOrg_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/LoadSalesOrgErrorFault" name="ErrorFault" message="tns:IService1_LoadSalesOrg_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadStatus" message="tns:IService1_LoadStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadStatusResponse" message="tns:IService1_LoadStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/LoadStatusErrorFault" name="ErrorFault" message="tns:IService1_LoadStatus_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadBusinessStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadBusinessStatus" message="tns:IService1_LoadBusinessStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadBusinessStatusResponse" message="tns:IService1_LoadBusinessStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/LoadBusinessStatusErrorFault" name="ErrorFault" message="tns:IService1_LoadBusinessStatus_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertQuoteDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertQuoteDetails" message="tns:IService1_InsertQuoteDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertQuoteDetailsResponse" message="tns:IService1_InsertQuoteDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/InsertQuoteDetailsErrorFault" name="ErrorFault" message="tns:IService1_InsertQuoteDetails_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QuoteSaveAsNewQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/QuoteSaveAsNewQuote" message="tns:IService1_QuoteSaveAsNewQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/QuoteSaveAsNewQuoteResponse" message="tns:IService1_QuoteSaveAsNewQuote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/QuoteSaveAsNewQuoteErrorFault" name="ErrorFault" message="tns:IService1_QuoteSaveAsNewQuote_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuoteDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateQuoteDetails" message="tns:IService1_UpdateQuoteDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateQuoteDetailsResponse" message="tns:IService1_UpdateQuoteDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/UpdateQuoteDetailsErrorFault" name="ErrorFault" message="tns:IService1_UpdateQuoteDetails_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertQuotePriceDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertQuotePriceDetails" message="tns:IService1_InsertQuotePriceDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertQuotePriceDetailsResponse" message="tns:IService1_InsertQuotePriceDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/InsertQuotePriceDetailsErrorFault" name="ErrorFault" message="tns:IService1_InsertQuotePriceDetails_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QuoteShippingInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/QuoteShippingInsert" message="tns:IService1_QuoteShippingInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/QuoteShippingInsertResponse" message="tns:IService1_QuoteShippingInsert_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/QuoteShippingInsertErrorFault" name="ErrorFault" message="tns:IService1_QuoteShippingInsert_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteShippingList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetQuoteShippingList" message="tns:IService1_GetQuoteShippingList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetQuoteShippingListResponse" message="tns:IService1_GetQuoteShippingList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetQuoteShippingListErrorFault" name="ErrorFault" message="tns:IService1_GetQuoteShippingList_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteShippingTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetQuoteShippingTotal" message="tns:IService1_GetQuoteShippingTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetQuoteShippingTotalResponse" message="tns:IService1_GetQuoteShippingTotal_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetQuoteShippingTotalErrorFault" name="ErrorFault" message="tns:IService1_GetQuoteShippingTotal_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuoteShipping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateQuoteShipping" message="tns:IService1_UpdateQuoteShipping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateQuoteShippingResponse" message="tns:IService1_UpdateQuoteShipping_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/UpdateQuoteShippingErrorFault" name="ErrorFault" message="tns:IService1_UpdateQuoteShipping_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteShippingChargesDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetQuoteShippingChargesDetails" message="tns:IService1_GetQuoteShippingChargesDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetQuoteShippingChargesDetailsResponse" message="tns:IService1_GetQuoteShippingChargesDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetQuoteShippingChargesDetailsErrorFault" name="ErrorFault" message="tns:IService1_GetQuoteShippingChargesDetails_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteBaseMaterialBundleList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetQuoteBaseMaterialBundleList" message="tns:IService1_GetQuoteBaseMaterialBundleList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetQuoteBaseMaterialBundleListResponse" message="tns:IService1_GetQuoteBaseMaterialBundleList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetQuoteBaseMaterialBundleListErrorFault" name="ErrorFault" message="tns:IService1_GetQuoteBaseMaterialBundleList_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteListForCreate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetQuoteListForCreate" message="tns:IService1_GetQuoteListForCreate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetQuoteListForCreateResponse" message="tns:IService1_GetQuoteListForCreate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetQuoteListForCreateErrorFault" name="ErrorFault" message="tns:IService1_GetQuoteListForCreate_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteListForApprove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetQuoteListForApprove" message="tns:IService1_GetQuoteListForApprove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetQuoteListForApproveResponse" message="tns:IService1_GetQuoteListForApprove_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetQuoteListForApproveErrorFault" name="ErrorFault" message="tns:IService1_GetQuoteListForApprove_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteListForCollaborate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetQuoteListForCollaborate" message="tns:IService1_GetQuoteListForCollaborate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetQuoteListForCollaborateResponse" message="tns:IService1_GetQuoteListForCollaborate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetQuoteListForCollaborateErrorFault" name="ErrorFault" message="tns:IService1_GetQuoteListForCollaborate_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthorizedRejectedQuoteList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAuthorizedRejectedQuoteList" message="tns:IService1_GetAuthorizedRejectedQuoteList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAuthorizedRejectedQuoteListResponse" message="tns:IService1_GetAuthorizedRejectedQuoteList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetAuthorizedRejectedQuoteListErrorFault" name="ErrorFault" message="tns:IService1_GetAuthorizedRejectedQuoteList_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteBaseMaterialBundle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetQuoteBaseMaterialBundle" message="tns:IService1_GetQuoteBaseMaterialBundle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetQuoteBaseMaterialBundleResponse" message="tns:IService1_GetQuoteBaseMaterialBundle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetQuoteBaseMaterialBundleErrorFault" name="ErrorFault" message="tns:IService1_GetQuoteBaseMaterialBundle_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetQuoteDetails" message="tns:IService1_GetQuoteDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetQuoteDetailsResponse" message="tns:IService1_GetQuoteDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetQuoteDetailsErrorFault" name="ErrorFault" message="tns:IService1_GetQuoteDetails_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQualitativeInfomation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetQualitativeInfomation" message="tns:IService1_GetQualitativeInfomation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetQualitativeInfomationResponse" message="tns:IService1_GetQualitativeInfomation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetQualitativeInfomationErrorFault" name="ErrorFault" message="tns:IService1_GetQualitativeInfomation_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalQuoteQualitativeTotalService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTotalQuoteQualitativeTotalService" message="tns:IService1_GetTotalQuoteQualitativeTotalService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTotalQuoteQualitativeTotalServiceResponse" message="tns:IService1_GetTotalQuoteQualitativeTotalService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetTotalQuoteQualitativeTotalServiceErrorFault" name="ErrorFault" message="tns:IService1_GetTotalQuoteQualitativeTotalService_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumMaximumAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetMinimumMaximumAmount" message="tns:IService1_GetMinimumMaximumAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetMinimumMaximumAmountResponse" message="tns:IService1_GetMinimumMaximumAmount_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetMinimumMaximumAmountErrorFault" name="ErrorFault" message="tns:IService1_GetMinimumMaximumAmount_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialListBasedOnCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetMaterialListBasedOnCategory" message="tns:IService1_GetMaterialListBasedOnCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetMaterialListBasedOnCategoryResponse" message="tns:IService1_GetMaterialListBasedOnCategory_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetMaterialListBasedOnCategoryErrorFault" name="ErrorFault" message="tns:IService1_GetMaterialListBasedOnCategory_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSugectionMaterial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetSugectionMaterial" message="tns:IService1_GetSugectionMaterial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetSugectionMaterialResponse" message="tns:IService1_GetSugectionMaterial_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetSugectionMaterialErrorFault" name="ErrorFault" message="tns:IService1_GetSugectionMaterial_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfferedMaterial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetOfferedMaterial" message="tns:IService1_GetOfferedMaterial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetOfferedMaterialResponse" message="tns:IService1_GetOfferedMaterial_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetOfferedMaterialErrorFault" name="ErrorFault" message="tns:IService1_GetOfferedMaterial_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBundleMappingMaterial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetBundleMappingMaterial" message="tns:IService1_GetBundleMappingMaterial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetBundleMappingMaterialResponse" message="tns:IService1_GetBundleMappingMaterial_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetBundleMappingMaterialErrorFault" name="ErrorFault" message="tns:IService1_GetBundleMappingMaterial_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBundleListBasedOnCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetBundleListBasedOnCategory" message="tns:IService1_GetBundleListBasedOnCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetBundleListBasedOnCategoryResponse" message="tns:IService1_GetBundleListBasedOnCategory_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetBundleListBasedOnCategoryErrorFault" name="ErrorFault" message="tns:IService1_GetBundleListBasedOnCategory_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryNameList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCategoryNameList" message="tns:IService1_GetCategoryNameList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCategoryNameListResponse" message="tns:IService1_GetCategoryNameList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetCategoryNameListErrorFault" name="ErrorFault" message="tns:IService1_GetCategoryNameList_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialSingleRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetMaterialSingleRecord" message="tns:IService1_GetMaterialSingleRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetMaterialSingleRecordResponse" message="tns:IService1_GetMaterialSingleRecord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetMaterialSingleRecordErrorFault" name="ErrorFault" message="tns:IService1_GetMaterialSingleRecord_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBundleSingleRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetBundleSingleRecord" message="tns:IService1_GetBundleSingleRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetBundleSingleRecordResponse" message="tns:IService1_GetBundleSingleRecord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetBundleSingleRecordErrorFault" name="ErrorFault" message="tns:IService1_GetBundleSingleRecord_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBundleMaterialRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateBundleMaterialRecord" message="tns:IService1_UpdateBundleMaterialRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateBundleMaterialRecordResponse" message="tns:IService1_UpdateBundleMaterialRecord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/UpdateBundleMaterialRecordErrorFault" name="ErrorFault" message="tns:IService1_UpdateBundleMaterialRecord_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBundleMaterialRecordDiscount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateBundleMaterialRecordDiscount" message="tns:IService1_UpdateBundleMaterialRecordDiscount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateBundleMaterialRecordDiscountResponse" message="tns:IService1_UpdateBundleMaterialRecordDiscount_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/UpdateBundleMaterialRecordDiscountErrorFault" name="ErrorFault" message="tns:IService1_UpdateBundleMaterialRecordDiscount_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBundleMaterialRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteBundleMaterialRecord" message="tns:IService1_DeleteBundleMaterialRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteBundleMaterialRecordResponse" message="tns:IService1_DeleteBundleMaterialRecord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/DeleteBundleMaterialRecordErrorFault" name="ErrorFault" message="tns:IService1_DeleteBundleMaterialRecord_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBundleMaterialToQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddBundleMaterialToQuote" message="tns:IService1_AddBundleMaterialToQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddBundleMaterialToQuoteResponse" message="tns:IService1_AddBundleMaterialToQuote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/AddBundleMaterialToQuoteErrorFault" name="ErrorFault" message="tns:IService1_AddBundleMaterialToQuote_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteMaterialBundleTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetQuoteMaterialBundleTotal" message="tns:IService1_GetQuoteMaterialBundleTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetQuoteMaterialBundleTotalResponse" message="tns:IService1_GetQuoteMaterialBundleTotal_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetQuoteMaterialBundleTotalErrorFault" name="ErrorFault" message="tns:IService1_GetQuoteMaterialBundleTotal_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetSymbol" message="tns:IService1_GetSymbol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetSymbolResponse" message="tns:IService1_GetSymbol_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetSymbolErrorFault" name="ErrorFault" message="tns:IService1_GetSymbol_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignedApproverToQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AssignedApproverToQuote" message="tns:IService1_AssignedApproverToQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AssignedApproverToQuoteResponse" message="tns:IService1_AssignedApproverToQuote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/AssignedApproverToQuoteErrorFault" name="ErrorFault" message="tns:IService1_AssignedApproverToQuote_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApprovedQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ApprovedQuote" message="tns:IService1_ApprovedQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ApprovedQuoteResponse" message="tns:IService1_ApprovedQuote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/ApprovedQuoteErrorFault" name="ErrorFault" message="tns:IService1_ApprovedQuote_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RejectQuote" message="tns:IService1_RejectQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RejectQuoteResponse" message="tns:IService1_RejectQuote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/RejectQuoteErrorFault" name="ErrorFault" message="tns:IService1_RejectQuote_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectCreatorQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RejectCreatorQuote" message="tns:IService1_RejectCreatorQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RejectCreatorQuoteResponse" message="tns:IService1_RejectCreatorQuote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/RejectCreatorQuoteErrorFault" name="ErrorFault" message="tns:IService1_RejectCreatorQuote_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertShippingToQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertShippingToQuote" message="tns:IService1_InsertShippingToQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertShippingToQuoteResponse" message="tns:IService1_InsertShippingToQuote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/InsertShippingToQuoteErrorFault" name="ErrorFault" message="tns:IService1_InsertShippingToQuote_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertQualitativeInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertQualitativeInformation" message="tns:IService1_InsertQualitativeInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertQualitativeInformationResponse" message="tns:IService1_InsertQualitativeInformation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/InsertQualitativeInformationErrorFault" name="ErrorFault" message="tns:IService1_InsertQualitativeInformation_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertQualitativeInformationUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertQualitativeInformationUpdate" message="tns:IService1_InsertQualitativeInformationUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertQualitativeInformationUpdateResponse" message="tns:IService1_InsertQualitativeInformationUpdate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/InsertQualitativeInformationUpdateErrorFault" name="ErrorFault" message="tns:IService1_InsertQualitativeInformationUpdate_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteShippingDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetQuoteShippingDetails" message="tns:IService1_GetQuoteShippingDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetQuoteShippingDetailsResponse" message="tns:IService1_GetQuoteShippingDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetQuoteShippingDetailsErrorFault" name="ErrorFault" message="tns:IService1_GetQuoteShippingDetails_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteMaterialBundleListwithwarranty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetQuoteMaterialBundleListwithwarranty" message="tns:IService1_GetQuoteMaterialBundleListwithwarranty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetQuoteMaterialBundleListwithwarrantyResponse" message="tns:IService1_GetQuoteMaterialBundleListwithwarranty_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetQuoteMaterialBundleListwithwarrantyErrorFault" name="ErrorFault" message="tns:IService1_GetQuoteMaterialBundleListwithwarranty_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialBundleWarrentyRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateMaterialBundleWarrentyRecord" message="tns:IService1_UpdateMaterialBundleWarrentyRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateMaterialBundleWarrentyRecordResponse" message="tns:IService1_UpdateMaterialBundleWarrentyRecord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/UpdateMaterialBundleWarrentyRecordErrorFault" name="ErrorFault" message="tns:IService1_UpdateMaterialBundleWarrentyRecord_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertQuoteBoughtOutItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertQuoteBoughtOutItem" message="tns:IService1_InsertQuoteBoughtOutItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertQuoteBoughtOutItemResponse" message="tns:IService1_InsertQuoteBoughtOutItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/InsertQuoteBoughtOutItemErrorFault" name="ErrorFault" message="tns:IService1_InsertQuoteBoughtOutItem_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteBasedBoughtoutItemList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetQuoteBasedBoughtoutItemList" message="tns:IService1_GetQuoteBasedBoughtoutItemList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetQuoteBasedBoughtoutItemListResponse" message="tns:IService1_GetQuoteBasedBoughtoutItemList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetQuoteBasedBoughtoutItemListErrorFault" name="ErrorFault" message="tns:IService1_GetQuoteBasedBoughtoutItemList_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteBasedBoughtoutItemRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetQuoteBasedBoughtoutItemRecord" message="tns:IService1_GetQuoteBasedBoughtoutItemRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetQuoteBasedBoughtoutItemRecordResponse" message="tns:IService1_GetQuoteBasedBoughtoutItemRecord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetQuoteBasedBoughtoutItemRecordErrorFault" name="ErrorFault" message="tns:IService1_GetQuoteBasedBoughtoutItemRecord_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuoteBasedBoughtoutItemRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateQuoteBasedBoughtoutItemRecord" message="tns:IService1_UpdateQuoteBasedBoughtoutItemRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateQuoteBasedBoughtoutItemRecordResponse" message="tns:IService1_UpdateQuoteBasedBoughtoutItemRecord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/UpdateQuoteBasedBoughtoutItemRecordErrorFault" name="ErrorFault" message="tns:IService1_UpdateQuoteBasedBoughtoutItemRecord_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQuoteBasedBoughtoutItemRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteQuoteBasedBoughtoutItemRecord" message="tns:IService1_DeleteQuoteBasedBoughtoutItemRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteQuoteBasedBoughtoutItemRecordResponse" message="tns:IService1_DeleteQuoteBasedBoughtoutItemRecord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/DeleteQuoteBasedBoughtoutItemRecordErrorFault" name="ErrorFault" message="tns:IService1_DeleteQuoteBasedBoughtoutItemRecord_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalCostBoughtoutItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTotalCostBoughtoutItem" message="tns:IService1_GetTotalCostBoughtoutItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTotalCostBoughtoutItemResponse" message="tns:IService1_GetTotalCostBoughtoutItem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetTotalCostBoughtoutItemErrorFault" name="ErrorFault" message="tns:IService1_GetTotalCostBoughtoutItem_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleNameList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetRoleNameList" message="tns:IService1_GetRoleNameList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetRoleNameListResponse" message="tns:IService1_GetRoleNameList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetRoleNameListErrorFault" name="ErrorFault" message="tns:IService1_GetRoleNameList_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QuoteAuthorizeStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/QuoteAuthorizeStatus" message="tns:IService1_QuoteAuthorizeStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/QuoteAuthorizeStatusResponse" message="tns:IService1_QuoteAuthorizeStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/QuoteAuthorizeStatusErrorFault" name="ErrorFault" message="tns:IService1_QuoteAuthorizeStatus_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetcollabratorListOnQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetcollabratorListOnQuote" message="tns:IService1_GetcollabratorListOnQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetcollabratorListOnQuoteResponse" message="tns:IService1_GetcollabratorListOnQuote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetcollabratorListOnQuoteErrorFault" name="ErrorFault" message="tns:IService1_GetcollabratorListOnQuote_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollaboratorList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCollaboratorList" message="tns:IService1_GetCollaboratorList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCollaboratorListResponse" message="tns:IService1_GetCollaboratorList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetCollaboratorListErrorFault" name="ErrorFault" message="tns:IService1_GetCollaboratorList_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollaboratorRemarks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCollaboratorRemarks" message="tns:IService1_GetCollaboratorRemarks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCollaboratorRemarksResponse" message="tns:IService1_GetCollaboratorRemarks_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetCollaboratorRemarksErrorFault" name="ErrorFault" message="tns:IService1_GetCollaboratorRemarks_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCollabratorQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertCollabratorQuote" message="tns:IService1_InsertCollabratorQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertCollabratorQuoteResponse" message="tns:IService1_InsertCollabratorQuote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/InsertCollabratorQuoteErrorFault" name="ErrorFault" message="tns:IService1_InsertCollabratorQuote_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCollabratorStatusForQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateCollabratorStatusForQuote" message="tns:IService1_UpdateCollabratorStatusForQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateCollabratorStatusForQuoteResponse" message="tns:IService1_UpdateCollabratorStatusForQuote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/UpdateCollabratorStatusForQuoteErrorFault" name="ErrorFault" message="tns:IService1_UpdateCollabratorStatusForQuote_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApproverQuoteStatusList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetApproverQuoteStatusList" message="tns:IService1_GetApproverQuoteStatusList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetApproverQuoteStatusListResponse" message="tns:IService1_GetApproverQuoteStatusList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetApproverQuoteStatusListErrorFault" name="ErrorFault" message="tns:IService1_GetApproverQuoteStatusList_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetDataErrorFault" name="ErrorFault" message="tns:IService1_GetData_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractErrorFault" name="ErrorFault" message="tns:IService1_GetDataUsingDataContract_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CompanyList">
+      <soap:operation soapAction="http://tempuri.org/IService1/CompanyList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAuthentication">
+      <soap:operation soapAction="http://tempuri.org/IService1/CheckAuthentication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUsername">
+      <soap:operation soapAction="http://tempuri.org/IService1/CheckUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserID">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRole">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUserRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCurrency">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadCurrency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LoadSalesOrg">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadSalesOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LoadStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBusinessStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadBusinessStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertQuoteDetails">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertQuoteDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QuoteSaveAsNewQuote">
+      <soap:operation soapAction="http://tempuri.org/IService1/QuoteSaveAsNewQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuoteDetails">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateQuoteDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertQuotePriceDetails">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertQuotePriceDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QuoteShippingInsert">
+      <soap:operation soapAction="http://tempuri.org/IService1/QuoteShippingInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteShippingList">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetQuoteShippingList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteShippingTotal">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetQuoteShippingTotal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuoteShipping">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateQuoteShipping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteShippingChargesDetails">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetQuoteShippingChargesDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteBaseMaterialBundleList">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetQuoteBaseMaterialBundleList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteListForCreate">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetQuoteListForCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteListForApprove">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetQuoteListForApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteListForCollaborate">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetQuoteListForCollaborate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthorizedRejectedQuoteList">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAuthorizedRejectedQuoteList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteBaseMaterialBundle">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetQuoteBaseMaterialBundle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteDetails">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetQuoteDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQualitativeInfomation">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetQualitativeInfomation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalQuoteQualitativeTotalService">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTotalQuoteQualitativeTotalService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumMaximumAmount">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetMinimumMaximumAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialListBasedOnCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetMaterialListBasedOnCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSugectionMaterial">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetSugectionMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfferedMaterial">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetOfferedMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBundleMappingMaterial">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetBundleMappingMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBundleListBasedOnCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetBundleListBasedOnCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryNameList">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetCategoryNameList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialSingleRecord">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetMaterialSingleRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBundleSingleRecord">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetBundleSingleRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBundleMaterialRecord">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateBundleMaterialRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBundleMaterialRecordDiscount">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateBundleMaterialRecordDiscount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBundleMaterialRecord">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteBundleMaterialRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddBundleMaterialToQuote">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddBundleMaterialToQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteMaterialBundleTotal">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetQuoteMaterialBundleTotal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbol">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetSymbol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AssignedApproverToQuote">
+      <soap:operation soapAction="http://tempuri.org/IService1/AssignedApproverToQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ApprovedQuote">
+      <soap:operation soapAction="http://tempuri.org/IService1/ApprovedQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RejectQuote">
+      <soap:operation soapAction="http://tempuri.org/IService1/RejectQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RejectCreatorQuote">
+      <soap:operation soapAction="http://tempuri.org/IService1/RejectCreatorQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertShippingToQuote">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertShippingToQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertQualitativeInformation">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertQualitativeInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertQualitativeInformationUpdate">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertQualitativeInformationUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteShippingDetails">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetQuoteShippingDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteMaterialBundleListwithwarranty">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetQuoteMaterialBundleListwithwarranty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialBundleWarrentyRecord">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateMaterialBundleWarrentyRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertQuoteBoughtOutItem">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertQuoteBoughtOutItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteBasedBoughtoutItemList">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetQuoteBasedBoughtoutItemList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteBasedBoughtoutItemRecord">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetQuoteBasedBoughtoutItemRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuoteBasedBoughtoutItemRecord">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateQuoteBasedBoughtoutItemRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQuoteBasedBoughtoutItemRecord">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteQuoteBasedBoughtoutItemRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalCostBoughtoutItem">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTotalCostBoughtoutItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleNameList">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetRoleNameList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QuoteAuthorizeStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/QuoteAuthorizeStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetcollabratorListOnQuote">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetcollabratorListOnQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollaboratorList">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetCollaboratorList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollaboratorRemarks">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetCollaboratorRemarks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCollabratorQuote">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertCollabratorQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCollabratorStatusForQuote">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateCollabratorStatusForQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetApproverQuoteStatusList">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetApproverQuoteStatusList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://172.17.0.147:8090/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

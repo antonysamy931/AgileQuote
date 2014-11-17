@@ -1,0 +1,125 @@
+01-Aug-13 10:42:17 AM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|Error message:- No connection string named 'ChangepondProductEntities' could be found in the application config file. Error Details:-   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at AgileQuoteData.DataLogic.LoginDL.checkUsernamePassword(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteData\DataLogic\LoginDL.cs:line 30
+   at AgileQuoteBusiness.BusinessLogic.LoginBL.AuthenticationCheck(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\BusinessLogic\LoginBL.cs:line 28
+   at AgileQuoteServices.Service1.CheckAuthentication(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\Service1.svc.cs:line 33
+01-Aug-13 11:51:58 AM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|Error message:- No connection string named 'ChangepondProductEntities' could be found in the application config file. Error Details:-   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at AgileQuoteData.DataLogic.LoginDL.checkUsernamePassword(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteData\DataLogic\LoginDL.cs:line 30
+   at AgileQuoteBusiness.BusinessLogic.LoginBL.AuthenticationCheck(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\BusinessLogic\LoginBL.cs:line 28
+   at AgileQuoteServices.Service1.CheckAuthentication(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\Service1.svc.cs:line 33
+01-Aug-13 11:58:06 AM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|Error message:- No connection string named 'ChangepondProductEntities' could be found in the application config file. Error Details:-   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at AgileQuoteData.DataLogic.LoginDL.checkUsernamePassword(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteData\DataLogic\LoginDL.cs:line 30
+   at AgileQuoteBusiness.BusinessLogic.LoginBL.AuthenticationCheck(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\BusinessLogic\LoginBL.cs:line 28
+   at AgileQuoteServices.Service1.CheckAuthentication(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\Service1.svc.cs:line 33
+01-Aug-13 11:59:05 AM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|Error message:- No connection string named 'ChangepondProductEntities' could be found in the application config file. Error Details:-   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at AgileQuoteData.DataLogic.LoginDL.checkUsernamePassword(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteData\DataLogic\LoginDL.cs:line 30
+   at AgileQuoteBusiness.BusinessLogic.LoginBL.AuthenticationCheck(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\BusinessLogic\LoginBL.cs:line 28
+   at AgileQuoteServices.Service1.CheckAuthentication(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\Service1.svc.cs:line 33
+01-Aug-13 12:06:21 PM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|Error message:- No connection string named 'ChangepondProductEntities' could be found in the application config file. Error Details:-   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at AgileQuoteData.DataLogic.LoginDL.checkUsernamePassword(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteData\DataLogic\LoginDL.cs:line 30
+   at AgileQuoteBusiness.BusinessLogic.LoginBL.AuthenticationCheck(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\BusinessLogic\LoginBL.cs:line 28
+   at AgileQuoteServices.Service1.CheckAuthentication(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\Service1.svc.cs:line 33
+01-Aug-13 12:23:51 PM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|Error message:- No connection string named 'ChangepondProductEntities' could be found in the application config file. Error Details:-   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at AgileQuoteData.DataLogic.LoginDL.checkUsernamePassword(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteData\DataLogic\LoginDL.cs:line 30
+   at AgileQuoteBusiness.BusinessLogic.LoginBL.AuthenticationCheck(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\BusinessLogic\LoginBL.cs:line 28
+   at AgileQuoteServices.Service1.CheckAuthentication(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\Service1.svc.cs:line 33
+01-Aug-13 12:56:26 PM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|Error message:- No connection string named 'ChangepondProductEntities' could be found in the application config file. Error Details:-   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at AgileQuoteData.DataLogic.LoginDL.checkUsernamePassword(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteData\DataLogic\LoginDL.cs:line 30
+   at AgileQuoteBusiness.BusinessLogic.LoginBL.AuthenticationCheck(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\BusinessLogic\LoginBL.cs:line 28
+   at AgileQuoteServices.Service1.CheckAuthentication(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\Service1.svc.cs:line 33
+01-Aug-13 2:42:23 PM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|Error message:- No connection string named 'ChangepondProductEntities' could be found in the application config file. Error Details:-   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at AgileQuoteData.DataLogic.LoginDL.checkUsernamePassword(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteData\DataLogic\LoginDL.cs:line 30
+   at AgileQuoteBusiness.BusinessLogic.LoginBL.AuthenticationCheck(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\BusinessLogic\LoginBL.cs:line 28
+   at AgileQuoteServices.Service1.CheckAuthentication(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\Service1.svc.cs:line 33
+01-Aug-13 2:46:11 PM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|Error message:- No connection string named 'ChangepondProductEntities' could be found in the application config file. Error Details:-   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at AgileQuoteData.DataLogic.LoginDL.checkUsernamePassword(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteData\DataLogic\LoginDL.cs:line 30
+   at AgileQuoteBusiness.BusinessLogic.LoginBL.AuthenticationCheck(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\BusinessLogic\LoginBL.cs:line 28
+   at AgileQuoteServices.Service1.CheckAuthentication(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\Service1.svc.cs:line 33
+01-Aug-13 4:32:13 PM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|Error message:- No connection string named 'ChangepondProductEntities' could be found in the application config file. Error Details:-   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at AgileQuoteData.DataLogic.LoginDL.checkUsernamePassword(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteData\DataLogic\LoginDL.cs:line 30
+   at AgileQuoteBusiness.BusinessLogic.LoginBL.AuthenticationCheck(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\BusinessLogic\LoginBL.cs:line 28
+   at AgileQuoteServices.Service1.CheckAuthentication(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\Service1.svc.cs:line 34
+8/1/2013 4:51:29 PM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|Error message:- No connection string named 'ChangepondProductEntities' could be found in the application config file. Error Details:-   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at AgileQuoteData.DataLogic.LoginDL.checkUsernamePassword(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteData\DataLogic\LoginDL.cs:line 30
+   at AgileQuoteBusiness.BusinessLogic.LoginBL.AuthenticationCheck(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\BusinessLogic\LoginBL.cs:line 28
+   at AgileQuoteServices.Service1.CheckAuthentication(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\Service1.svc.cs:line 34
+8/1/2013 4:57:26 PM|(AgileQuoteWebApplication.dll->AgileQuoteWebApplication.Controllers.AccountController->Login)|Error message:- No connection string named 'ChangepondProductEntities' could be found in the application config file. Error Details:-   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at AgileQuoteData.DataLogic.LoginDL.checkUsernamePassword(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteData\DataLogic\LoginDL.cs:line 30
+   at AgileQuoteBusiness.BusinessLogic.LoginBL.AuthenticationCheck(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteBusiness\BusinessLogic\LoginBL.cs:line 28
+   at AgileQuoteServices.Service1.CheckAuthentication(Login oLogin) in d:\AgileQuote\trunk\AgileQuote\AgileQuoteServices\Service1.svc.cs:line 34

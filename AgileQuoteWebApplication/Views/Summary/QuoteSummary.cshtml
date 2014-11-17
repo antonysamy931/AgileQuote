@@ -1,0 +1,860 @@
+﻿@model AgileQuoteProperty.Model.QuoteSummary
+@using AgileQuoteProperty.Common
+
+@{
+    ViewBag.Title = "QuoteBoard";
+    Layout = "~/Views/Shared/_Layout.cshtml";    
+}
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+
+<script src="~/Scripts/jquery.noty.js"></script>
+<script src="~/Scripts/center.js"></script>
+<script src="~/Scripts/default.js"></script>
+<script src="~/Scripts/top.js"></script>
+
+<link href="~/Content/QuoteList.css" rel="stylesheet" />
+<style>
+    #QuoteSummary_body .quote_list table tr th
+    {
+        border: 1px solid #8CB2D9;
+    }
+
+    #QuoteSummary_body .quote_list table tr td
+    {
+        border: 1px solid #C6D9EC;
+        height: 40px;
+        padding: 4px 10px;
+    }
+</style>
+
+<script type="text/javascript">
+    var notyAlert = null;
+    $(document).ready(function () {
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        if (hashes[1] !== '') {
+            if (hashes[1] === 'Approver' || hashes[1] === 'Approver#') {
+                $('.submit_box').css('width', '17% !important');
+                $('#ApproveQuote').css('display', 'block');
+                $('#RejectQuote').css('display', 'block');
+                $('#pdfQuote').css('display', 'none');
+            }
+            else if (hashes[1] === 'Collaborate' || hashes[1] === 'Collaborate#') {
+                $('.submit_box').css('width', '10% !important');
+                $('#CollaborateComments').css('display', 'block');
+                $('#pdfQuote').css('display', 'none');
+            }
+        }
+        $('#returnQuote').click(function () {
+            window.location.replace("/QuoteBoard/QuoteBoard");
+        });
+
+        $('#ApproveQuote').click(function () {
+            notyAlert = noty({
+                text: "Are you sure to approve this quote?",
+                type: 'success',
+                buttons: [{
+                    addClass: 'btn btn-primary', text: 'YES', onClick: function ($noty) {
+                        $noty.close();
+                        $('#SummaryQuoteApproveCommentsQuoteID').val($('#QuoteIdhidden').val());
+                        var popMargTop = ($('#SummaryQuoteApproveComments').height() + 24) / 2;
+                        var popMargLeft = ($('#SummaryQuoteApproveComments').width() + 24) / 2;
+
+                        $('#SummaryQuoteApproveComments').css({
+                            'margin-top': -popMargTop,
+                            'margin-left': -popMargLeft
+                        });
+
+                        // Add the mask to body
+                        $('body').append('<div id="mask"></div>');
+                        $('#mask').fadeIn(300);
+                        //Fade in the Popup
+                        $('#SummaryQuoteApproveComments').fadeIn(300);
+                    }
+                },
+                {
+                    addClass: 'btn btn-danger', text: 'CANCEL', onClick: function ($noty) {
+                        $noty.close();
+                    }
+                }]
+            });            
+            return false;
+        });
+
+        $('#SummaryQuoteApproveComments_close').click(function () {
+            $('#SummaryQuoteApproveComments').fadeOut(300);
+            $('#mask').fadeOut(300);
+        });
+
+        $('#SummaryQuoteApproveCommentsButton').click(function () {
+
+            var quoteId = $('#SummaryQuoteApproveCommentsQuoteID').val();
+            var value = $('#SummaryQuoteApproveCommentsbox').val();
+
+
+            $.ajax({
+                url: '/QuoteList/ApproveQuote?QuoteID=' + quoteId + '&Description=' + value,
+                type: 'post',
+                dataType: 'json',
+                success: function (result) {
+                    if (result.redirect) {
+                        window.location.replace(result.redirectAction);
+                    }
+                },
+                error: function (e) {
+                },
+                async: false
+            });
+        });
+
+        $('#RejectQuote').click(function () {
+            $.noty.closeAll();
+            notyAlert = noty({
+                text: "Are you sure to reject this quote?",
+                type: 'error',
+                buttons: [{
+                    addClass: 'btn btn-primary', text: 'YES', onClick: function ($noty) {
+                        $noty.close();
+
+                        $('#SummaryQuoteRemoveCommentsQuoteID').val($('#QuoteIdhidden').val());
+                        var popMargTop = ($('#SummaryQuoteRemoveComments').height() + 24) / 2;
+                        var popMargLeft = ($('#SummaryQuoteRemoveComments').width() + 24) / 2;
+
+                        $('#SummaryQuoteRemoveComments').css({
+                            'margin-top': -popMargTop,
+                            'margin-left': -popMargLeft
+                        });
+
+                        // Add the mask to body
+                        $('body').append('<div id="mask"></div>');
+                        $('#mask').fadeIn(300);
+                        //Fade in the Popup
+                        $('#SummaryQuoteRemoveComments').fadeIn(300);
+                    }
+
+                },
+                {
+                    addClass: 'btn btn-danger', text: 'CANCEL', onClick: function ($noty) {
+                        $noty.close();
+                    }
+                }]
+            });
+            return false;
+        });
+
+        $('#SummaryQuoteRemoveComments_close').click(function () {
+            $('#SummaryQuoteRemoveComments').fadeOut(300);
+            $('#mask').fadeOut(300);
+        });
+
+        $('#SummaryQuoteRemoveCommentsButton').click(function () {
+
+            var quoteId = $('#SummaryQuoteRemoveCommentsQuoteID').val();
+            var value = $('#SummaryQuoteRemoveCommentsbox').val();
+            if (value === '') {
+                $.noty.closeAll();
+                notyAlert = noty({
+                    text: "Please enter your comments.",
+                    type: 'error',
+                    buttons: [{
+                        addClass: 'btn btn-primary', text: 'OK', onClick: function ($noty) {
+                            $noty.close();
+                        }
+                    }]
+                });
+            }
+            else {
+
+
+                $.ajax({
+                    url: '/QuoteList/RejectQuote?QuoteID=' + quoteId + '&Description=' + value,
+                    type: 'post',
+                    dataType: 'json',
+                    success: function (result) {
+                        if (result.redirect) {
+                            window.location.replace(result.redirectAction);
+                        }
+                    },
+                    error: function (e) {
+                    },
+                    async: false
+                });
+
+
+            }
+        });
+
+        $('#CollaborateComments').click(function () {
+            var QuoteID = $('#QuoteIdhidden').val();
+
+            $.ajax({
+                url: "/QuoteCollabrator/GetCollabratorRemarks?QuoteID=" + QuoteID,
+                type: 'post',
+                datatype: 'json',
+                success: function (result) {
+                    if (result.redirect) {
+                        window.location.replace(result.redirectAction);
+                    }
+                    else {
+                        $('#CollabratorRemaks').val(result.Result);
+                    }
+                },
+                error: function (e) {
+                },
+                async: false
+            });
+
+            $('#CollaboratorQuoteID').val(QuoteID);
+            var popMargTop = ($('#CollabratorQuoteComments').height() + 24) / 2;
+            var popMargLeft = ($('#CollabratorQuoteComments').width() + 24) / 2;
+
+            $('#CollabratorQuoteComments').css({
+                'margin-top': -popMargTop,
+                'margin-left': -popMargLeft
+            });
+
+            // Add the mask to body
+            $('body').append('<div id="mask"></div>');
+            $('#mask').fadeIn(300);
+            //Fade in the Popup
+            $('#CollabratorQuoteComments').fadeIn(300);
+        });
+
+
+        $('#CollabratorQuoteComments_close').click(function () {
+            $('#CollabratorQuoteComments').fadeOut(300);
+            $('#mask').fadeOut(300);
+        });
+
+        $('#CollabratorQuoteCommentsButton').click(function () {
+            var value = $('#CollabratorQuoteCommentsbox').val();
+            var quoteId = $('#CollaboratorQuoteID').val();
+            if (value === '') {
+                $.noty.closeAll();
+                notyAlert = noty({
+                    text: "Please enter your comments",
+                    type: 'error',
+                    buttons: [{
+                        addClass: 'btn btn-primary', text: 'OK', onClick: function ($noty) {
+                            $noty.close();
+                        }
+                    }]
+                });
+            }
+            else {
+                $.ajax({
+                    url: '/QuoteCollabrator/UpdateCollabratorToQuote?QuoteID=' + quoteId + '&QuoteStatusDescription=' + value,
+                    type: 'post',
+                    dataType: 'json',
+                    success: function (result) {
+                        if (result.redirect) {
+                            window.location.replace(result.redirectAction);
+                        }
+                        else {
+                            $('#CollabratorQuoteComments').fadeOut(300);
+                            $('#mask').fadeOut(300);
+                        }
+                    },
+                    error: function (e) {
+                    },
+                    async: false
+                });
+            }
+        });
+
+    });
+</script>
+@using (Html.BeginForm("GeneratePdf", "Pdf", FormMethod.Post))
+{    
+    <input type="hidden" id="QuoteIdhidden" value="@ViewBag.QuoteID" />
+    <div style="padding-bottom: 2%!important;">
+        <div id="QuoteSummary_body">
+            <section class="main-title">
+                <div class="c6 quote">
+                    <img alt="img1" src="/Content/images/qoute-ion.png">
+                    <p style="padding-top: 5px;">Quotation Summary</p>
+                </div>
+            </section>
+
+            <div class="greay_box">
+                <ul>
+                    <li>
+                        @Html.LabelFor(x => x.summaryQuote.QuoteName)<span style="float: none;">:</span>
+                        <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.QuoteName</span>
+                    </li>
+                    <li>
+                        <label>Sales Organization Name:</label>
+                        @*@Html.LabelFor(x => x.summaryQuote.salesOrgName)<span style="float: none;">:</span>*@
+                        <span style="padding-left: 4%; font-size: 13px;">@Model.summaryQuote.qQuoteSalesOrgName</span>
+                    </li>
+                    <li>
+                        @Html.LabelFor(x => x.summaryQuote.CustomerCode)<span style="float: none;">:</span>
+                        @*@Html.TextBoxFor(x => x.summaryQuote.CustomerCode)*@
+                        <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.CustomerCode</span>
+                    </li>
+                    <li>
+                        @Html.LabelFor(x => x.summaryQuote.CustomerName)<span style="float: none;">:</span>
+                        @*@Html.TextBoxFor(x => x.summaryQuote.CustomerName)*@
+                        <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.CustomerName</span>
+                    </li>
+                    <li>
+                        @Html.LabelFor(x => x.summaryQuote.RequrestedDate)<span style="float: none;">:</span>
+                        @*@Html.TextBoxFor(x => x.summaryQuote.RequrestedDate)*@
+                        <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.RequrestedDate</span>
+                    </li>
+                    <li>
+                        @Html.LabelFor(x => x.summaryQuote.currencyName)<span style="float: none;">:</span>
+                        @*@Html.TextBoxFor(x => x.summaryQuote.qQuoteCurrencyName)*@
+                        <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.qQuoteCurrencyName</span>
+                    </li>
+                    <li>
+                        @Html.LabelFor(x => x.summaryQuote.BudgetValue)<span style="float: none;">:</span>
+                        @*@Html.TextBoxFor(x => x.summaryQuote.BudgetValue)*@
+                        <span style="padding-left: 3%; font-size: 13px;">@String.Format("{0:0}", Model.summaryQuote.BudgetValue)</span>
+                    </li>
+                    <li>
+                        @Html.LabelFor(x => x.summaryQuote.PreparedBy)<span style="float: none;">:</span>
+                        @*@Html.TextBoxFor(x => x.summaryQuote.PreparedBy)*@
+                        <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.PreparedBy</span>
+                    </li>
+                </ul>
+            </div>
+
+            <ul>
+                <li style="width: 47%; float: left;">
+                    <section class="main-title">
+                        <div class="quote">
+                            <p>Billing Address Details</p>
+                        </div>
+                    </section>
+
+                    <div class="greay_box">
+                        <ul>
+                            <li>
+                                @Html.LabelFor(x => x.summaryQuote.BillingAddressOne)<span style="float: none;">:</span>
+                                @*@Html.TextBoxFor(x => x.summaryQuote.BillingAddressOne)*@
+                                <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.BillingAddressOne</span>
+                            </li>
+                            <li>
+                                @Html.LabelFor(x => x.summaryQuote.BillingAddressTwo)<span style="float: none;">:</span>
+                                @*@Html.TextBoxFor(x => x.summaryQuote.BillingAddressTwo)*@
+                                <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.BillingAddressTwo</span>
+                            </li>
+                            <li>
+                                @Html.LabelFor(x => x.summaryQuote.BillingCity)<span style="float: none;">:</span>
+                                @*@Html.TextBoxFor(x => x.summaryQuote.BillingCity)*@
+                                <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.BillingCity</span>
+                            </li>
+                            <li>
+                                @Html.LabelFor(x => x.summaryQuote.BillingState)<span style="float: none;">:</span>
+                                @*@Html.TextBoxFor(x => x.summaryQuote.BillingState)*@
+                                <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.BillingState</span>
+                            </li>
+                            <li>
+                                @Html.LabelFor(x => x.summaryQuote.BillingCountry)<span style="float: none;">:</span>
+                                @*@Html.TextBoxFor(x => x.summaryQuote.BillingCountry)*@
+                                <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.BillingCountry</span>
+                            </li>
+                            <li>
+                                @Html.LabelFor(x => x.summaryQuote.BillingPostalCode)<span style="float: none;">:</span>
+                                @*@Html.TextBoxFor(x => x.summaryQuote.BillingPostalCode)*@
+                                <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.BillingPostalCode</span>
+                            </li>
+                            <li>
+                                @Html.LabelFor(x => x.summaryQuote.BillingPhoneNumber)<span style="float: none;">:</span>
+                                @*@Html.TextBoxFor(x => x.summaryQuote.BillingPhoneNumber)*@
+                                <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.BillingPhoneNumber</span>
+                            </li>
+                            @*<li>
+                                @Html.LabelFor(x => x.summaryQuote.BillingMobileNumber)<span style="float: none;">:</span>
+                                @Html.TextBoxFor(x => x.summaryQuote.BillingMobileNumber)
+                                <span style="padding-left: 3%;font-size:13px;">@Model.summaryQuote.BillingMobileNumber</span>
+                            </li>*@
+                        </ul>
+                    </div>
+                </li>
+                <li style="width: 53%; float: left;">
+                    <section class="main-title">
+                        <div class="quote">
+                            <p>Shipping Address Details</p>
+                        </div>
+                    </section>
+
+                    <div class="greay_box">
+                        <ul>
+                            <li>
+                                @Html.LabelFor(x => x.summaryQuote.ShippingAddressOne)<span style="float: none;">:</span>
+                                @*@Html.TextBoxFor(x => x.summaryQuote.ShippingAddressOne)*@
+                                <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.ShippingAddressOne</span>
+                            </li>
+                            <li>
+                                @Html.LabelFor(x => x.summaryQuote.ShippingAddressTwo)<span style="float: none;">:</span>
+                                @*@Html.TextBoxFor(x => x.summaryQuote.ShippingAddressTwo)*@
+                                <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.ShippingAddressTwo</span>
+                            </li>
+                            <li>
+                                @Html.LabelFor(x => x.summaryQuote.ShippingCity)<span style="float: none;">:</span>
+                                @*@Html.TextBoxFor(x => x.summaryQuote.ShippingCity)*@
+                                <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.ShippingCity</span>
+                            </li>
+                            <li>
+                                @Html.LabelFor(x => x.summaryQuote.ShippingState)<span style="float: none;">:</span>
+                                @*@Html.TextBoxFor(x => x.summaryQuote.ShippingState)*@
+                                <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.ShippingState</span>
+                            </li>
+                            <li>
+                                @Html.LabelFor(x => x.summaryQuote.ShippingCountry)<span style="float: none;">:</span>
+                                @*@Html.TextBoxFor(x => x.summaryQuote.ShippingCountry)*@
+                                <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.ShippingCountry</span>
+                            </li>
+                            <li>
+                                @Html.LabelFor(x => x.summaryQuote.ShippingPostalCode)<span style="float: none;">:</span>
+                                @*@Html.TextBoxFor(x => x.summaryQuote.ShippingPostalCode)*@
+                                <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.ShippingPostalCode</span>
+                            </li>
+                            <li>
+                                @Html.LabelFor(x => x.summaryQuote.ShippingPhoneNumber)<span style="float: none;">:</span>
+                                @*@Html.TextBoxFor(x => x.summaryQuote.ShippingPhoneNumber)*@
+                                <span style="padding-left: 3%; font-size: 13px;">@Model.summaryQuote.ShippingPhoneNumber</span>
+                            </li>
+                            @*<li>
+                                @Html.LabelFor(x => x.summaryQuote.ShippingMobileNumber)<span style="float: none;">:</span>
+                                @Html.TextBoxFor(x => x.summaryQuote.ShippingMobileNumber)
+                                <span style="padding-left: 3%;font-size:13px;">@Model.summaryQuote.ShippingMobileNumber</span>
+                            </li>*@
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+            <section class="main-title">
+                <div class="quote">
+                    <p>Bundle Material</p>
+                </div>
+            </section>
+            <div class="create">
+                <div class="greay_box whitebox">
+                    <div class="quote_list">
+                        <table style="width: 100%; border: 1px solid #C6D9EC;">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Unit Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total Gross Price</th>
+                                    <th>Discount</th>
+                                    <th>Total Net Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.summaryQuoteBundle.ListQuoteBundleMaterial)
+                                {
+                                    <tr>
+                                        <td>@item.Code</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Description</td>
+                                        <td>@Extension.FormatCurrency(ViewBag.Nfi, item.UnitPrice)</td>
+                                        <td>@item.Quantity</td>
+                                        <td>@Extension.FormatCurrency(ViewBag.Nfi, item.GrossPrice)</td>
+                                        <td>@item.Discount%</td>
+                                        <td>@Extension.FormatCurrency(ViewBag.Nfi, item.NetPrice)</td>
+                                    </tr>
+                                    if (item.Type == "B")
+                                    {
+                                    <tr>
+                                        <td colspan="1" style="border: 0;">
+                                            <img src="~/Content/images/minus.png" />
+                                        </td>
+                                        <td colspan="7" style="border: 0;">
+                                            <table style="margin: 1%; width: 95%;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Code</th>
+                                                        <th>Name</th>
+                                                        <th>Quantity</th>
+                                                        <th>Amount</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var sam in item.ListOfMaterialMappedBundle)
+                                                    {
+                                                        <tr>
+                                                            <td>@sam.MaterialCode</td>
+                                                            <td>@sam.MaterialName</td>
+                                                            <td>@sam.Quantity</td>
+                                                            <td>@Extension.FormatCurrency(ViewBag.Nfi, sam.MaterialAmount)</td>
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+
+                        <table style="width: 65%; float: right;">
+                            <tr>
+                                <td class="Noborder">Grand Total Gross Price&nbsp&nbsp:</td>
+                                <td class="Noborder">@Extension.FormatCurrency(ViewBag.Nfi, Model.summaryQuoteBundle.qQuoteBundleMaterial.qTotalGrossPrice)</td>
+                                <td class="Noborder">Overall Discount&nbsp&nbsp:</td>
+                                <td class="Noborder">@Model.summaryQuoteBundle.qQuoteBundleMaterial.qTotalDiscount%</td>
+                                <td class="Noborder">Grand Total Net Price &nbsp&nbsp:</td>
+                                <td class="Noborder">@Extension.FormatCurrency(ViewBag.Nfi, Model.summaryQuoteBundle.qQuoteBundleMaterial.qTotalNetPrice)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <section class="main-title">
+                <div class="quote">
+                    <p>Bought Out Item</p>
+                </div>
+            </section>
+            <div class="create">
+                <div class="greay_box whitebox">
+                    <div class="quote_list">
+                        <table style="width: 100%">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Name</th>
+                                    <th>Unit Cost</th>
+                                    <th>Quantity</th>
+                                    <th>Total Cost</th>
+                                    <th>Unit Price</th>
+                                    <th>Total Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.summaryQuoteBoughtoutItem)
+                                {
+                                    <tr>
+                                        <td>@item.ItemId</td>
+                                        <td>@item.ItemName</td>
+                                        <td>@Extension.FormatCurrency(ViewBag.Nfi, item.UnitPrice)</td>
+                                        <td>@item.Quantity</td>
+                                        <td>@Extension.FormatCurrency(ViewBag.Nfi, item.NetPrice)</td>
+                                        <td>@Extension.FormatCurrency(ViewBag.Nfi, item.quotedUnitPrice)</td>
+                                        <td>@Extension.FormatCurrency(ViewBag.Nfi, item.quotedNetPrice)</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                        <table style="width: 50%; float: right;">
+                            <tr>
+                                @*<td class="Noborder">Total Unit Cost&nbsp&nbsp:</td>
+                                <td class="Noborder">@ViewBag.symbol @String.Format("{0:0.00}", Model.summaryQuoteBoughtoutItemTotal.TotalUnitPrice)</td>
+                                <td class="Noborder">Total Quantity&nbsp&nbsp:</td>
+                                <td class="Noborder">@Model.summaryQuoteBoughtoutItemTotal.TotalQuantity</td>*@
+                                <td class="Noborder">Grand Total Cost&nbsp&nbsp:</td>
+                                <td class="Noborder">@Extension.FormatCurrency(ViewBag.Nfi, Model.summaryQuoteBoughtoutItemTotal.TotalNetPrice)</td>
+                                @*<td class="Noborder">Total Quoted Unit Price&nbsp&nbsp:</td>
+                                <td class="Noborder">@ViewBag.symbol @String.Format("{0:0.00}", Model.summaryQuoteBoughtoutItemTotal.TotalQuotedUnitPrice)</td>*@
+                                <td class="Noborder">Grand Total Price&nbsp&nbsp:</td>
+                                <td class="Noborder">@Extension.FormatCurrency(ViewBag.Nfi, Model.summaryQuoteBoughtoutItemTotal.TotalQuotedNetPrice)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <section class="main-title">
+                <div class="quote">
+                    <p>Material Bundle Warranty</p>
+                </div>
+            </section>
+            <div class="create">
+                <div class="greay_box whitebox">
+                    <div class="quote_list">
+                        <table style="width: 100%">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Warranty</th>
+                                    <th>Override Warranty</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.summaryQuoteBundleWarrenty)
+                                {
+                                    <tr>
+                                        <td>@item.Code</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Description</td>
+                                        <td>@item.Warrenty</td>
+                                        <td>@item.OverRideWarrenty</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <section class="main-title">
+                <div class="quote">
+                    <p>Material Bundle Installation</p>
+                </div>
+            </section>
+            <div class="create">
+                <div class="greay_box whitebox">
+                    <div class="quote_list">
+                        <table style="width: 100%">
+                            <thead>
+                                <tr>
+                                    <th style="width: 20% !important;">No of FTE's required</th>
+                                    <th>Per Day Cost</th>
+                                    <th>No of Days Required</th>
+                                    <th>Total No of FTE's Costs</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@Model.summaryQuoteInstallationCharges.NoEmployees</td>
+                                    <td>@Extension.FormatCurrency(ViewBag.Nfi, Model.summaryQuoteInstallationCharges.CostPerDay)</td>
+                                    <td>@Model.summaryQuoteInstallationCharges.NoDays</td>
+                                    <td>@Extension.FormatCurrency(ViewBag.Nfi, Model.summaryQuoteInstallationCharges.TotalCost)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <section class="main-title">
+                <div class="quote">
+                    <p>Shipping Charges</p>
+                </div>
+            </section>
+            <div class="create">
+                <div class="greay_box whitebox">
+                    <div class="quote_list">
+                        <table style="width: 100%">
+                            <thead>
+                                <tr>
+                                    <th style="width: 20% !important;">Shipping Code</th>
+                                    <th>Truck Cost</th>
+                                    <th>Diesel Cost</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    @foreach (var item in Model.summaryQuoteShipping)
+                                    {
+                                        <td>@item.Sno</td>
+                                        <td>@Extension.FormatCurrency(ViewBag.Nfi, item.truckCost)</td>                                        
+                                        <td>@Extension.FormatCurrency(ViewBag.Nfi, item.dieselCost)</td>
+                                    }
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <section class="main-title">
+                <div class="quote">
+                    <p>Quote Qualitative Information</p>
+                </div>
+            </section>
+            <ul>
+                <li>
+                    <div class="greay_box">
+                        <ul>
+                            <li>
+                                <label>Quote Value</label>
+                                <span>:</span>
+                                <span style="font-size: 13px;">@Model.summaryQuoteQualitativeInformation.txtQuoteValue</span>
+                            </li>
+                            <li>
+                                <label>Gross Margin Amount / Percentage</label>
+                                <span>:</span>
+                                <span style="font-size: 13px;">@Model.summaryQuoteQualitativeInformation.txtMagrinAmountPercentage</span>
+                            </li>
+                            <li>
+                                <label>Leadtime</label>
+                                <span>:</span>
+                                <span>@Model.summaryQuoteQualitativeInformation.txtLeadTime</span>
+                            </li>
+                            <li>
+                                <label>Win Probability % </label>
+                                <span>:</span>
+                                <span>@Model.summaryQuoteQualitativeInformation.txtWinProbability</span>
+                            </li>
+                            <li>
+                                <label>Scope of Work</label>
+                                <span>:</span>
+                                <span>@Model.summaryQuoteQualitativeInformation.txtareaScopeofWork</span>
+                            </li>
+                            <li>
+                                <label>Executive Summary</label>
+                                <span>:</span>
+                                <span>@Model.summaryQuoteQualitativeInformation.txtareaExecutiveSummary</span>
+                            </li>
+                            <li>
+                                <label>Primary Competitor</label>
+                                <span>:</span>
+                                <span>@Model.summaryQuoteQualitativeInformation.txtareaPrimaryCompetitor</span>
+                            </li>
+                            <li>
+                                <label>How was Selling Price Set?</label>
+                                <span>:</span>
+                                <span>@Model.summaryQuoteQualitativeInformation.txtareaSellingPrice</span>
+                            </li>
+                            <li>
+                                <label>Payment Terms</label>
+                                <span>:</span>
+                                <span>@Model.summaryQuoteQualitativeInformation.txtareaPaymentTerms</span>
+                            </li>
+                            <li>
+                                <label>Risk & Mitigation</label>
+                                <span>:</span>
+                                <span>@Model.summaryQuoteQualitativeInformation.txtareaRiskMitigation</span>
+                            </li>
+                            <li>
+                                <label>New/Repeat Business</label>
+                                <span>:</span>
+                                <span>@Model.summaryQuoteQualitativeInformation.Business</span>
+                            </li>
+                            <li>
+                                <label>Any Other Comments</label>
+                                <span>:</span>
+                                <span>@Model.summaryQuoteQualitativeInformation.txtareaAnyOtherComments</span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            @*<section class="main-title">
+                <div class="quote">
+                    <p>Quote Price</p>
+                </div>
+            </section>
+            <div class="create">
+                <div class="greay_box whitebox">
+                    <div class="quote_list">
+                        <table style="width: 100%">
+                            <thead>
+                                <tr>
+                                    <th style="width: 75% !important; text-align: center;">Item</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 1%;">Material Bundle Price</td>
+                                    <td>@ViewBag.symbol @String.Format("{0:0.00}", Model.summaryQuoteBundle.qQuoteBundleMaterial.qTotalNetPrice) </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="text-align: left; padding-left: 1%;">Bought Out Item Price</td>
+                                    <td>@ViewBag.symbol @String.Format("{0:0.00}", Model.summaryQuoteBoughtoutItemTotal.TotalQuotedNetPrice)</td>
+                                </tr>
+                               
+                                <tr>
+                                    <td style="text-align: left; padding-left: 1%;">Material Bundle Installation Price</td>
+                                    <td>@ViewBag.symbol @String.Format("{0:0.00}", Model.summaryQuoteInstallationCharges.TotalCost) </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; padding-left: 1%;">Shipping Charges</td>
+                                    <td>@ViewBag.symbol @String.Format("{0:0.00}", Model.summaryQuoteShippingTotalCost)</td>
+                                </tr>
+                            </tbody>
+                            <tfoot style="background: linear-gradient(to bottom, #F4F4F4 0%, #E2E2E2 100%) repeat scroll 0 0 transparent; padding-left: 4%; text-align: left;">
+                                <tr>
+                                    <td style="text-align: left; font-weight: bold; padding-left: 1%;">Quote Price</td>
+                                    <td>@ViewBag.symbol @String.Format("{0:0.00}", Model.summaryQuotePrice) </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>*@
+
+
+        </div>
+
+
+        <div class="submit_box" style="width: 16%">
+            <input type="submit" value="Generate PDF" id="pdfQuote" />
+            @*<input type="button" id="returnQuote" value="Quotes" />*@
+            <input type="button" id="ApproveQuote" value="Approve" style="display: none;" />
+            <input type="button" id="RejectQuote" value="Reject" style="display: none;" />
+            <input type="button" id="CollaborateComments" value="Comments" style="display: none;" />
+        </div>
+
+    </div>
+}
+
+<div class="light-popup" id="SummaryQuoteApproveComments">
+    <a href="#" class="close" id="SummaryQuoteApproveComments_close">
+        <img src="~/Content/images/fancy_close.png" class="btn_close" title="Close Window" alt="Close" /></a>
+    <div class="Title">
+        Enter Your Comments
+    </div>
+    <div id="SummaryQuoteApproveCommentsLightBox" class="popup-center">
+        <div class="create">
+            <input type="hidden" id="SummaryQuoteApproveCommentsQuoteID" />
+            <input type="hidden" id="SummaryQuoteApproveCommentsStatus" />
+            <textarea id="SummaryQuoteApproveCommentsbox" cols="40" rows="15"></textarea>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="accord_btns center" style="text-align: center !important;">
+        <input type="button" id="SummaryQuoteApproveCommentsButton" value="Submit" />
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div class="light-popup" id="SummaryQuoteRemoveComments">
+    <a href="#" class="close" id="SummaryQuoteRemoveComments_close">
+        <img src="~/Content/images/fancy_close.png" class="btn_close" title="Close Window" alt="Close" /></a>
+    <div class="Title">
+        Enter Your Comments
+    </div>
+    <div id="SummaryQuoteRemoveCommentsLightBox" class="popup-center">
+        <div class="create">
+            <input type="hidden" id="SummaryQuoteRemoveCommentsQuoteID" />
+            <input type="hidden" id="SummaryQuoteRemoveCommentsStatus" />
+            <textarea id="SummaryQuoteRemoveCommentsbox" cols="40" rows="15"></textarea>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="accord_btns center" style="text-align: center !important;">
+        <input type="button" id="SummaryQuoteRemoveCommentsButton" value="Submit" />
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div class="light-popup" id="CollabratorQuoteComments">
+    <a href="#" class="close" id="CollabratorQuoteComments_close">
+        <img src="~/Content/images/fancy_close.png" class="btn_close" title="Close Window" alt="Close" /></a>
+    <div class="Title">
+        Enter Your Comments
+    </div>
+    <div id="CollabratorQuoteCommentsLightBox" class="popup-center">
+        <div class="create">
+            <input type="hidden" id="CollaboratorQuoteID" />
+            <input type="hidden" id="ColabratorStatus" />
+            <label>Quote Owner's Comments</label>
+            <textarea id="CollabratorRemaks" cols="1" rows="1" disabled="disabled"></textarea>
+            <label>Enter Your Comments</label>
+            <textarea id="CollabratorQuoteCommentsbox" cols="5" rows="5"></textarea>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="accord_btns center" style="text-align: center !important;">
+        <input type="button" id="CollabratorQuoteCommentsButton" value="Submit" />
+    </div>
+    <div class="clear"></div>
+</div>

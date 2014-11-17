@@ -1,0 +1,11 @@
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteProperty\bin\Release\AgileQuoteProperty.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteProperty\bin\Release\AgileQuoteProperty.pdb
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteProperty\obj\Release\AgileQuoteProperty.dll
+D:\AgileQuote\trunk\AgileQuote\AgileQuoteProperty\obj\Release\AgileQuoteProperty.pdb
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteProperty\bin\Release\AgileQuoteProperty.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteProperty\bin\Release\AgileQuoteProperty.pdb
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteProperty\bin\Release\Awesome.Utilities.System.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteProperty\bin\Release\Awesome.Utilities.System.xml
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteProperty\obj\Release\AgileQuoteProperty.dll
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteProperty\obj\Release\AgileQuoteProperty.pdb
+D:\AgileQuoteNew\trunk\AgileQuote\AgileQuoteProperty\obj\Release\AgileQuoteProperty.csprojResolveAssemblyReference.cache
